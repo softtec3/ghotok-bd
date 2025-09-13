@@ -30,7 +30,7 @@
                 <div class="tmbLeft">
                     <h1>Matrimony</h1>
                 </div>
-                <div class="tmbMiddle">
+                <div id="time" class="tmbMiddle">
                     9:30 AM
                 </div>
                 <div class="tmbRight">
@@ -44,5 +44,6 @@
             
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
