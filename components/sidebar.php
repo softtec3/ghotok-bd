@@ -28,8 +28,8 @@
                         </div>
                     </div>
                  <div class="sideBarLinks">
-                    <a href="#"><i class="fas fa-home"></i> Home</a>
-                    <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a href="/matrimony"><i class="fas fa-home"></i> Home</a>
+                    <a href="/matrimony/profile"><i class="fas fa-user"></i> Profile</a>
                     <a href="#"><i class="fas fa-heart"></i> Interested</a>
                     <a href="#"><i class="fas fa-star"></i> Favorite</a>
                     <a href="#"><i class="fas fa-eye"></i> View As</a>
