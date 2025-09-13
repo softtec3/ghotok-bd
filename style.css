@@ -14,6 +14,7 @@ a {
 :root {
   ---primaryBackground: linear-gradient(90deg, #522b79 0%, #ed3284 100%);
   ---secondaryColor: #522b79;
+  ---primaryColor: #ed3284;
 }
 #container {
   display: grid;
@@ -57,11 +58,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(---primaryBackground);
+  background: var(---secondaryColor);
   color: white;
   height: 50px;
   padding: 10px;
   border-top: 1px solid gray;
+}
+.tmbLeft img {
+  height: 40px;
+  cursor: pointer;
 }
 .tmbMiddle {
   font-size: 20px;
@@ -78,4 +83,173 @@ a {
 .tmbRight span:first-child {
   border-right: 2px solid white;
   padding-right: 3px;
+}
+
+/* main part */
+#mainPart {
+  display: flex;
+  /* align-items: start; */
+  /* gap: 20px; */
+  min-height: 80vh;
+  width: 100%;
+}
+#sideBar {
+  min-width: 280px;
+  padding: 10px;
+  background: var(---secondaryColor);
+}
+.sideBarProfile {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  flex-direction: column;
+  gap: 10px;
+}
+.sideBarProfile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(---secondaryColor);
+}
+.status {
+  font-size: 14px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.fa-circle-xmark {
+  color: rgb(153, 8, 8);
+}
+.description {
+  font-weight: 500;
+}
+.description table td {
+  padding: 2px;
+  padding-right: 10px;
+}
+.actionButtons {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actionButtons button {
+  width: 80px;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.actionButtons button:first-child {
+  background-color: var(---primaryColor);
+  color: ghostwhite;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.actionButtons button:last-child {
+  background-color: green;
+  color: ghostwhite;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.sideBarLinks a {
+  list-style: none;
+  margin-bottom: 5px;
+  font-size: 17px;
+  border: 1px solid rgb(83, 83, 83);
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+}
+.sideBarLinks a:hover {
+  background: var(---primaryBackground);
+}
+.sideBarLinks {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main content */
+#mainContent {
+  width: 100%;
+}
+.mainContent {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  place-content: start;
+}
+.mainContent .sideBarProfile {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.295);
+  /* min-width: 250px; */
+  width: 100%;
+  height: 330px;
+  transition: all 0.3s;
+}
+.mainContent .sideBarProfile:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+.mainContent .sideBarProfile button {
+  width: 90px;
+}
+
+.filter {
+  width: 100%;
+  background: var(---primaryBackground);
+  color: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selects {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.selects select {
+  font-size: 14px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+}
+.selects input {
+  font-size: 14px;
+  padding: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  padding-right: 25px;
+  transition: all 0.3s;
+  width: 150px;
+}
+.selects input:focus {
+  width: 250px;
+  transition: all 0.3s;
+}
+.selects .fa-magnifying-glass {
+  position: absolute;
+  right: 2px;
+  top: 6px;
+  color: black;
 }
