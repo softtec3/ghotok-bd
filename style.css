@@ -1,0 +1,81 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* Reset Styles */
+/* Root styles */
+:root {
+  ---primaryBackground: linear-gradient(90deg, #522b79 0%, #ed3284 100%);
+  ---secondaryColor: #522b79;
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+}
+#advertise1 {
+  grid-column: span 2;
+}
+
+#advertise2 {
+  grid-column: span 2;
+}
+
+#main {
+  grid-column: span 8;
+}
+
+/* Top Bar styles */
+#topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  background: var(---secondaryColor);
+  color: white;
+  padding: 10px;
+}
+#topBar div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#topBar a {
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* Top Main Bar */
+#topMainBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(---primaryBackground);
+  color: white;
+  height: 50px;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+.tmbMiddle {
+  font-size: 20px;
+}
+.tmbRight {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+}
+.tmbRight span {
+  cursor: pointer;
+}
+.tmbRight span:first-child {
+  border-right: 2px solid white;
+  padding-right: 3px;
+}
