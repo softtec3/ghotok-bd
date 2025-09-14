@@ -1,6 +1,6 @@
 <div class="filter">
-                        <h2>Home</h2>
-                        <div class="selects">
+    <h2>Home</h2>
+    <div class="selects">
                             <select name="age" id="age">
                                 <option style="display: none;" value="">Age</option>
                                 <option value="18">18</option>
@@ -48,5 +48,5 @@
                                 <option value="Atheist">Atheist</option>
                             </select>
                             <span style="position: relative;"><input type="text" placeholder="Search here.."><i class="fa-solid fa-magnifying-glass"></i></span>
-                        </div>
-                    </div>
+    </div>
+</div>
