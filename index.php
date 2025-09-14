@@ -70,6 +70,12 @@
         <p>23 yrs • Student</p>
         <a  href="home" class="view-btn">View Profile</a>
       </div>
+            <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
+        <h3>John Doe</h3>
+        <p>26 yrs • Software Engineer</p>
+        <a href="home" class="view-btn">View Profile</a>
+      </div>
     </div>
   </div>
 </section>
