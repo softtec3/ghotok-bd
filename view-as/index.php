@@ -48,7 +48,7 @@
 
     <!-- Action -->
     <div class="viewAs-action">
-      <a href="/ghotok-bd/update-profile"><button class="edit-btn"><i class="fas fa-edit"></i> Edit Profile</button></a>
+      <a href="/ghotok-bd/biodata"><button class="edit-btn"><i class="fas fa-edit"></i> Edit Profile</button></a>
     </div>
   </div>
 </div>

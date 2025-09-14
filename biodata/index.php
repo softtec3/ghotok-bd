@@ -20,7 +20,7 @@
                   <div id="mainContent">
                     <!-- <?php include_once("../components/filter.php")?> -->
                 <div class="registerBiodataContainer">
-  <h2>Register Bio-data</h2>
+  <h2>Update Bio-data</h2>
   <form class="registerForm" action="" method="post" enctype="multipart/form-data">
     
     <!-- Personal Information -->

@@ -30,11 +30,12 @@
                  <div class="sideBarLinks">
                     <a href="/ghotok-bd/home"><i class="fas fa-home"></i> Home</a>
                     <a href="/ghotok-bd/profile"><i class="fas fa-id-card"></i> Profile</a>
-                    <a href="/ghotok-bd/update-profile"><i class="fas fa-user-edit"></i> Update Profile</a>
+                    <!-- <a href="/ghotok-bd/update-profile"><i class="fas fa-user-edit"></i> Update Profile</a> -->
+                     <a href="/ghotok-bd/biodata"><i class="fas fa-file-signature"></i> Update Bio-data</a>
                     <a href="/ghotok-bd/interested"><i class="fas fa-heart"></i> Interested</a>
                     <a href="/ghotok-bd/favorite"><i class="fas fa-star"></i> Favorite</a>
                     <a href="/ghotok-bd/view-as"><i class="fas fa-eye"></i> View As</a>
                     <a href="/ghotok-bd/rules-regulations"><i class="fas fa-gavel"></i> Rules & Regulations</a>
-                   <a href="/ghotok-bd/register-biodata"><i class="fas fa-file-signature"></i> Register Bio-data</a>
+                   
                 </div>
 </div>

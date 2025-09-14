@@ -36,7 +36,43 @@
       features, we make your partner search simple, secure, and effective.
     </p>
   </section>
+<!-- Latest Uploaded Profiles Section -->
+<section class="latest-profiles">
+  <div class="container">
+    <h2 class="section-title">Latest Uploaded Profiles</h2>
+    <p class="section-subtitle">Discover newly added members</p>
 
+    <div class="profiles-grid">
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=200" alt="Profile">
+        <h3>John Doe</h3>
+        <p>26 yrs • Software Engineer</p>
+        <a href="home" class="view-btn">View Profile</a>
+      </div>
+
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=200" alt="Profile">
+        <h3>Jane Smith</h3>
+        <p>24 yrs • Teacher</p>
+        <a href="home" class="view-btn">View Profile</a>
+      </div>
+
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200" alt="Profile">
+        <h3>Rahim Khan</h3>
+        <p>29 yrs • Businessman</p>
+        <a href="home" class="view-btn">View Profile</a>
+      </div>
+
+      <div class="profile-card">
+        <img src="https://plus.unsplash.com/premium_photo-1679440415182-c362deb2fd40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
+        <h3>Ayesha Noor</h3>
+        <p>23 yrs • Student</p>
+        <a  href="home" class="view-btn">View Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Features Section -->
 <section class="features">
   <h2>Our Features</h2>
@@ -90,7 +126,7 @@
   <section class="cta">
     <h2>Start Your Journey Today</h2>
     <p>Join thousands of people who found their life partners on Ghotok-BD.</p>
-    <a href="/ghotok-bd/register" class="btn-primary">Create Free Account</a>
+    <a href="/ghotok-bd/register" class="btn-primary" style="padding: 10px;border-radius:5px;">Create Free Account</a>
   </section>
   <footer class="footer">
     <div class="footer-container">
