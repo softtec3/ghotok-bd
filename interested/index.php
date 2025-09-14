@@ -28,7 +28,7 @@
                 <!-- Favorite Icon -->
                 <span class="favoriteIcon" style="font-size: 22px;"><i class="fas fa-handshake"></i></span>
 
-                <a href="/matrimony/details?id=1">
+                <a href="/ghotok-bd/details?id=1">
                   <img
                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW58ZW58MHx8MHx8fDA%3D"
                     alt="profile image"

@@ -23,18 +23,18 @@
                             </table>
                         </div>
                         <div class="actionButtons">
-                            <a href="/matrimony/update-profile">Edit</a>
+                            <a href="/ghotok-bd/update-profile">Edit</a>
                             <button id="publishBtn">Publish</button>
                         </div>
                     </div>
                  <div class="sideBarLinks">
-                    <a href="/matrimony"><i class="fas fa-home"></i> Home</a>
-                    <a href="/matrimony/profile"><i class="fas fa-id-card"></i> Profile</a>
-                    <a href="/matrimony/update-profile"><i class="fas fa-user-edit"></i> Update Profile</a>
-                    <a href="/matrimony/interested"><i class="fas fa-heart"></i> Interested</a>
-                    <a href="/matrimony/favorite"><i class="fas fa-star"></i> Favorite</a>
-                    <a href="#"><i class="fas fa-eye"></i> View As</a>
-                    <a href="/matrimony/rules-regulations"><i class="fas fa-gavel"></i> Rules & Regulations</a>
-                   <a href="/matrimony/register-biodata"><i class="fas fa-file-signature"></i> Register Bio-data</a>
+                    <a href="/ghotok-bd/home"><i class="fas fa-home"></i> Home</a>
+                    <a href="/ghotok-bd/profile"><i class="fas fa-id-card"></i> Profile</a>
+                    <a href="/ghotok-bd/update-profile"><i class="fas fa-user-edit"></i> Update Profile</a>
+                    <a href="/ghotok-bd/interested"><i class="fas fa-heart"></i> Interested</a>
+                    <a href="/ghotok-bd/favorite"><i class="fas fa-star"></i> Favorite</a>
+                    <a href="/ghotok-bd/view-as"><i class="fas fa-eye"></i> View As</a>
+                    <a href="/ghotok-bd/rules-regulations"><i class="fas fa-gavel"></i> Rules & Regulations</a>
+                   <a href="/ghotok-bd/register-biodata"><i class="fas fa-file-signature"></i> Register Bio-data</a>
                 </div>
 </div>

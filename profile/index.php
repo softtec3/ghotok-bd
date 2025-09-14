@@ -123,7 +123,7 @@
   </div>
   <!-- Action Buttons -->
   <div class="actions">
-    <a href="/matrimony/update-profile" class="btn primary"><i class="fas fa-user-edit"></i> Update Profile</a>
+    <a href="/ghotok-bd/update-profile" class="btn primary"><i class="fas fa-user-edit"></i> Update Profile</a>
   </div>
 
 </div>

@@ -5,6 +5,8 @@
 <body>
   <div class="register-container">
   <div class="register-card">
+       <!-- Home Icon -->
+      <a href="/ghotok-bd" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>Create Your Account</h2>
     <form action="register.php" method="POST">
       <!-- Email / Phone -->
@@ -57,7 +59,7 @@
       <button type="submit" class="register-btn">Register</button>
     </form>
     <p class="login-link">
-      Already have an account? <a href="/matrimony/login">Login here</a>
+      Already have an account? <a href="/ghotok-bd/login">Login here</a>
     </p>
   </div>
 </div>

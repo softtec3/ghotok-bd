@@ -1,320 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once("./components/head.php")?>
-<body>
-    <div id="container">
-        <!-- Advertise Container 01 -->
-        <?php include_once("./components/advertisement1.php")?>
-        <!-- Main -->
-        <div id="main">
-            <!-- Top Bar -->
-             <?php include_once("./components/topbar.php")?>
-             <!-- Top Main Bar -->
-              <?php include_once("./components/topbarmain.php")?>
-            <!-- Main part -->
-             <div id="mainPart">
-                <!-- Side bar -->
-                 <?php include_once("./components/sidebar.php")?>
-                 <!-- Main Content - changeable -->
-                  <div id="mainContent">
-                    <?php include_once("./components/filter.php")?>
-                    <div class="mainContent">
-                    <!-- Home content -->
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button class="fav">Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1602442787305-decbd65be507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://plus.unsplash.com/premium_photo-1682431956407-ead76b412a42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHdvbWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                     <!-- match profile -->
-                     <div class="sideBarProfile">
-                        <a href="details?id=1"><img src="https://images.unsplash.com/photo-1530047198515-516ff90fc4d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHdvbWVufGVufDB8fDB8fHww" alt="profile image"></a>
-                        <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                        <div class="description">
-                            <table>
-                                <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>John Doe</td>
-                                </tr>
-                                <tr>
-                                    <td>AGE:</td>
-                                    <td>24 years</td>
-                                </tr>
-                                <tr>
-                                    <td>HEIGHT:</td>
-                                    <td>5′ 1″</td>
-                                </tr>
-                                <tr>
-                                    <td>PROFESSION:</td>
-                                    <td>Teacher</td>
-                                </tr>
-                                <tr>
-                                    <td>SKIN COLOR:</td>
-                                    <td>Bright</td>
-                                </tr>
-                                <tr>
-                                    <td>WEIGHT:</td>
-                                    <td>50 KG</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="actionButtons">
-                            <button>Favorite</button>
-                            <button>Interested</button>
-                        </div>
-                    </div>
-                </div>
-                  </div>
-             </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FontAwesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-        </div>
-        <!-- Advertise Container 02 -->
-        <?php include_once("./components/advertisement2.php")?>
+    <link rel="stylesheet" href="./style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="public-home">
+    <?php include_once("./components/topbar.php")?>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>Ghotok-BD</span></h1>
+      <p>Your trusted ghotok-bd platform to find the perfect life partner.</p>
+      <a href="/ghotok-bd/register" class="btn-primary">Register Now</a>
+      <a href="/ghotok-bd/login" class="btn-secondary">Login</a>
     </div>
-    <script src="./script.js"></script>
+    <div class="overlay"></div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>Why Choose Ghotok-BD?</h2>
+    <p>
+      We connect thousands of genuine brides and grooms across Bangladesh.
+      With verified profiles, advanced search filters, and privacy-focused
+      features, we make your partner search simple, secure, and effective.
+    </p>
+  </section>
+
+<!-- Features Section -->
+<section class="features">
+  <h2>Our Features</h2>
+  <div class="feature-list">
+    <div class="feature">
+      <i class="fas fa-user-shield"></i>
+      <h3>Verified Profiles</h3>
+      <p>We ensure genuine profiles through strict verification.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-search"></i>
+      <h3>Advanced Search</h3>
+      <p>Find your perfect match using filters like age, profession, and location.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-heart"></i>
+      <h3>Personalized Matches</h3>
+      <p>Our system recommends matches based on your preferences.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-lock"></i>
+      <h3>Secure & Private</h3>
+      <p>Your data and privacy are always protected with us.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Testimonials / Success Stories -->
+<section class="testimonials">
+  <h2>Success Stories</h2>
+  <div class="testimonial-list">
+    <div class="testimonial">
+      <img src="https://plus.unsplash.com/premium_photo-1711044546394-607a69c3654a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWFycmlnZSUyMGNvdXBsZXxlbnwwfDB8MHx8fDA%3D" alt="Couple Story 1" />
+      <div class="testimonial-text">
+        <p>"We met on Ghotok-BD and are now happily married. Thank you for bringing us together!"</p>
+        <span>- Rahim & Fatema</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://images.unsplash.com/photo-1690749180711-367cef00772f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1hcnJpZ2UlMjBjb3VwbGV8ZW58MHwwfDB8fHww" alt="Couple Story 2" />
+      <div class="testimonial-text">
+        <p>"Best ghotok-bd site with genuine profiles. Highly recommend!"</p>
+        <span>- Shakib & Nabila</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Start Your Journey Today</h2>
+    <p>Join thousands of people who found their life partners on Ghotok-BD.</p>
+    <a href="/ghotok-bd/register" class="btn-primary">Create Free Account</a>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Ghotok-BD</h3>
+        <p>
+          Ghotok-BD is Bangladesh’s trusted ghotok-bd platform helping brides and grooms
+          connect with genuine life partners securely and confidently.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/ghotok-bd">Home</a></li>
+          <li><a href="/ghotok-bd/register">Register</a></li>
+          <li><a href="/ghotok-bd/login">Login</a></li>
+          <li><a href="/ghotok-bd/rules-regulations">Rules & Regulations</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> support@ghotokbd.com</p>
+        <p><i class="fas fa-phone"></i> +8801318195591</p>
+        <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Ghotok-BD. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
 </body>
 </html>

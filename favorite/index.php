@@ -27,7 +27,7 @@
                 <!-- Favorite Icon -->
                 <span class="favoriteIcon"><i class="fas fa-heart"></i></span>
 
-                <a href="/matrimony/details?id=1">
+                <a href="/ghotok-bd/details?id=1">
                   <img
                     src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW58ZW58MHx8MHx8fDA%3D"
                     alt="profile image"
@@ -73,7 +73,7 @@
                 <!-- Favorite Icon -->
                 <span class="favoriteIcon"><i class="fas fa-heart"></i></span>
 
-                <a href="/matrimony/details?id=1">
+                <a href="/ghotok-bd/details?id=1">
                   <img
                     src="https://plus.unsplash.com/premium_photo-1681493353999-a3eea8b95e1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29tZW58ZW58MHx8MHx8fDA%3D"
                     alt="profile image"

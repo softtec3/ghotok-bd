@@ -1,6 +1,6 @@
 <div id="topMainBar">
                 <div class="tmbLeft">
-                    <a href="/matrimony"><img src="./ghotok-logo.png" alt="logo"></a>
+                    <a href="/ghotok-bd"><img src="./ghotok-logo.png" alt="logo"></a>
                 </div>
         <div id="time" class="tmbMiddle">
                    
