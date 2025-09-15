@@ -64,4 +64,18 @@
     <a href="/ghotok-bd/home" id="payBtn">Proceed to Payment</a>
   </div>
 </div>
+<div id="sidebarClose">
+<i class="fas fa-arrow-left"></i>Close
 </div>
+</div>
+
+<script>
+  // Sidebar close and open
+const sideBar = document.getElementById("sideBar");
+const sideBarCloseBtn = document.getElementById("sidebarClose");
+
+sideBarCloseBtn.addEventListener("click", () => {
+  sideBar.classList.add("sidebarCloseAnimation")
+});
+
+</script>

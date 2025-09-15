@@ -1432,7 +1432,39 @@ textarea {
   font-size: 13px;
   color: #888;
 }
+/* Sidebar button */
+#sidebarClose {
+  display: none !important;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background: var(---primaryBackground);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 
+#sidebarClose i {
+  font-size: 18px;
+}
+
+#sidebarClose:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #a02b55 0%, #ff6688 100%);
+}
+.sidebarCloseAnimation {
+  transform: translateX(-100%);
+  transition: all 1s;
+}
 /* Responsive */
 @media only screen and (max-width: 1200px) {
   .profiles-grid {
@@ -1456,5 +1488,60 @@ textarea {
   }
   .feature-list {
     gap: 10px;
+  }
+
+  #advertise1,
+  #advertise2 {
+    display: none;
+  }
+
+  #main {
+    grid-column: span 12;
+  }
+  #topMainBar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+  .tmbMiddle {
+    display: none;
+  }
+
+  #sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+  }
+  #sidebarClose {
+    display: flex !important;
+  }
+  .filter .selects {
+    display: none;
+  }
+  .mainContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mainContent .sideBarProfile {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .mainContent .sideBarProfile .description table {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .person-details {
+    margin: 0 10px;
+    margin-top: 10px;
+  }
+  .registerBiodataContainer {
+    margin-left: 10px;
+    margin: 10px;
+  }
+  .rules-container {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
