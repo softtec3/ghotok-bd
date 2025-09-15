@@ -1381,4 +1381,26 @@ textarea {
 
 /* Responsive */
 @media only screen and (max-width: 1200px) {
+  .profiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile-card {
+    height: 270px;
+    position: relative;
+  }
+  .profile-card .view-btn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  #topBar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feature-list {
+    gap: 10px;
+  }
 }
