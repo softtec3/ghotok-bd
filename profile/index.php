@@ -21,13 +21,11 @@
                     <!-- <?php include_once("../components/filter.php")?> -->
                      <div class="filter"><h2>Profile</h2></div>
 <div class="status-select-container">
-                       <div class="status-select">
-  <label for="profileStatus">Profile Status</label>
-  <select id="profileStatus" name="status">
-    <option value="inactive">Inactive</option>
-    <option value="active">Active</option>
-    <option value="married">Got Married</option>
-  </select>
+   <div class="status-select">
+  <label for="profileStatus">Profile Status <span class="status">Inactive</span></label>
+  <!-- <label for="profileStatus">Profile Status <span class="status" style="color: white;background-color:green">Active</span></label> -->
+  <button>Active</button>
+  <!-- <button style="background: red;">Inactive</button> -->
 </div>
 </div>
 

@@ -43,9 +43,9 @@
 <div id="publishModal" class="modal">
   <div class="modal-content">
     <span class="close"><i class="fas fa-xmark"></i></span>
-    <h2>Publish Your Biodata</h2>
+    <h2>Publish Your Profile</h2>
     <p class="intro-text">
-      To make your biodata visible on our platform, a small one-time publishing charge applies.
+      To make your profile visible on our platform, a small one-time publishing charge applies.
     </p>
 
     <div class="charges-box">
