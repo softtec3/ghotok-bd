@@ -1379,6 +1379,60 @@ textarea {
   background: linear-gradient(90deg, #fff, #fff5f7);
 }
 
+/* Notification */
+.notification-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: var(---secondaryBackground);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid gainsboro;
+}
+
+.notification-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(---primaryColor);
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+}
+
+.notification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.notification-card:last-child {
+  border-bottom: none;
+}
+
+.notification-card:hover {
+  background: #fff6f9; /* light pink highlight */
+  border-radius: 8px;
+}
+
+.notification-card i {
+  font-size: 22px;
+  color: var(---secondaryColor);
+  margin-top: 3px;
+}
+
+.notification-text p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.notification-text .time {
+  font-size: 13px;
+  color: #888;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1200px) {
   .profiles-grid {
