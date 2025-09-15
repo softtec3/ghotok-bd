@@ -23,9 +23,10 @@
                             </table>
                         </div>
                         <div class="actionButtons">
-                            <a href="/ghotok-bd/update-profile">Edit</a>
+                            <a href="/ghotok-bd/biodata">Edit</a>
                             <button id="publishBtn">Publish</button>
                         </div>
+
                     </div>
                  <div class="sideBarLinks">
                     <a href="/ghotok-bd/home"><i class="fas fa-home"></i> Home</a>
@@ -38,4 +39,29 @@
                     <a href="/ghotok-bd/rules-regulations"><i class="fas fa-gavel"></i> Rules & Regulations</a>
                    
                 </div>
+                    <!-- Publish Modal -->
+<div id="publishModal" class="modal">
+  <div class="modal-content">
+    <span class="close"><i class="fas fa-xmark"></i></span>
+    <h2>Publish Your Biodata</h2>
+    <p class="intro-text">
+      To make your biodata visible on our platform, a small one-time publishing charge applies.
+    </p>
+
+    <div class="charges-box">
+      <h3>Publishing Charges</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Standard Publish: 500৳</li>
+        <!-- <li><i class="fas fa-check-circle"></i> Featured Publish (highlighted profile): 1000৳</li> -->
+      </ul>
+    </div>
+
+    <p class="note">
+      Once you publish, your biodata will be visible to all members.  
+      You can later upgrade to <strong>Featured Publish</strong> for better visibility.
+    </p>
+
+    <a href="/ghotok-bd/home" id="payBtn">Proceed to Payment</a>
+  </div>
+</div>
 </div>
