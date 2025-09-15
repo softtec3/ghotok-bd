@@ -152,6 +152,6 @@
         <!-- Advertise Container 02 -->
         <?php include_once("../components/advertisement2.php")?>
     </div>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

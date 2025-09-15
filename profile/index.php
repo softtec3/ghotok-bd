@@ -20,7 +20,18 @@
                   <div id="mainContent">
                     <!-- <?php include_once("../components/filter.php")?> -->
                      <div class="filter"><h2>Profile</h2></div>
-                                        <div class="person-details">
+<div class="status-select-container">
+                       <div class="status-select">
+  <label for="profileStatus">Profile Status</label>
+  <select id="profileStatus" name="status">
+    <option value="inactive">Inactive</option>
+    <option value="active">Active</option>
+    <option value="married">Got Married</option>
+  </select>
+</div>
+</div>
+
+<div class="person-details">
   
   <!-- Profile Header -->
   <div class="profile-header">
@@ -135,6 +146,6 @@
         <!-- Advertise Container 02 -->
         <?php include_once("../components/advertisement2.php")?>
     </div>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

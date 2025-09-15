@@ -311,7 +311,6 @@
                 </div>
                   </div>
              </div>
-
         </div>
         <!-- Advertise Container 02 -->
         <?php include_once("../components/advertisement2.php")?>

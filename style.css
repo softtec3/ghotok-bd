@@ -1261,10 +1261,11 @@ textarea {
   max-width: 95%;
   text-align: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  /* animation: fadeIn 0.3s ease; */
   position: relative;
 }
-
+.modal-content:hover {
+  background: var(---secondaryBackground);
+}
 /* Title */
 .modal-content h2 {
   margin-bottom: 15px;
@@ -1338,4 +1339,46 @@ textarea {
 }
 .close:hover {
   color: var(---primaryColor);
+}
+/* Status select */
+.status-select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.status-select {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 150px;
+  padding: 5px;
+}
+
+.status-select label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.status-select select {
+  padding: 5px;
+  border: 2px solid var(--secondaryColor, #b03060);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-select select:focus {
+  outline: none;
+  border-color: var(--primaryColor, #ed3284);
+  background: linear-gradient(90deg, #fff, #fff5f7);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
 }
