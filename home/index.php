@@ -316,5 +316,6 @@
         <?php include_once("../components/advertisement2.php")?>
     </div>
     <script src="../script.js"></script>
+    <script src="../script2.js"></script>
 </body>
 </html>

@@ -1461,12 +1461,60 @@ textarea {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
   background: linear-gradient(90deg, #a02b55 0%, #ff6688 100%);
 }
-.sidebarCloseAnimation {
-  transform: translateX(-100%);
+
+/* Mobile navbar */
+#mobileNav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(---secondaryColor);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+#mobileNav a {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 10px;
+}
+#mobileNav a i {
+  font-size: 18px;
+}
+#mobileNav a:hover {
+  background: var(---primaryBackground);
+}
+#mobileNav .menuLink {
+  margin-top: -30px;
+}
+#mobileNav .menuLink:hover {
+  background: none;
+}
+#mobileNav .menuLink span {
+  background: var(---primaryBackground);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.sidebarOpenAnimation {
+  transform: translateX(0);
   transition: all 1s;
 }
 /* Responsive */
 @media only screen and (max-width: 1200px) {
+  .sidebarCloseAnimation {
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
   .profiles-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1543,5 +1591,8 @@ textarea {
   .rules-container {
     margin-left: 10px;
     margin-right: 10px;
+  }
+  #mobileNav {
+    display: flex;
   }
 }

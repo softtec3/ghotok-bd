@@ -1,4 +1,4 @@
-<div id="sideBar">
+<div id="sideBar" class="sidebarCloseAnimation">
 <div class="sideBarProfile">
                         <img src="https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVufGVufDB8fDB8fHww" alt="profile image">
                         <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span>
@@ -77,5 +77,25 @@ const sideBarCloseBtn = document.getElementById("sidebarClose");
 sideBarCloseBtn.addEventListener("click", () => {
   sideBar.classList.add("sidebarCloseAnimation")
 });
+// Publish modal Script
+const modal = document.getElementById("publishModal");
+const btn = document.getElementById("publishBtn");
+const closeBtn = document.querySelector(".close");
+const payBtn = document.getElementById("payBtn");
+
+// Open Modal
+btn.onclick = () => {
+  modal.style.display = "flex";
+};
+
+// Close Modal
+const closeModal = () => {
+  modal.style.display = "none";
+};
+
+closeBtn.onclick = closeModal;
+window.onclick = (e) => {
+  if (e.target == modal) closeModal();
+};
 
 </script>
