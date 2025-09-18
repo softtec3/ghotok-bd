@@ -47,6 +47,7 @@
         <label for="accountBy">Who is opening this account?</label>
         <select id="accountBy" name="accountBy" required>
           <option value="">Select option</option>
+          <option value="ghotok">Ghotok</option>
           <option value="self">Self</option>
           <option value="parents">Parents</option>
           <option value="siblings">Siblings</option>

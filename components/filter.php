@@ -7,7 +7,11 @@
             <h2>Filter</h2>
             <div>
                 <div class="mobileSelectSelects">
-                    <span style="position: relative;"><input type="text" placeholder="Search here.."><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <select name="lookingFor" class="lookingFor">
+                                <option style="display: none;" value="">Looking For</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                            </select>
                             <select name="age" id="age">
                                 <option style="display: none;" value="">Age</option>
                                 <option value="18">18</option>
@@ -62,6 +66,11 @@
         </div>
     </div>
     <div class="selects">
+                         <select name="lookingFor" class="lookingFor">
+                                <option style="display: none;" value="">Looking For</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                            </select>
                             <select name="age" id="age">
                                 <option style="display: none;" value="">Age</option>
                                 <option value="18">18</option>
@@ -108,7 +117,6 @@
                                 <option value="Christian">Christian</option>
                                 <option value="Atheist">Atheist</option>
                             </select>
-                            <span style="position: relative;"><input type="text" placeholder="Search here.."><i class="fa-solid fa-magnifying-glass"></i></span>
     </div>
 </div>
 

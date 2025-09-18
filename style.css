@@ -80,6 +80,18 @@ a {
 .tmbMiddle {
   font-size: 20px;
 }
+.connects {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+  display: none;
+}
+.topBarConnects {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
 .tmbRight {
   display: flex;
   align-items: center;
@@ -1592,8 +1604,132 @@ textarea {
   transform: translateX(120%);
   transition: all 1s;
 }
+.lookingFor {
+  min-width: 120px !important;
+}
+/* Buy connects page */
+.buy-connects {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.buy-connects .section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(---primaryColor);
+  margin-bottom: 10px;
+}
+
+.buy-connects .section-sub {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  flex: 1;
+  min-width: 260px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+  border: 1px solid gainsboro;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+}
+
+.plan-card h3 {
+  font-size: 20px;
+  color: var(---secondaryColor);
+  margin-bottom: 10px;
+}
+
+.plan-card .price {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(---primaryColor);
+  margin-bottom: 20px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.plan-card ul li {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.plan-card ul li i {
+  color: var(---primaryColor);
+  margin-right: 8px;
+}
+
+.plan-btn {
+  display: inline-block;
+  background: var(---primaryBackground);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.plan-btn:hover {
+  opacity: 0.9;
+}
+
+/* Highlighted Middle Card */
+/* Badge for Most Popular */
+.featured {
+  position: relative;
+  transform: scale(1.08);
+  border: 2px solid var(---primaryColor);
+  background: linear-gradient(145deg, #fff, #fff0f5);
+}
+
+.featured .badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(---primaryBackground);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1200px) {
+  .connects {
+    display: block;
+  }
+  .topBarConnects {
+    display: none;
+  }
   .sidebarCloseAnimation {
     transform: translateX(-100%);
     transition: all 1s;
@@ -1645,6 +1781,7 @@ textarea {
     left: 0;
     height: 100vh;
     z-index: 999;
+    overflow-y: auto;
   }
   #sidebarClose {
     display: flex !important;

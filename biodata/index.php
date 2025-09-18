@@ -36,6 +36,12 @@
         <option>Female</option>
         <option>Other</option>
       </select>
+      <label>Marital Status</label>
+      <select name="maritalStatus" required>
+        <option value="">-- Select --</option>
+        <option>Married</option>
+        <option>Single</option>
+      </select>
 
       <label>Date of Birth</label>
       <input type="date" name="dob" required>

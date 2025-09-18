@@ -1,4 +1,7 @@
 <div id="sideBar" class="sidebarCloseAnimation">
+             <div class="connects">
+            Connects: <span id="connect">25</span>
+           </div>
 <div class="sideBarProfile">
                         <img src="https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVufGVufDB8fDB8fHww" alt="profile image">
                         <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span>
@@ -37,6 +40,7 @@
                     <a href="/ghotok-bd/favorite"><i class="fas fa-star"></i> Favorite</a>
                     <a href="/ghotok-bd/view-as"><i class="fas fa-eye"></i> View As</a>
                     <a href="/ghotok-bd/rules-regulations"><i class="fas fa-gavel"></i> Rules & Regulations</a>
+                    <a href="/ghotok-bd/buy-connects"><i class="fas fa-coins"></i> Buy Connects</a>
                    
                 </div>
                     <!-- Publish Modal -->
