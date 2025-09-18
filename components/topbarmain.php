@@ -3,7 +3,7 @@
                     <a href="/ghotok-bd/home"><img src="./ghotok-logo.png" alt="logo"></a>
                 </div>
         <div id="time" class="tmbMiddle">
-                   
+                   00:00 PM/AM | 12-12-1912
            </div>
            <div class="topBarConnects">
             Connects: <span id="connects">25</span>

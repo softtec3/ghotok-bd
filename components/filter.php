@@ -61,7 +61,7 @@
                         </div>
             </div>
             <div id="sidebarClose2">
-        <i class="fas fa-arrow-left"></i>Close
+        <i class="fas fa-arrow-left"></i>
         </div>
         </div>
     </div>

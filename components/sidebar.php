@@ -69,7 +69,7 @@
   </div>
 </div>
 <div id="sidebarClose">
-<i class="fas fa-arrow-left"></i>Close
+<i class="fas fa-arrow-left"></i>
 </div>
 </div>
 
