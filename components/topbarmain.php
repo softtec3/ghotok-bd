@@ -1,3 +1,6 @@
+<?php
+        include_once("./php/user_logout.php")
+?>
 <div id="topMainBar">
                 <div class="tmbLeft">
                     <a href="./home.php"><img src="./ghotok-logo.png" alt="logo"></a>
@@ -9,7 +12,9 @@
             Connects: <span id="connects">25</span>
            </div>
      <div class="tmbRight"><div style="color: white;"><span onclick="handleShow('notification')"><i class="fa-regular fa-bell"></i></span></div>
- <span><i class="fa-solid fa-right-from-bracket"></i></span>
+        <form action="" method="post">
+                <button name="logout_user" value="logout_user" type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </form>
 </div>
 <nav id="mobileNav">
 

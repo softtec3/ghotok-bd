@@ -1,3 +1,7 @@
+<?php
+  include_once("./php/config.php");
+  include_once("./php/user_login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,10 +22,10 @@
        <!-- Home Icon -->
       <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>User Login</h2>
-    <form action="login.php" method="POST">
+    <form action="" method="POST">
       <div class="form-group">
-        <label for="email">Email / Phone</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email or phone" required>
+        <label for="user_id">Email / Phone</label>
+        <input type="text" id="email" name="user_id" placeholder="Enter your email or phone" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>

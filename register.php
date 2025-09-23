@@ -1,3 +1,7 @@
+<?php
+  include_once("./php/config.php");
+  include_once("./php/user_registration.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,11 +22,11 @@
        <!-- Home Icon -->
       <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>Create Your Account</h2>
-    <form action="register.php" method="POST">
+    <form action="" method="POST">
       <!-- Email / Phone -->
       <div class="form-group">
-        <label for="email">Email / Phone</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email or phone" required>
+        <label for="user_id">Email / Phone</label>
+        <input type="text" id="email" name="user_id" placeholder="Enter your email or phone" required>
       </div>
 
       <!-- Password -->
@@ -35,28 +39,27 @@
       <div class="form-group">
         <label for="gender">Your Gender</label>
         <select id="gender" name="gender" required>
-          <option value="">Select gender</option>
-          <option value="male">Man</option>
-          <option value="female">Woman</option>
-          <option value="other">Other</option>
+          <option style="display: none;" value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
         </select>
       </div>
 
       <!-- Looking For -->
       <div class="form-group">
-        <label for="lookingFor">Looking For</label>
-        <select id="lookingFor" name="lookingFor" required>
-          <option value="">Select preference</option>
-          <option value="men">Men</option>
-          <option value="women">Women</option>
+        <label for="looking_for">Looking For</label>
+        <select id="lookingFor" name="looking_for" required>
+          <option style="display: none;" value="">Select preference</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
         </select>
       </div>
 
       <!-- Who is Opening This Account -->
       <div class="form-group">
-        <label for="accountBy">Who is opening this account?</label>
-        <select id="accountBy" name="accountBy" required>
-          <option value="">Select option</option>
+        <label for="role">Who is opening this account?</label>
+        <select id="accountBy" name="role" required>
+          <option style="display: none;" value="">Select option</option>
           <option value="ghotok">Ghotok</option>
           <option value="self">Self</option>
           <option value="parents">Parents</option>
