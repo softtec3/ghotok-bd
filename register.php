@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once("../components/head.php")?>
-<link rel="stylesheet" href="../style.css">
+<?php include_once("./components/head.php")?>
+<link rel="stylesheet" href="./style.css">
 <body>
   <div class="register-container">
   <div class="register-card">
        <!-- Home Icon -->
-      <a href="/ghotok-bd" class="home-icon"><i class="fas fa-home"></i></a>
+      <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>Create Your Account</h2>
     <form action="register.php" method="POST">
       <!-- Email / Phone -->
@@ -60,7 +60,7 @@
       <button type="submit" class="register-btn">Register</button>
     </form>
     <p class="login-link">
-      Already have an account? <a href="/ghotok-bd/login">Login here</a>
+      Already have an account? <a href="./login.php">Login here</a>
     </p>
   </div>
 </div>

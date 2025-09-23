@@ -21,8 +21,8 @@
     <div class="hero-content">
       <h1>Welcome to <span>Ghotok-BD</span></h1>
       <p>Your trusted ghotok-bd platform to find the perfect life partner.</p>
-      <a href="/ghotok-bd/register" class="btn-primary">Register Now</a>
-      <a href="/ghotok-bd/login" class="btn-secondary">Login</a>
+      <a href="/ghotok-bd/register.php" class="btn-primary">Register Now</a>
+      <a href="/ghotok-bd/login.php" class="btn-secondary">Login</a>
     </div>
     <div class="overlay"></div>
   </section>
@@ -47,34 +47,34 @@
         <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=200" alt="Profile">
         <h3>John Doe</h3>
         <p>26 yrs • Software Engineer</p>
-        <a href="home" class="view-btn">View Profile</a>
+        <a href="./home.php" class="view-btn">View Profile</a>
       </div>
 
       <div class="profile-card">
         <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=200" alt="Profile">
         <h3>Jane Smith</h3>
         <p>24 yrs • Teacher</p>
-        <a href="home" class="view-btn">View Profile</a>
+        <a href="./home.php" class="view-btn">View Profile</a>
       </div>
 
       <div class="profile-card">
         <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200" alt="Profile">
         <h3>Rahim Khan</h3>
         <p>29 yrs • Businessman</p>
-        <a href="home" class="view-btn">View Profile</a>
+        <a href="./home.php" class="view-btn">View Profile</a>
       </div>
 
       <div class="profile-card">
         <img src="https://plus.unsplash.com/premium_photo-1679440415182-c362deb2fd40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
         <h3>Ayesha Noor</h3>
         <p>23 yrs • Student</p>
-        <a  href="home" class="view-btn">View Profile</a>
+        <a  href="./home.php" class="view-btn">View Profile</a>
       </div>
             <div class="profile-card">
         <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
         <h3>John Doe</h3>
         <p>26 yrs • Software Engineer</p>
-        <a href="home" class="view-btn">View Profile</a>
+        <a href="./home.php" class="view-btn">View Profile</a>
       </div>
     </div>
   </div>
@@ -132,7 +132,7 @@
   <section class="cta">
     <h2>Start Your Journey Today</h2>
     <p>Join thousands of people who found their life partners on Ghotok-BD.</p>
-    <a href="/ghotok-bd/register" class="btn-primary" style="padding: 10px;border-radius:5px;">Create Free Account</a>
+    <a href="./register.php" class="btn-primary" style="padding: 10px;border-radius:5px;">Create Free Account</a>
   </section>
   <footer class="footer">
     <div class="footer-container">
@@ -146,10 +146,10 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/ghotok-bd">Home</a></li>
-          <li><a href="/ghotok-bd/register">Register</a></li>
-          <li><a href="/ghotok-bd/login">Login</a></li>
-          <li><a href="/ghotok-bd/rules-regulations">Rules & Regulations</a></li>
+          <li><a href="./home.php">Home</a></li>
+          <li><a href="./home.php">Register</a></li>
+          <li><a href="./home.php">Login</a></li>
+          <li><a href="./home.php">Rules & Regulations</a></li>
         </ul>
       </div>
       <div class="footer-contact">

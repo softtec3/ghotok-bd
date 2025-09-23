@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once("../components/head.php")?>
-<link rel="stylesheet" href="../style.css">
+<?php include_once("./components/head.php")?>
+<link rel="stylesheet" href="./style.css">
 <body>
   <div class="login-container">
   <div class="login-card">
        <!-- Home Icon -->
-      <a href="/ghotok-bd" class="home-icon"><i class="fas fa-home"></i></a>
+      <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>User Login</h2>
     <form action="login.php" method="POST">
       <div class="form-group">
@@ -20,7 +20,7 @@
       <button type="submit" class="login-btn">Login</button>
     </form>
     <p class="register-link">
-      Don’t have an account? <a href="/ghotok-bd/register">Register here</a>
+      Don’t have an account? <a href="./register.php">Register here</a>
     </p>
   </div>
 </div>

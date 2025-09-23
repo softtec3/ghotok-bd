@@ -1,6 +1,6 @@
 <div id="topMainBar">
                 <div class="tmbLeft">
-                    <a href="/ghotok-bd/home"><img src="./ghotok-logo.png" alt="logo"></a>
+                    <a href="./home.php"><img src="./ghotok-logo.png" alt="logo"></a>
                 </div>
         <div id="time" class="tmbMiddle">
                    00:00 PM/AM | 12-12-1912
@@ -8,17 +8,17 @@
            <div class="topBarConnects">
             Connects: <span id="connects">25</span>
            </div>
-     <div class="tmbRight"><a href="/ghotok-bd/notification" style="color: white;"><span><i class="fa-regular fa-bell"></i></span></a>
+     <div class="tmbRight"><div style="color: white;"><span onclick="handleShow('notification')"><i class="fa-regular fa-bell"></i></span></div>
  <span><i class="fa-solid fa-right-from-bracket"></i></span>
 </div>
 <nav id="mobileNav">
 
-        <a href="/ghotok-bd/home"><i class="fas fa-home"></i> Home</a>
-        <a href="/ghotok-bd/profile"><i class="fas fa-id-card"></i> Profile</a>
+        <button onclick="handleShow('home')"><i class="fas fa-home"></i> Home</button>
+        <button onclick="handleShow('profile')"><i class="fas fa-id-card"></i> Profile</button>
         
-        <a id="sidebarOpen" href="#" class="menuLink"><span><i class="fas fa-bars"></i></span>Menu</a>
-        <a href="/ghotok-bd/interested"><i class="fas fa-heart"></i> Interested</a>
-        <a href="/ghotok-bd/favorite"><i class="fas fa-star"></i> Favorite</a>
+        <button id="sidebarOpen" class="menuLink"><span><i class="fas fa-bars"></i></span>Menu</button>
+        <button onclick="handleShow('interested')"><i class="fas fa-heart"></i> Interested</button>
+        <button onclick="handleShow('favorite')"><i class="fas fa-star"></i> Favorite</button>
 </nav>
 </div>
 

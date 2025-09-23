@@ -187,8 +187,7 @@ a {
   align-items: center;
   gap: 8px;
 }
-.actionButtons button,
-.actionButtons a {
+.actionButtons button {
   flex: 1;
   font-size: 14px;
   padding: 7px 0;
@@ -198,14 +197,14 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.actionButtons a {
+.actionButtons .editButton {
   background-color: #222;
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-align: center;
 }
-.actionButtons a:hover {
+.actionButtons .editButton:hover {
   background-color: #444;
 }
 .actionButtons button:last-child {
@@ -224,19 +223,20 @@ a {
   font-weight: 500;
   letter-spacing: 1px;
 }
-.sideBarLinks a {
-  list-style: none;
+.sideBarLinks button {
   margin-bottom: 5px;
   font-size: 17px;
-  /* border: 1px solid rgb(83, 83, 83); */
   padding: 5px;
   border-radius: 3px;
   cursor: pointer;
   color: white;
   transition: all 0.3s;
   background: var(---primaryBackground);
+  border: none;
+  outline: none;
+  text-align: left;
 }
-.sideBarLinks a:hover {
+.sideBarLinks button:hover {
   background: var(---reversePrimaryBackground);
 }
 .sideBarLinks {
@@ -1484,7 +1484,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
 }
-#mobileNav a {
+#mobileNav button {
   display: flex;
   flex-direction: column;
   color: white;
@@ -1493,11 +1493,14 @@ textarea {
   gap: 10px;
   font-size: 14px;
   padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
 }
-#mobileNav a i {
+#mobileNav button i {
   font-size: 18px;
 }
-#mobileNav a:hover {
+#mobileNav button:hover {
   background: var(---primaryBackground);
 }
 #mobileNav .menuLink {
