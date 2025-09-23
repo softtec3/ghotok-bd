@@ -180,6 +180,17 @@ a {
   background: #fce4e4;
   color: rgb(153, 8, 8);
 }
+.statusGreen {
+  font-size: 13px;
+  padding: 5px 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(0, 128, 0, 0.164);
+  color: green;
+}
 
 /* Description */
 .description {

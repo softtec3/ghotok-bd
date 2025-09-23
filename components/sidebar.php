@@ -1,32 +1,58 @@
+<?php
+  
+?>
+
 <div id="sideBar" class="sidebarCloseAnimation">
   <div class="connects">Connects: <span id="connect">25</span></div>
   <div class="sideBarProfile">
     <img
-      src="https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVufGVufDB8fDB8fHww"
+      src="<?php 
+      $url ="placeholder.jpg";
+        if($logged_user_bio_details["profile_picture"]){
+          $url = "./uploads/". $logged_user_bio_details['profile_picture'];
+        };
+          echo $url;
+        ?>"
       alt="profile image"
     />
-    <span class="status"
-      ><i class="fa-regular fa-circle-xmark"></i> Inactive</span
+    <span class="<?php 
+      if($logged_user_bio_details['status'] == "inactive"){
+        echo "status";
+      }else{
+        echo "statusGreen";
+      }
+    ?>"
+      ><i class="fa-regular fa-circle-xmark"></i> <?php echo $logged_user_bio_details['status'];?></span
     >
-    <div class="description">
+
+    <p style="<?php
+      if(!empty($logged_user_bio_details['full_name'])){
+        echo "display:none";
+      };
+    ?>">Please Update bio-data</p>
+    <div class="description" style="<?php
+      if(empty($logged_user_bio_details['full_name'])){
+        echo "display:none";
+      };
+    ?>">
       <table>
         <tr>
           <td>ID:</td>
           <td style="color: var(---secondaryColor); font-weight: bold">
-            XRFKD87DG
+            <?php echo $logged_user_bio_details['id'];?>
           </td>
         </tr>
         <tr>
           <td>Name:</td>
-          <td>John Doe</td>
+          <td><?php echo $logged_user_bio_details['full_name'];?></td>
         </tr>
         <tr>
           <td>AGE:</td>
-          <td>24 years</td>
+          <td><?php echo $logged_user_bio_details['age'];?> years</td>
         </tr>
         <tr>
           <td>HEIGHT:</td>
-          <td>5′ 1″</td>
+          <td><?php echo $logged_user_bio_details['height'];?></td>
         </tr>
       </table>
     </div>

@@ -13,7 +13,8 @@
             </script>";
         }else{
         $create_user = $conn->query("INSERT INTO users(`user_id`,`password`, `gender`, `looking_for`, `role`) VALUES ('$user_id', '$password', '$gender', '$looking_for', '$role')");
-        if($create_user){
+        $create_biodata = $conn->query("INSERT INTO biodatas(`user_id`) VALUES ('$user_id')");
+        if($create_user && $create_biodata){
             header("Location: ./login.php");
             exit();
         }else{

@@ -1,6 +1,11 @@
 <?php
+  session_start();
   include_once("./php/config.php");
   include_once("./php/user_registration.php");
+        if (isset($_SESSION["user_id"])) {
+        header("Location: ./home.php");
+        exit();
+        };
 ?>
 <!DOCTYPE html>
 <html lang="en">

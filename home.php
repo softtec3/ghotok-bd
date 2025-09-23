@@ -1,25 +1,37 @@
 <?php
   session_start();
+  include_once("./php/config.php");
     if (!isset($_SESSION["user_id"])) {
         header("Location: ./login.php");
         exit();
     };
+  include_once("./php/user_biodata.php");
+  include_once("./php/logged_user_details.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- FontAwesome cdn -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- Google Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
     <title>Ghotok BD</title>
-</head>
+  </head>
   <body>
     <div id="container">
       <!-- Advertise Container 01 -->
@@ -36,336 +48,334 @@
           <?php include_once("./components/sidebar.php")?>
           <!-- Main Content - changeable -->
           <div id="mainContent">
-            
-
             <!-- Home Section -->
             <!-- all profiles -->
-            <div id="homeSection" >
+            <div id="homeSection">
               <?php include_once("./components/filter.php")?>
-            <div class="mainContent">
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+              <div class="mainContent">
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button class="fav">Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button class="fav">Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1602442787305-decbd65be507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1602442787305-decbd65be507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://plus.unsplash.com/premium_photo-1682431956407-ead76b412a42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHdvbWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://plus.unsplash.com/premium_photo-1682431956407-ead76b412a42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHdvbWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
-                </div>
-              </div>
-              <!-- match profile -->
-              <div class="sideBarProfile">
-                <span onclick="handleShow('details')"
-                  ><img
-                    src="https://images.unsplash.com/photo-1530047198515-516ff90fc4d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHdvbWVufGVufDB8fDB8fHww"
-                    alt="profile image"
-                /></span>
-                <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                <div class="description">
-                  <table>
-                    <!-- <tr>
+                <!-- match profile -->
+                <div class="sideBarProfile">
+                  <span onclick="handleShow('details')"
+                    ><img
+                      src="https://images.unsplash.com/photo-1530047198515-516ff90fc4d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHdvbWVufGVufDB8fDB8fHww"
+                      alt="profile image"
+                  /></span>
+                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
+                  <div class="description">
+                    <table>
+                      <!-- <tr>
                                     <td>ID:</td>
                                     <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
                                 </tr> -->
-                    <tr>
-                      <td>NAME:</td>
-                      <td>John Doe</td>
-                    </tr>
-                    <tr>
-                      <td>AGE:</td>
-                      <td>24 years</td>
-                    </tr>
-                    <tr>
-                      <td>HEIGHT:</td>
-                      <td>5′ 1″</td>
-                    </tr>
-                    <tr>
-                      <td>PROFESSION:</td>
-                      <td>Teacher</td>
-                    </tr>
-                    <tr>
-                      <td>SKIN COLOR:</td>
-                      <td>Bright</td>
-                    </tr>
-                    <tr>
-                      <td>WEIGHT:</td>
-                      <td>50 KG</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="actionButtons">
-                  <button>Favorite</button>
-                  <button>Interested</button>
+                      <tr>
+                        <td>NAME:</td>
+                        <td>John Doe</td>
+                      </tr>
+                      <tr>
+                        <td>AGE:</td>
+                        <td>24 years</td>
+                      </tr>
+                      <tr>
+                        <td>HEIGHT:</td>
+                        <td>5′ 1″</td>
+                      </tr>
+                      <tr>
+                        <td>PROFESSION:</td>
+                        <td>Teacher</td>
+                      </tr>
+                      <tr>
+                        <td>SKIN COLOR:</td>
+                        <td>Bright</td>
+                      </tr>
+                      <tr>
+                        <td>WEIGHT:</td>
+                        <td>50 KG</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="actionButtons">
+                    <button>Favorite</button>
+                    <button>Interested</button>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
             <!-- Profile section -->
-            <div id="profileSection" style="display: none;">
+            <div id="profileSection" style="display: none">
               <div class="status-select-container">
                 <div class="status-select">
                   <label for="profileStatus"
-                    >Profile Status <span class="status">Inactive</span></label
+                    >Profile Status <span class="status"><?php echo $logged_user_bio_details['status'];?></span></label
                   >
                   <!-- <label for="profileStatus">Profile Status <span class="status" style="color: white;background-color:green">Active</span></label> -->
                   <button>Active</button>
@@ -377,17 +387,22 @@
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
-                    src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?w=200&h=200&fit=crop"
+                    src="<?php 
+                    $url ="placeholder.jpg";
+                      if($logged_user_bio_details["profile_picture"]){
+                        $url = "./uploads/". $logged_user_bio_details['profile_picture'];
+                      };
+                        echo $url;
+                      ?>"
                     alt="Profile"
                   />
                   <div class="profile-basic">
-                    <h2>John Flekh <span class="id">ID: XHF476GF34R</span></h2>
-                    <p>
+                    <h2><?php echo $logged_user_bio_details['full_name'];?> <span class="id">ID: <?php echo $logged_user_bio_details['id'];?></span></h2>
+                    <!-- <p>
                       <i class="fas fa-circle" style="color: red"></i> Inactive
-                    </p>
+                    </p> -->
                     <p>
-                      <i class="fas fa-map-marker-alt"></i> Jashore, Khulna,
-                      Bangladesh
+                      <i class="fas fa-map-marker-alt"></i> <?php echo $logged_user_bio_details['present_address'];?>
                     </p>
                   </div>
                 </div>
@@ -395,25 +410,25 @@
                 <!-- Quick Intro -->
                 <div class="info-section">
                   <h3><i class="fas fa-id-card"></i> Overview</h3>
-                  <p>Name: John Flekh, Age: 26 Years</p>
-                  <p>Education: Bachelor | Profession: Businessman</p>
-                  <p>Height: 5ft 8in | Skin Color: Bright</p>
-                  <p><strong>A Few Lines About John:</strong> .............</p>
+                  <p>Name: <?php echo $logged_user_bio_details['full_name'];?>, Age: <?php echo $logged_user_bio_details['age'];?> Years</p>
+                  <p>Education: <?php echo $logged_user_bio_details['education'];?> | Profession: <?php echo $logged_user_bio_details['profession'];?></p>
+                  <p>Height: <?php echo $logged_user_bio_details['height'];?> | Skin Color: <?php echo $logged_user_bio_details['skin_color'];?></p>
+                  <p><strong>A Few Lines About <?php echo $logged_user_bio_details['full_name'];?>:</strong> .............</p>
                 </div>
 
                 <!-- Basic Details -->
-                <div class="info-section">
+                <div class="info-section" style="text-transform: capitalize;">
                   <h3><i class="fas fa-user"></i> Basic Details</h3>
                   <ul>
-                    <li><strong>Profile For:</strong> Self</li>
-                    <li><strong>Full Name:</strong> John Flekh</li>
-                    <li><strong>Age:</strong> 24 Years</li>
-                    <li><strong>Height:</strong> 5ft 8in</li>
-                    <li><strong>Gender:</strong> Male</li>
-                    <li><strong>Marital Status:</strong> Unmarried</li>
-                    <li><strong>Mother Tongue:</strong> English</li>
+                    <!-- <li><strong>Profile For:</strong> Self</li> -->
+                    <li><strong>Full Name:</strong> <?php echo $logged_user_bio_details['full_name'];?></li>
+                    <li><strong>Age:</strong> <?php echo $logged_user_bio_details['age'];?> Years</li>
+                    <li><strong>Height:</strong> <?php echo $logged_user_bio_details['height'];?></li>
+                    <li><strong>Gender:</strong> <?php echo $logged_user_bio_details['gender'];?></li>
+                    <li><strong>Marital Status:</strong> <?php echo $logged_user_bio_details['marital_status'];?></li>
+                    <!-- <li><strong>Mother Tongue:</strong> English</li>
                     <li><strong>Blood Group:</strong> B+</li>
-                    <li><strong>Religion:</strong> Islam</li>
+                    <li><strong>Religion:</strong> Islam</li> -->
                   </ul>
                 </div>
 
@@ -421,11 +436,10 @@
                 <div class="info-section">
                   <h3><i class="fas fa-phone"></i> Contact Details</h3>
                   <ul>
-                    <li><strong>Phone:</strong> +8801300000000</li>
-                    <li><strong>Email:</strong> xzy@contact.com</li>
+                    <li><strong>Phone:</strong> <?php echo $logged_user_bio_details['phone'];?></li>
+                    <li><strong>Email:</strong> <?php echo $logged_user_bio_details['email'];?></li>
                     <li>
-                      <strong>Address:</strong> 50 Washington Square S, New
-                      York, NY 10012, USA
+                      <strong>Address:</strong> <?php echo $logged_user_bio_details['present_address'];?>
                     </li>
                   </ul>
                 </div>
@@ -436,25 +450,25 @@
                     <i class="fas fa-briefcase"></i> Professional Information
                   </h3>
                   <ul>
-                    <li><strong>Education:</strong> Bachelor</li>
-                    <li><strong>Profession:</strong> Teacher</li>
-                    <li><strong>Employment:</strong> Private Sector</li>
-                    <li><strong>Annual Income:</strong> 200000/=</li>
+                    <li><strong>Education:</strong> <?php echo $logged_user_bio_details['education'];?></li>
+                    <li><strong>Profession:</strong> <?php echo $logged_user_bio_details['profession'];?></li>
+                    <!-- <li><strong>Employment:</strong> Private Sector</li> -->
+                    <li><strong>Monthly Income:</strong> <?php echo $logged_user_bio_details['monthly_income'];?>/=</li>
                   </ul>
                 </div>
 
                 <!-- Lifestyle -->
-                <div class="info-section">
+                <!-- <div class="info-section">
                   <h3><i class="fas fa-leaf"></i> Lifestyle</h3>
                   <ul>
                     <li><strong>Eating Habits:</strong> —</li>
                     <li><strong>Drinking Habits:</strong> —</li>
                     <li><strong>Smoking Habits:</strong> —</li>
                   </ul>
-                </div>
+                </div> -->
 
                 <!-- Location -->
-                <div class="info-section">
+                <!-- <div class="info-section">
                   <h3><i class="fas fa-map"></i> Location</h3>
                   <ul>
                     <li><strong>City:</strong> Jashore</li>
@@ -462,22 +476,22 @@
                     <li><strong>Country:</strong> Bangladesh</li>
                     <li><strong>Nationality:</strong> Bangladeshi</li>
                   </ul>
-                </div>
+                </div> -->
 
                 <!-- Family Details -->
                 <div class="info-section">
                   <h3><i class="fas fa-users"></i> Family Details</h3>
                   <ul>
-                    <li><strong>No. of Brothers:</strong> —</li>
-                    <li><strong>No. of Sisters:</strong> —</li>
+                    <li><strong>Siblings:</strong> — <?php echo $logged_user_bio_details['siblings'];?></li>
+                    <!-- <li><strong>No. of Sisters:</strong> —</li>
                     <li><strong>Father’s Profession:</strong> —</li>
                     <li><strong>Mother’s Profession:</strong> —</li>
-                    <li><strong>Family Origin:</strong> —</li>
+                    <li><strong>Family Origin:</strong> —</li> -->
                   </ul>
                 </div>
 
                 <!-- Interests & Hobbies -->
-                <div class="info-section">
+                <!-- <div class="info-section">
                   <h3><i class="fas fa-heart"></i> Interests & Hobbies</h3>
                   <ul>
                     <li>Interest 1</li>
@@ -485,18 +499,18 @@
                     <li>Hobby 1</li>
                     <li>Hobby 2</li>
                   </ul>
-                </div>
+                </div> -->
                 <!-- Action Buttons -->
                 <div class="actions">
-                  <a href="/ghotok-bd/biodata" class="btn primary"
-                    ><i class="fas fa-user-edit"></i> Update Bio-data</a
-                  >
+                  <button onclick="handleShow('updateBio')" class="btn primary"
+                    ><i class="fas fa-user-edit"></i> Update Bio-data
+                  </button>
                 </div>
               </div>
             </div>
 
             <!-- Update bio-data section -->
-            <div id="updateBio-dataSection" style="display: none;">
+            <div id="updateBio-dataSection" style="display: none">
               <div class="registerBiodataContainer">
                 <h2>Update Bio-data</h2>
                 <form
@@ -509,40 +523,39 @@
                   <fieldset>
                     <legend>Personal Information</legend>
                     <label>Full Name</label>
-                    <input type="text" name="full_name" required />
+                    <input type="text" name="full_name" required value="<?php echo $logged_user_bio_details['full_name']?>"/>
 
                     <label>Gender</label>
-                    <select name="gender" required>
-                      <option value="">-- Select --</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Other</option>
+                    <select name="gender" required >
+                      <option style="display: none;" value="">-- Select --</option>
+                      <option value="male" <?php if($logged_user_bio_details['gender'] == 'male') echo 'selected'; ?>>Male</option>
+                        <option value="female" <?php if($logged_user_bio_details['gender'] == 'female') echo 'selected'; ?>>Female</option>
                     </select>
                     <label>Marital Status</label>
-                    <select name="maritalStatus" required>
-                      <option value="">-- Select --</option>
-                      <option>Married</option>
-                      <option>Single</option>
+                    <select name="marital_status" required>
+                      <option style="display: none;" value="">-- Select --</option>
+                      <option value="married" <?php if($logged_user_bio_details['marital_status'] == 'married') echo 'selected';?>>Married</option>
+                      <option value="unmarried" <?php if($logged_user_bio_details['marital_status'] == 'unmarried') echo 'selected';?>>Unmarried</option>
                     </select>
 
                     <label>Date of Birth</label>
-                    <input type="date" name="dob" required />
+                    <input type="date" name="dob" required value="<?php echo $logged_user_bio_details['dob']?>"/>
 
                     <label>Age</label>
-                    <input type="number" name="age" min="18" required />
+                    <input type="number" name="age" min="18" required value="<?php echo $logged_user_bio_details['age']?>"/>
 
                     <label>Height</label>
-                    <input type="text" name="height" placeholder="e.g. 5′ 6″" />
+                    <input type="text" name="height" placeholder="e.g. 5′ 6″" required value="<?php echo $logged_user_bio_details['height']?>"/>
 
                     <label>Weight</label>
-                    <input type="text" name="weight" placeholder="e.g. 60 KG" />
+                    <input type="text" name="weight" placeholder="e.g. 60 KG" required value="<?php echo $logged_user_bio_details['weight']?>"/>
 
                     <label>Skin Color</label>
-                    <select name="skin_color">
-                      <option value="">-- Select --</option>
-                      <option>Fair</option>
-                      <option>Medium</option>
-                      <option>Dark</option>
+                    <select name="skin_color" required>
+                      <option style="display: none;" value="">-- Select --</option>
+                      <option value="fair" <?php if($logged_user_bio_details['skin_color'] == 'fair') echo 'selected';?>>Fair</option>
+                      <option value="medium" <?php if($logged_user_bio_details['skin_color'] == 'medium') echo 'selected';?>>Medium</option>
+                      <option value="dark" <?php if($logged_user_bio_details['skin_color'] == 'dark') echo 'selected';?>>Dark</option>
                     </select>
                   </fieldset>
 
@@ -550,60 +563,54 @@
                   <fieldset>
                     <legend>Education & Profession</legend>
                     <label>Education</label>
-                    <input type="text" name="education" />
+                    <input type="text" name="education" required value="<?php echo $logged_user_bio_details['education']?>"/>
 
                     <label>Profession</label>
-                    <input type="text" name="profession" />
+                    <input type="text" name="profession" required value="<?php echo $logged_user_bio_details['profession']?>"/>
 
                     <label>Monthly Income</label>
-                    <input type="text" name="income" />
+                    <input type="text" name="monthly_income" required value="<?php echo $logged_user_bio_details['monthly_income']?>"/>
                   </fieldset>
 
                   <!-- Family Information -->
                   <fieldset>
                     <legend>Family Information</legend>
                     <label>Father's Name</label>
-                    <input type="text" name="father_name" />
+                    <input type="text" name="fathers_name" required value="<?php echo $logged_user_bio_details['fathers_name']?>"/>
 
                     <label>Father's Occupation</label>
-                    <input type="text" name="father_occupation" />
+                    <input type="text" name="fathers_occupation" required value="<?php echo $logged_user_bio_details['fathers_occupation']?>"/>
 
                     <label>Mother's Name</label>
-                    <input type="text" name="mother_name" />
+                    <input type="text" name="mothers_name" required value="<?php echo $logged_user_bio_details['mothers_name']?>"/>
 
                     <label>Mother's Occupation</label>
-                    <input type="text" name="mother_occupation" />
+                    <input type="text" name="mothers_occupation" required value="<?php echo $logged_user_bio_details['mothers_occupation']?>"/>
 
                     <label>Siblings</label>
-                    <input type="text" name="siblings" />
+                    <input type="text" name="siblings" required value="<?php echo $logged_user_bio_details['siblings']?>"/>
                   </fieldset>
 
                   <!-- Contact Information -->
                   <fieldset>
                     <legend>Contact Information</legend>
                     <label>Phone</label>
-                    <input type="tel" name="phone" required />
+                    <input type="tel" name="phone" required value="<?php echo $logged_user_bio_details['phone']?>"/>
 
                     <label>Email</label>
-                    <input type="email" name="email" />
+                    <input type="email" name="email" required value="<?php echo $logged_user_bio_details['email']?>"/>
 
                     <label>Present Address</label>
-                    <textarea name="present_address"></textarea>
-
-                    <label>Permanent Address</label>
-                    <textarea name="permanent_address"></textarea>
+                    <textarea name="present_address" required><?php echo $logged_user_bio_details['present_address'];?></textarea>
 
                     <label>District</label>
                     <select name="district" required>
-                      <option value="">-- Select District --</option>
-                      <option>Dhaka</option>
-                      <option>Chattogram</option>
-                      <option>Rajshahi</option>
-                      <option>Khulna</option>
-                      <option>Barishal</option>
-                      <option>Sylhet</option>
-                      <option>Rangpur</option>
-                      <option>Mymensingh</option>
+                      <option style="display: none;" value="">-- Select District --</option>
+                      <option value="dhaka" <?php if($logged_user_bio_details['district'] == 'dhaka') echo 'selected';?>>Dhaka</option>
+                      <option value="jashore" <?php if($logged_user_bio_details['district'] == 'jashore') echo 'selected';?>>Jashore</option>
+                      <option value="rajshahi" <?php if($logged_user_bio_details['district'] == 'rajshahi') echo 'selected';?>>Rajshahi</option>
+                      <option value="khulna" <?php if($logged_user_bio_details['district'] == 'khulna') echo 'selected';?>>Khulna</option>
+                      <option value="barishal" <?php if($logged_user_bio_details['district'] == 'barishal') echo 'selected';?>>Barishal</option>
                     </select>
                   </fieldset>
 
@@ -613,18 +620,20 @@
                     <label>Preferred Age</label>
                     <input
                       type="text"
-                      name="partner_age"
+                      name="preferred_age"
                       placeholder="e.g. 22 - 30"
+                      required
+                      value="<?php echo $logged_user_bio_details['preferred_age']?>"
                     />
 
                     <label>Preferred Height</label>
-                    <input type="text" name="partner_height" />
+                    <input type="text" name="preferred_height" required value="<?php echo $logged_user_bio_details['preferred_height']?>" />
 
                     <label>Preferred Education</label>
-                    <input type="text" name="partner_education" />
+                    <input type="text" name="preferred_education"  required value="<?php echo $logged_user_bio_details['preferred_education']?>"/>
 
                     <label>Preferred Profession</label>
-                    <input type="text" name="partner_profession" />
+                    <input type="text" name="preferred_profession"  required value="<?php echo $logged_user_bio_details['preferred_profession']?>"/>
                   </fieldset>
 
                   <!-- Profile Image -->
@@ -632,9 +641,16 @@
                     <legend>Profile Picture</legend>
                     <input
                       type="file"
-                      name="profile_image"
+                      name="profile_picture"
                       accept="image/*"
-                      required
+                   <?php 
+                   if($logged_user_bio_details['profile_picture']){
+                    echo "";
+                   }else{
+                    echo "required";
+                   }
+                   ?>
+
                     />
                   </fieldset>
 
@@ -645,7 +661,7 @@
             </div>
 
             <!-- Interested section -->
-            <div id="interestedSection" style="display: none;">
+            <div id="interestedSection" style="display: none">
               <div class="filter"><h2>Interested</h2></div>
               <div class="mainContent">
                 <!-- Favorite content -->
@@ -702,7 +718,7 @@
             </div>
 
             <!-- Favorite Section -->
-            <div id="favoriteSection" style="display: none;">
+            <div id="favoriteSection" style="display: none">
               <div class="filter"><h2>Favorites</h2></div>
               <div class="mainContent">
                 <!-- Favorite content -->
@@ -802,7 +818,7 @@
             </div>
 
             <!-- View as section -->
-            <div id="viewAsSection" style="display: none;">
+            <div id="viewAsSection" style="display: none">
               <div class="filter"><h2>View As</h2></div>
               <div class="viewAs-container">
                 <div class="viewAs-card">
@@ -846,18 +862,16 @@
 
                   <!-- Action -->
                   <div class="viewAs-action">
-                    <a href="/ghotok-bd/biodata"
-                      ><button class="edit-btn">
+                    <button onclick="handleShow('updateBio')" class="edit-btn">
                         <i class="fas fa-edit"></i> Edit Profile
-                      </button></a
-                    >
+                      </button>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Rules and regulation section -->
-            <div id="rulesAndRegulationSection" style="display: none;">
+            <div id="rulesAndRegulationSection" style="display: none">
               <div class="rules-container">
                 <h1>Rules & Regulations</h1>
                 <div class="rules-content">
@@ -883,7 +897,7 @@
             </div>
 
             <!-- Buy connects section -->
-            <div id="buyConnectsSection" style="display: none;">
+            <div id="buyConnectsSection" style="display: none">
               <section class="buy-connects">
                 <h2 class="section-title">Buy Connects</h2>
                 <p class="section-sub">
@@ -945,7 +959,7 @@
             </div>
 
             <!-- notification section -->
-            <div id="notificationSection" style="display: none;">
+            <div id="notificationSection" style="display: none">
               <div class="notification-container">
                 <h2>Notifications</h2>
 
@@ -981,7 +995,7 @@
             </div>
 
             <!-- Details section -->
-            <div id="detailsSection" style="display: none;">
+            <div id="detailsSection" style="display: none">
               <div class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
@@ -1113,8 +1127,6 @@
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
