@@ -18,7 +18,7 @@
 </div>
 <nav id="mobileNav">
 
-        <button onclick="handleShow('home')"><i class="fas fa-home"></i> Home</button>
+        <a href="./home.php"><i class="fas fa-home"></i> Home</a>
         <button onclick="handleShow('profile')"><i class="fas fa-id-card"></i> Profile</button>
         
         <button id="sidebarOpen" class="menuLink"><span><i class="fas fa-bars"></i></span>Menu</button>

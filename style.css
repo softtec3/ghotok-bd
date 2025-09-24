@@ -266,6 +266,22 @@ a {
 .sideBarLinks button:hover {
   background: var(---reversePrimaryBackground);
 }
+.sideBarLinks a {
+  margin-bottom: 5px;
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+  background: var(---primaryBackground);
+  border: none;
+  outline: none;
+  text-align: left;
+}
+.sideBarLinks a:hover {
+  background: var(---reversePrimaryBackground);
+}
 .sideBarLinks {
   margin-top: 20px;
   display: flex;
@@ -1540,6 +1556,25 @@ textarea {
   font-size: 18px;
 }
 #mobileNav button:hover {
+  background: var(---primaryBackground);
+}
+#mobileNav a {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
+}
+#mobileNav a i {
+  font-size: 18px;
+}
+#mobileNav a:hover {
   background: var(---primaryBackground);
 }
 #mobileNav .menuLink {

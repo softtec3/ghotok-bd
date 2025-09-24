@@ -68,7 +68,7 @@
     </div>
   </div>
   <div class="sideBarLinks">
-    <button onclick="handleShow('home')"><i class="fas fa-home"></i> Home</button>
+    <a href="./home.php"><i class="fas fa-home"></i> Home</a>
     <button onclick="handleShow('profile')"><i class="fas fa-id-card"></i> Profile</button>
     <button onclick="handleShow('updateBio')"><i class="fas fa-file-signature"></i> Update Bio-data</button>
     <button onclick="handleShow('interested')"><i class="fas fa-heart"></i> Interested</button>

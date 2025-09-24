@@ -10,6 +10,7 @@
   include_once("./php/all_biodata.php");
   include_once("./php/user_favorites.php");
   include_once("./php/user_interested.php");
+  include_once("./php/single_biodata_details.php");
 ?>
 
 <!DOCTYPE html>
@@ -63,13 +64,11 @@
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                      echo "
-              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
-                  <span onclick='showDetails($biodata_json)'
-                    ><img
-                    onclick=\"handleShow('details')\"
+              <form action='' method='get' style='margin-top:0;' class='sideBarProfile'>
+                  <a href='./home.php?details_id={$biodata["id"]}'><img
                       src='./uploads/{$biodata['profile_picture']}'
                       alt='profile image'
-                  /></span>
+                  /></a>
                   <div class='description'>
                     <table>
                       <tr>
@@ -727,7 +726,101 @@
 
             <!-- Details section -->
             <div id="detailsSection" style="display: none">
-                      <!-- Dynamic from js -->
+                             <div class="person-details">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                  <img
+                    src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>"
+                    alt="Profile"
+                  />
+                  <div class="profile-basic">
+                    <h2><?php echo $biodata_details["full_name"]?> <span class="id">ID: <?php echo $biodata_details["id"]?></span></h2>
+                    <p>
+                      <i class="fas fa-map-marker-alt"></i> <?php echo $biodata_details["present_address"]?>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Quick Intro -->
+                <div class="info-section">
+                  <h3><i class="fas fa-id-card"></i> Overview</h3>
+                  <p>Name: <?php echo $biodata_details["full_name"]?>, Age: <?php echo $biodata_details["age"]?> Years</p>
+                  <p>Education: <?php echo $biodata_details["education"]?> | Profession: <?php echo $biodata_details["profession"]?></p>
+                  <p>Height: <?php echo $biodata_details["height"]?> | Skin Color: <?php echo $biodata_details["skin_color"]?></p>
+                  <p><strong>A Few Lines About <?php echo $biodata_details["full_name"]?>:</strong> .............</p>
+                </div>
+
+                <!-- Basic Details -->
+                <div class="info-section">
+                  <h3><i class="fas fa-user"></i> Basic Details</h3>
+                  <ul>
+                    <li><strong>Full Name:</strong> <?php echo $biodata_details["full_name"]?></li>
+                    <li><strong>Age:</strong> <?php echo $biodata_details["age"]?> Years</li>
+                    <li><strong>Height:</strong> <?php echo $biodata_details["height"]?></li>
+                    <li><strong>Gender:</strong> <?php echo $biodata_details["gender"]?></li>
+                    <li><strong>Marital Status:</strong> <?php echo $biodata_details["marital_status"]?></li>
+                  </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="info-section">
+                  <h3><i class="fas fa-phone"></i> Contact Details</h3>
+                  <ul>
+                    <li><strong>Phone:</strong> <?php 
+                      if(isset($biodata_details["phone"])){
+                        echo $biodata_details["phone"];
+                      }else{
+                        echo "Sent interest to see";
+                      }
+                    
+                    ?></li>
+                    <li><strong>Email:</strong> <?php 
+                      if(isset($biodata_details["email"])){
+                        echo $biodata_details["email"];
+                      }else{
+                        echo "Sent interest to see";
+                      }
+                    
+                    ?></li>
+                    <li>
+                      <strong>Address:</strong> <?php echo $biodata_details["present_address"]?>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="info-section">
+                  <h3>
+                    <i class="fas fa-briefcase"></i> Professional Information
+                  </h3>
+                  <ul>
+                    <li><strong>Education:</strong> <?php echo $biodata_details["education"]?></li>
+                    <li><strong>Profession:</strong> <?php echo $biodata_details["profession"]?></li>
+                    <li><strong>Monthly Income:</strong> <?php echo $biodata_details["monthly_income"]?>/=</li>
+                  </ul>
+                </div>
+
+
+                <!-- Family Details -->
+                <div class="info-section">
+                  <h3><i class="fas fa-users"></i> Family Details</h3>
+                  <ul>
+                    <li><strong>Siblings:</strong> — <?php echo $biodata_details["siblings"]?></li>
+                  </ul>
+                </div>
+
+
+                <!-- Action Buttons -->
+                <div class="actions">
+
+                  <button class="btn info">
+                    <i class="fas fa-phone"></i> Contact
+                  </button>
+                  <button class="btn danger">
+                    <i class="fas fa-exclamation-triangle"></i> Report
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

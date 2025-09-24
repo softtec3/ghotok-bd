@@ -190,3 +190,9 @@ const showDetails = (data) => {
 // <button class="btn secondary">
 //   <i class="fas fa-star"></i> Add to Favorites
 // </button>
+
+// Details showing based on url
+const params = new URLSearchParams(window.location.search);
+if (params.has("details_id")) {
+  handleShow("details");
+}
