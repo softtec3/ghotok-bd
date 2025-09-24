@@ -1423,7 +1423,7 @@ textarea {
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   width: 100px;
- background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
   color: white;
   font-weight: 600;
   letter-spacing: 0.6px;

@@ -8,6 +8,7 @@
   include_once("./php/user_biodata.php");
   include_once("./php/logged_user_details.php");
   include_once("./php/all_biodata.php");
+  include_once("./php/user_favorites.php");
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +62,7 @@
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                      echo "
-              <div class='sideBarProfile'>
+              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
                   <span onclick='showDetails($biodata_json)'
                     ><img
                     onclick=\"handleShow('details')\"
@@ -97,10 +98,10 @@
                     </table>
                   </div>
                   <div class='actionButtons'>
-                    <button>Favorite</button>
-                    <button>Interested</button>
+                    <button type='submit' value='{$biodata["id"]}' name='add_favorite'>Favorite</button>
+                    <button type='button'>Interested</button>
                   </div>
-                </div>
+                </form>
                      ";
                     };
                  ?>
@@ -477,98 +478,60 @@
               <div class="filter"><h2>Favorites</h2></div>
               <div class="mainContent">
                 <!-- Favorite content -->
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <!-- Favorite Icon -->
-                  <span class="favoriteIcon"><i class="fas fa-heart"></i></span>
-
-                  <span onclick="handleShow('details')">
-                    <img
-                      src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW58ZW58MHx8MHx8fDA%3D"
-                      alt="profile image"
-                    />
-                  </span>
-
-                  <div class="description">
+                <!-- Fetching all favorites bio-data from database -->
+                  <?php
+                  if($all_favorites_biodata && count($all_favorites_biodata)>0){
+                     foreach($all_favorites_biodata as $biodata){
+                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_profession = substr($biodata['profession'], 0, 5);
+                      $biodata_json = json_encode($biodata);
+                     echo "
+              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
+               <span class='favoriteIcon'><i class='fas fa-heart'></i></span>
+                  <span onclick='showDetails($biodata_json)'
+                    ><img
+                    onclick=\"handleShow('details')\"
+                      src='./uploads/{$biodata['profile_picture']}'
+                      alt='profile image'
+                  /></span>
+                  <div class='description'>
                     <table>
                       <tr>
-                        <td>Name:</td>
-                        <td>John Doe</td>
+                        <td>NAME:</td>
+                        <td>$short_name ..</td>
                       </tr>
                       <tr>
                         <td>AGE:</td>
-                        <td>24 years</td>
+                        <td>{$biodata['age']} years</td>
                       </tr>
                       <tr>
                         <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
+                        <td>{$biodata['height']}</td>
                       </tr>
                       <tr>
                         <td>PROFESSION:</td>
-                        <td>Teacher</td>
+                        <td>$short_profession ..</td>
                       </tr>
                       <tr>
                         <td>SKIN COLOR:</td>
-                        <td>Bright</td>
+                        <td>{$biodata['skin_color']}</td>
                       </tr>
                       <tr>
                         <td>WEIGHT:</td>
-                        <td>50 KG</td>
+                        <td>{$biodata['weight']} KG</td>
                       </tr>
                     </table>
                   </div>
-
-                  <div class="actionButtons">
-                    <button>Unfavorite</button>
-                    <button>Interested</button>
+                  <div class='actionButtons'>
+                    <button type='submit' value='{$biodata["id"]}' name='remove_favorite'>UnFavorite</button>
+                    <button type='button'>Interested</button>
                   </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <!-- Favorite Icon -->
-                  <span class="favoriteIcon"><i class="fas fa-heart"></i></span>
+                </form>
+                     ";
+                    };
+                  } 
+                 ?>
 
-                  <span onclick="handleShow('details')">
-                    <img
-                      src="https://plus.unsplash.com/premium_photo-1681493353999-a3eea8b95e1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29tZW58ZW58MHx8MHx8fDA%3D"
-                      alt="profile image"
-                    />
-                  </span>
-
-                  <div class="description">
-                    <table>
-                      <tr>
-                        <td>Name:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-
-                  <div class="actionButtons">
-                    <button>Unfavorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
               </div>
             </div>
 
