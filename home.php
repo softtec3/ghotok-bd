@@ -9,6 +9,7 @@
   include_once("./php/logged_user_details.php");
   include_once("./php/all_biodata.php");
   include_once("./php/user_favorites.php");
+  include_once("./php/user_interested.php");
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,7 @@
                   </div>
                   <div class='actionButtons'>
                     <button type='submit' value='{$biodata["id"]}' name='add_favorite'>Favorite</button>
-                    <button type='button'>Interested</button>
+                    <button type='submit' value='{$biodata["id"]}' name='add_interested'>Interested</button>
                   </div>
                 </form>
                      ";
@@ -421,55 +422,61 @@
               <div class="filter"><h2>Interested</h2></div>
               <div class="mainContent">
                 <!-- Favorite content -->
-
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <!-- Favorite Icon -->
-                  <span class="favoriteIcon" style="font-size: 22px"
-                    ><i class="fas fa-handshake"></i
+                   <!-- fetching all interested bio-data from database -->
+                  <?php
+                  if($all_interested_biodata && count($all_interested_biodata)>0){
+                     foreach($all_interested_biodata as $biodata){
+                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_profession = substr($biodata['profession'], 0, 5);
+                      $biodata_json = json_encode($biodata);
+                     echo "
+              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
+               <span class='favoriteIcon' style='font-size: 22px'
+                    ><i class='fas fa-handshake'></i
                   ></span>
-
-                  <span onclick="handleShow('details')">
-                    <img
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW58ZW58MHx8MHx8fDA%3D"
-                      alt="profile image"
-                    />
-                  </span>
-
-                  <div class="description">
+                  <span onclick='showDetails($biodata_json)'
+                    ><img
+                    onclick=\"handleShow('details')\"
+                      src='./uploads/{$biodata['profile_picture']}'
+                      alt='profile image'
+                  /></span>
+                  <div class='description'>
                     <table>
                       <tr>
-                        <td>Name:</td>
-                        <td>Maria</td>
+                        <td>NAME:</td>
+                        <td>$short_name ..</td>
                       </tr>
                       <tr>
                         <td>AGE:</td>
-                        <td>24 years</td>
+                        <td>{$biodata['age']} years</td>
                       </tr>
                       <tr>
                         <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
+                        <td>{$biodata['height']}</td>
                       </tr>
                       <tr>
                         <td>PROFESSION:</td>
-                        <td>Teacher</td>
+                        <td>$short_profession ..</td>
                       </tr>
                       <tr>
                         <td>SKIN COLOR:</td>
-                        <td>Bright</td>
+                        <td>{$biodata['skin_color']}</td>
                       </tr>
                       <tr>
                         <td>WEIGHT:</td>
-                        <td>50 KG</td>
+                        <td>{$biodata['weight']} KG</td>
                       </tr>
                     </table>
                   </div>
-
-                  <div class="actionButtons">
-                    <button>Reject</button>
-                    <button>Accept</button>
+                  <div class='actionButtons' onclick=\"handleShow('details')\" >
+                    <button onclick='showDetails($biodata_json)' type='button'>View Details</button>
                   </div>
-                </div>
+                </form>
+                     ";
+                    };
+                  } 
+                 ?>
+
               </div>
             </div>
 

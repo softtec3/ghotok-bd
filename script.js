@@ -80,6 +80,7 @@ const handleShow = (name) => {
 
 // selected bio-data details
 const showDetails = (data) => {
+  console.log(data);
   detailsSection.innerHTML = `
                 <div class="person-details">
                 <!-- Profile Header -->
@@ -89,9 +90,13 @@ const showDetails = (data) => {
                     alt="Profile"
                   />
                   <div class="profile-basic">
-                    <h2>${data?.full_name} <span class="id">ID: ${data?.id}</span></h2>
+                    <h2>${data?.full_name} <span class="id">ID: ${
+    data?.id
+  }</span></h2>
                     <p>
-                      <i class="fas fa-map-marker-alt"></i> ${data?.present_address}
+                      <i class="fas fa-map-marker-alt"></i> ${
+                        data?.present_address
+                      }
                     </p>
                   </div>
                 </div>
@@ -100,9 +105,15 @@ const showDetails = (data) => {
                 <div class="info-section">
                   <h3><i class="fas fa-id-card"></i> Overview</h3>
                   <p>Name: ${data?.full_name}, Age: ${data?.age} Years</p>
-                  <p>Education: ${data?.education} | Profession: ${data?.profession}</p>
-                  <p>Height: ${data?.height} | Skin Color: ${data?.skin_color}</p>
-                  <p><strong>A Few Lines About ${data?.full_name}:</strong> .............</p>
+                  <p>Education: ${data?.education} | Profession: ${
+    data?.profession
+  }</p>
+                  <p>Height: ${data?.height} | Skin Color: ${
+    data?.skin_color
+  }</p>
+                  <p><strong>A Few Lines About ${
+                    data?.full_name
+                  }:</strong> .............</p>
                 </div>
 
                 <!-- Basic Details -->
@@ -113,7 +124,9 @@ const showDetails = (data) => {
                     <li><strong>Age:</strong> ${data?.age} Years</li>
                     <li><strong>Height:</strong> ${data?.height}</li>
                     <li><strong>Gender:</strong> ${data?.gender}</li>
-                    <li><strong>Marital Status:</strong> ${data?.marital_status}</li>
+                    <li><strong>Marital Status:</strong> ${
+                      data?.marital_status
+                    }</li>
                   </ul>
                 </div>
 
@@ -121,8 +134,12 @@ const showDetails = (data) => {
                 <div class="info-section">
                   <h3><i class="fas fa-phone"></i> Contact Details</h3>
                   <ul>
-                    <li><strong>Phone:</strong> +8801xxxxxxxxx</li>
-                    <li><strong>Email:</strong> xxx@xxx.xx</li>
+                    <li><strong>Phone:</strong> ${
+                      data?.phone ? data?.phone : "Sent interest to see"
+                    }</li>
+                    <li><strong>Email:</strong> ${
+                      data?.email ? data?.email : "Sent interest to see"
+                    }</li>
                     <li>
                       <strong>Address:</strong> ${data?.present_address}
                     </li>
@@ -137,7 +154,9 @@ const showDetails = (data) => {
                   <ul>
                     <li><strong>Education:</strong> ${data?.education}</li>
                     <li><strong>Profession:</strong> ${data?.profession}</li>
-                    <li><strong>Monthly Income:</strong> ${data?.monthly_income}/=</li>
+                    <li><strong>Monthly Income:</strong> ${
+                      data?.monthly_income
+                    }/=</li>
                   </ul>
                 </div>
 
@@ -153,12 +172,7 @@ const showDetails = (data) => {
 
                 <!-- Action Buttons -->
                 <div class="actions">
-                  <button class="btn primary">
-                    <i class="fas fa-heart"></i> Send Interest
-                  </button>
-                  <button class="btn secondary">
-                    <i class="fas fa-star"></i> Add to Favorites
-                  </button>
+
                   <button class="btn info">
                     <i class="fas fa-phone"></i> Contact
                   </button>
@@ -169,3 +183,10 @@ const showDetails = (data) => {
               </div>
   `;
 };
+
+// <button class="btn primary">
+//   <i class="fas fa-heart"></i> Send Interest
+// </button>
+// <button class="btn secondary">
+//   <i class="fas fa-star"></i> Add to Favorites
+// </button>

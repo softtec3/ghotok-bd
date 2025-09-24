@@ -61,7 +61,6 @@
     };
 
     // Favorites table
-    
     $sql_favorites = "CREATE TABLE IF NOT EXISTS favorites(
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50) NOT NULL,
@@ -74,7 +73,23 @@
     if($conn->query($sql_favorites)){
         echo "Favorites table created or already exist <br/>";
     }else{
-       echo "Error creating users table <br/>";
+       echo "Error creating favorite table <br/>";
+    };
+
+    // Interested Table
+    $sql_interested = "CREATE TABLE IF NOT EXISTS interested(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50) NOT NULL,
+    biodata_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+    )";
+
+    if($conn->query($sql_interested)){
+        echo "Interested table created or already exist <br/>";
+    }else{
+       echo "Error creating interested table <br/>";
     };
     
 ?>
