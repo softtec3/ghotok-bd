@@ -7,6 +7,7 @@
     };
   include_once("./php/user_biodata.php");
   include_once("./php/logged_user_details.php");
+  include_once("./php/all_biodata.php");
 ?>
 
 <!DOCTYPE html>
@@ -49,325 +50,60 @@
           <!-- Main Content - changeable -->
           <div id="mainContent">
             <!-- Home Section -->
-            <!-- all profiles -->
+            <!-- all bio-data profiles -->
             <div id="homeSection">
               <?php include_once("./components/filter.php")?>
               <div class="mainContent">
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
+                <!-- fetching all bio-data from database -->
+                 <?php
+                    foreach($all_biodata as $biodata){
+                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_profession = substr($biodata['profession'], 0, 5);
+                      $biodata_json = json_encode($biodata);
+                     echo "
+              <div class='sideBarProfile'>
+                  <span onclick='showDetails($biodata_json)'
                     ><img
-                      src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="profile image"
+                    onclick=\"handleShow('details')\"
+                      src='./uploads/{$biodata['profile_picture']}'
+                      alt='profile image'
                   /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
+                  <div class='description'>
                     <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
                       <tr>
                         <td>NAME:</td>
-                        <td>John Doe</td>
+                        <td>$short_name ..</td>
                       </tr>
                       <tr>
                         <td>AGE:</td>
-                        <td>24 years</td>
+                        <td>{$biodata['age']} years</td>
                       </tr>
                       <tr>
                         <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
+                        <td>{$biodata['height']}</td>
                       </tr>
                       <tr>
                         <td>PROFESSION:</td>
-                        <td>Teacher</td>
+                        <td>$short_profession ..</td>
                       </tr>
                       <tr>
                         <td>SKIN COLOR:</td>
-                        <td>Bright</td>
+                        <td>{$biodata['skin_color']}</td>
                       </tr>
                       <tr>
                         <td>WEIGHT:</td>
-                        <td>50 KG</td>
+                        <td>{$biodata['weight']} KG</td>
                       </tr>
                     </table>
                   </div>
-                  <div class="actionButtons">
+                  <div class='actionButtons'>
                     <button>Favorite</button>
                     <button>Interested</button>
                   </div>
                 </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button class="fav">Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://images.unsplash.com/photo-1602442787305-decbd65be507?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button>Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button>Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button>Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://plus.unsplash.com/premium_photo-1682431956407-ead76b412a42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHdvbWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button>Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
-                <!-- match profile -->
-                <div class="sideBarProfile">
-                  <span onclick="handleShow('details')"
-                    ><img
-                      src="https://images.unsplash.com/photo-1530047198515-516ff90fc4d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHdvbWVufGVufDB8fDB8fHww"
-                      alt="profile image"
-                  /></span>
-                  <!-- <span class="status"><i class="fa-regular fa-circle-xmark"></i> Inactive</span> -->
-                  <div class="description">
-                    <table>
-                      <!-- <tr>
-                                    <td>ID:</td>
-                                    <td style="color: var(---secondaryColor);font-weight:bold;">XRFKD87DG</td>
-                                </tr> -->
-                      <tr>
-                        <td>NAME:</td>
-                        <td>John Doe</td>
-                      </tr>
-                      <tr>
-                        <td>AGE:</td>
-                        <td>24 years</td>
-                      </tr>
-                      <tr>
-                        <td>HEIGHT:</td>
-                        <td>5′ 1″</td>
-                      </tr>
-                      <tr>
-                        <td>PROFESSION:</td>
-                        <td>Teacher</td>
-                      </tr>
-                      <tr>
-                        <td>SKIN COLOR:</td>
-                        <td>Bright</td>
-                      </tr>
-                      <tr>
-                        <td>WEIGHT:</td>
-                        <td>50 KG</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="actionButtons">
-                    <button>Favorite</button>
-                    <button>Interested</button>
-                  </div>
-                </div>
+                     ";
+                    };
+                 ?>
               </div>
             </div>
             <!-- Profile section -->
@@ -375,10 +111,29 @@
               <div class="status-select-container">
                 <div class="status-select">
                   <label for="profileStatus"
-                    >Profile Status <span class="status"><?php echo $logged_user_bio_details['status'];?></span></label
+                    >Profile Status <span class="<?php 
+                                  if($logged_user_bio_details['status'] == "inactive"){
+                                    echo "status";
+                                  }else{
+                                    echo "statusGreen";
+                                  }
+                                ?>"><?php echo $logged_user_bio_details['status'];?></span></label
                   >
                   <!-- <label for="profileStatus">Profile Status <span class="status" style="color: white;background-color:green">Active</span></label> -->
-                  <button>Active</button>
+                  <button class="<?php 
+                    if($logged_user_bio_details['status'] == "active"){
+                      echo "btnInactive";
+                    }else{
+                      echo "btnActive";
+                    }
+                  ?>"> 
+                  <?php 
+                      if($logged_user_bio_details['status'] == "inactive"){
+                        echo "Active";
+                      }else{
+                        echo "Inactive";
+                      }
+                ?></button>
                   <!-- <button style="background: red;">Inactive</button> -->
                 </div>
               </div>
@@ -545,10 +300,10 @@
                     <input type="number" name="age" min="18" required value="<?php echo $logged_user_bio_details['age']?>"/>
 
                     <label>Height</label>
-                    <input type="text" name="height" placeholder="e.g. 5′ 6″" required value="<?php echo $logged_user_bio_details['height']?>"/>
+                    <input type="number" name="height" step="any" placeholder="e.g. 5′ 6″" required value="<?php echo $logged_user_bio_details['height']?>"/>
 
                     <label>Weight</label>
-                    <input type="text" name="weight" placeholder="e.g. 60 KG" required value="<?php echo $logged_user_bio_details['weight']?>"/>
+                    <input type="number" name="weight" placeholder="e.g. 60 KG" required value="<?php echo $logged_user_bio_details['weight']?>"/>
 
                     <label>Skin Color</label>
                     <select name="skin_color" required>
@@ -619,7 +374,7 @@
                     <legend>Partner Preferences</legend>
                     <label>Preferred Age</label>
                     <input
-                      type="text"
+                      type="number"
                       name="preferred_age"
                       placeholder="e.g. 22 - 30"
                       required
@@ -627,7 +382,7 @@
                     />
 
                     <label>Preferred Height</label>
-                    <input type="text" name="preferred_height" required value="<?php echo $logged_user_bio_details['preferred_height']?>" />
+                    <input type="number" step="any" name="preferred_height" required value="<?php echo $logged_user_bio_details['preferred_height']?>" />
 
                     <label>Preferred Education</label>
                     <input type="text" name="preferred_education"  required value="<?php echo $logged_user_bio_details['preferred_education']?>"/>
@@ -826,37 +581,43 @@
                   <p class="subtitle">See how your profile looks to others</p>
 
                   <!-- Tabs -->
-                  <div class="viewAs-tabs">
+                  <!-- <div class="viewAs-tabs">
                     <button class="active">As Member</button>
-                  </div>
+                  </div> -->
 
                   <!-- Profile Preview -->
                   <div class="profile-preview">
                     <div class="profile-photo">
                       <img
-                        src="https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVufGVufDB8fDB8fHww"
+                        src="<?php 
+                              $url ="placeholder.jpg";
+                                if($logged_user_bio_details["profile_picture"]){
+                                  $url = "./uploads/". $logged_user_bio_details['profile_picture'];
+                                };
+                                  echo $url;
+                                ?>"
                         alt="Profile Photo"
                       />
                     </div>
                     <div class="profile-info">
                       <h3>
-                        John Doe
+                        <?php echo $logged_user_bio_details["full_name"]?>
                         <span
                           class="status"
                           style="color: var(---secondaryColor)"
                           ><i class="fa-regular fa-circle-xmark"></i>
-                          Inactive</span
+                          <?php echo $logged_user_bio_details["status"]?></span
                         >
                       </h3>
 
-                      <p><strong>Age:</strong> 26 years</p>
-                      <p><strong>Height:</strong> 5′ 8″</p>
-                      <p><strong>Profession:</strong> Software Engineer</p>
-                      <p><strong>Location:</strong> Dhaka, Bangladesh</p>
-                      <p>
+                      <p><strong>Age:</strong> <?php echo $logged_user_bio_details["age"]?> years</p>
+                      <p><strong>Height:</strong> <?php echo $logged_user_bio_details["height"]?></p>
+                      <p><strong>Profession:</strong> <?php echo $logged_user_bio_details["profession"]?></p>
+                      <p><strong>Location:</strong> <?php echo $logged_user_bio_details["present_address"]?></p>
+                      <!-- <p>
                         <strong>About:</strong> I am a simple person looking for
                         a suitable life partner. I value honesty and family.
-                      </p>
+                      </p> -->
                     </div>
                   </div>
 
@@ -996,136 +757,7 @@
 
             <!-- Details section -->
             <div id="detailsSection" style="display: none">
-              <div class="person-details">
-                <!-- Profile Header -->
-                <div class="profile-header">
-                  <img
-                    src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?w=200&h=200&fit=crop"
-                    alt="Profile"
-                  />
-                  <div class="profile-basic">
-                    <h2>John Flekh <span class="id">ID: XHF476GF34R</span></h2>
-                    <p>
-                      <i class="fas fa-circle" style="color: red"></i> Inactive
-                    </p>
-                    <p>
-                      <i class="fas fa-map-marker-alt"></i> Jashore, Khulna,
-                      Bangladesh
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Quick Intro -->
-                <div class="info-section">
-                  <h3><i class="fas fa-id-card"></i> Overview</h3>
-                  <p>Name: John Flekh, Age: 26 Years</p>
-                  <p>Education: Bachelor | Profession: Businessman</p>
-                  <p>Height: 5ft 8in | Skin Color: Bright</p>
-                  <p><strong>A Few Lines About John:</strong> .............</p>
-                </div>
-
-                <!-- Basic Details -->
-                <div class="info-section">
-                  <h3><i class="fas fa-user"></i> Basic Details</h3>
-                  <ul>
-                    <li><strong>Profile For:</strong> Self</li>
-                    <li><strong>Full Name:</strong> John Flekh</li>
-                    <li><strong>Age:</strong> 24 Years</li>
-                    <li><strong>Height:</strong> 5ft 8in</li>
-                    <li><strong>Gender:</strong> Male</li>
-                    <li><strong>Marital Status:</strong> Unmarried</li>
-                    <li><strong>Mother Tongue:</strong> English</li>
-                    <li><strong>Blood Group:</strong> B+</li>
-                    <li><strong>Religion:</strong> Islam</li>
-                  </ul>
-                </div>
-
-                <!-- Contact Details -->
-                <div class="info-section">
-                  <h3><i class="fas fa-phone"></i> Contact Details</h3>
-                  <ul>
-                    <li><strong>Phone:</strong> +8801300000000</li>
-                    <li><strong>Email:</strong> xzy@contact.com</li>
-                    <li>
-                      <strong>Address:</strong> 50 Washington Square S, New
-                      York, NY 10012, USA
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Professional Information -->
-                <div class="info-section">
-                  <h3>
-                    <i class="fas fa-briefcase"></i> Professional Information
-                  </h3>
-                  <ul>
-                    <li><strong>Education:</strong> Bachelor</li>
-                    <li><strong>Profession:</strong> Teacher</li>
-                    <li><strong>Employment:</strong> Private Sector</li>
-                    <li><strong>Annual Income:</strong> 200000/=</li>
-                  </ul>
-                </div>
-
-                <!-- Lifestyle -->
-                <div class="info-section">
-                  <h3><i class="fas fa-leaf"></i> Lifestyle</h3>
-                  <ul>
-                    <li><strong>Eating Habits:</strong> —</li>
-                    <li><strong>Drinking Habits:</strong> —</li>
-                    <li><strong>Smoking Habits:</strong> —</li>
-                  </ul>
-                </div>
-
-                <!-- Location -->
-                <div class="info-section">
-                  <h3><i class="fas fa-map"></i> Location</h3>
-                  <ul>
-                    <li><strong>City:</strong> Jashore</li>
-                    <li><strong>State:</strong> Khulna</li>
-                    <li><strong>Country:</strong> Bangladesh</li>
-                    <li><strong>Nationality:</strong> Bangladeshi</li>
-                  </ul>
-                </div>
-
-                <!-- Family Details -->
-                <div class="info-section">
-                  <h3><i class="fas fa-users"></i> Family Details</h3>
-                  <ul>
-                    <li><strong>No. of Brothers:</strong> —</li>
-                    <li><strong>No. of Sisters:</strong> —</li>
-                    <li><strong>Father’s Profession:</strong> —</li>
-                    <li><strong>Mother’s Profession:</strong> —</li>
-                    <li><strong>Family Origin:</strong> —</li>
-                  </ul>
-                </div>
-
-                <!-- Interests & Hobbies -->
-                <div class="info-section">
-                  <h3><i class="fas fa-heart"></i> Interests & Hobbies</h3>
-                  <ul>
-                    <li>Interest 1</li>
-                    <li>Interest 2</li>
-                    <li>Hobby 1</li>
-                    <li>Hobby 2</li>
-                  </ul>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="actions">
-                  <button class="btn primary">
-                    <i class="fas fa-heart"></i> Send Interest
-                  </button>
-                  <button class="btn secondary">
-                    <i class="fas fa-star"></i> Add to Favorites
-                  </button>
-                  <button class="btn info">
-                    <i class="fas fa-phone"></i> Contact
-                  </button>
-                  <button class="btn danger">
-                    <i class="fas fa-exclamation-triangle"></i> Report
-                  </button>
-                </div>
-              </div>
+                      <!-- Dynamic from js -->
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@
                    00:00 PM/AM | 12-12-1912
            </div>
            <div class="topBarConnects">
-            Connects: <span id="connects">25</span>
+            Connects: <span id="connects"><?php echo $logged_user_details["connects"]?></span>
            </div>
      <div class="tmbRight"><div style="color: white;"><span onclick="handleShow('notification')"><i class="fa-regular fa-bell"></i></span></div>
         <form action="" method="post">

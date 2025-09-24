@@ -22,7 +22,13 @@
         echo "statusGreen";
       }
     ?>"
-      ><i class="fa-regular fa-circle-xmark"></i> <?php echo $logged_user_bio_details['status'];?></span
+      ><i class="fa-regular <?php 
+      if($logged_user_bio_details['status'] == "inactive"){
+        echo "fa-circle-xmark";
+      }else{
+        echo "fa-circle-check";
+      }
+    ?>"></i> <?php echo $logged_user_bio_details['status'];?></span
     >
 
     <p style="<?php

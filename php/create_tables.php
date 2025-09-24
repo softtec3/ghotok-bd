@@ -60,5 +60,21 @@
        echo "Error creating users table <br/>";
     };
 
+    // Favorites table
+    
+    $sql_favorites = "CREATE TABLE IF NOT EXISTS favorites(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50) UNIQUE NOT NULL,
+    biodata_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+)";
+
+    if($conn->query($sql_favorites)){
+        echo "Favorites table created or already exist <br/>";
+    }else{
+       echo "Error creating users table <br/>";
+    };
     
 ?>
