@@ -26,5 +26,3 @@
         <button onclick="handleShow('favorite')"><i class="fas fa-star"></i> Favorite</button>
 </nav>
 </div>
-
-<script src="../script2.js"></script>

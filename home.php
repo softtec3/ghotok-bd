@@ -724,7 +724,7 @@
 
             <!-- Details section -->
             <div id="detailsSection" style="display: none">
-                             <div class="person-details">
+                <div class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
