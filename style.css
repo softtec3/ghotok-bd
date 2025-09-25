@@ -1974,4 +1974,10 @@ textarea {
   .mobileFilter {
     display: block;
   }
+  .profile-header {
+    flex-direction: column;
+  }
+  .profile-basic {
+    text-align: center;
+  }
 }

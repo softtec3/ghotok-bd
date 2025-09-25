@@ -435,7 +435,7 @@
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                      echo "
-              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
+              <form action='' method='get' style='margin-top:0;' class='sideBarProfile'>
                <span class='favoriteIcon' style='font-size: 22px'
                     ><i class='fas fa-handshake'></i
                   ></span>
@@ -501,7 +501,7 @@
                       $biodata_json = json_encode($biodata);
                       $added_interested_already = in_array($biodata["id"], $int_ids) ? "Interested":"Interest";
                      echo "
-              <form action='' method='get' style='margin:0;' class='sideBarProfile'>
+              <form action='' method='get' style='margin-top:0;' class='sideBarProfile'>
                <span class='favoriteIcon'><i class='fas fa-heart'></i></span>
                   <a href='./home.php?details_id={$biodata["id"]}'><img
                       src='./uploads/{$biodata['profile_picture']}'
