@@ -9,7 +9,7 @@
         $find_add_interested = $conn->query("SELECT biodata_id FROM interested WHERE user_id='$user_id' AND biodata_id='$bio_id'");
         if($find_add_interested->rowCount()>0){
             echo "<script>
-                alert('Already added');
+                alert('Already added to interest');
             </script>";
         }else{
         if($connects > 0){

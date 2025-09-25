@@ -59,10 +59,13 @@
               <div class="mainContent">
                 <!-- fetching all bio-data from database -->
                  <?php
-                    foreach($all_biodata as $biodata){
+                    if(count($all_biodata)>0){
+                      foreach($all_biodata as $biodata){
                       $short_name = substr($biodata['full_name'], 0, 8);
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
+                      $added_fav = in_array($biodata["id"], $ids) ? "Added":"Favorite";
+                      $added_interested = in_array($biodata["id"], $int_ids) ? "Interested":"Interest";
                      echo "
               <form action='' method='get' style='margin-top:0;' class='sideBarProfile'>
                   <a href='./home.php?details_id={$biodata["id"]}'><img
@@ -98,12 +101,15 @@
                     </table>
                   </div>
                   <div class='actionButtons'>
-                    <button type='submit' value='{$biodata["id"]}' name='add_favorite'>Favorite</button>
-                    <button type='submit' value='{$biodata["id"]}' name='add_interested'>Interested</button>
+                    <button type='submit' value='{$biodata["id"]}' name='add_favorite'>$added_fav</button>
+                    <button type='submit' value='{$biodata["id"]}' name='add_interested'>$added_interested</button>
                   </div>
                 </form>
                      ";
                     };
+                    }else{
+                      echo "<p>No result found</p>";
+                    }
                  ?>
               </div>
             </div>
@@ -473,7 +479,9 @@
                 </form>
                      ";
                     };
-                  } 
+                  } else{
+                    echo "<p>You have no favorites</p>";
+                  }
                  ?>
 
               </div>
@@ -491,6 +499,7 @@
                       $short_name = substr($biodata['full_name'], 0, 8);
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
+                      $added_interested_already = in_array($biodata["id"], $int_ids) ? "Interested":"Interest";
                      echo "
               <form action='' method='get' style='margin:0;' class='sideBarProfile'>
                <span class='favoriteIcon'><i class='fas fa-heart'></i></span>
@@ -528,12 +537,14 @@
                   </div>
                   <div class='actionButtons'>
                     <button type='submit' value='{$biodata["id"]}' name='remove_favorite'>UnFavorite</button>
-                    <button type='button'>Interested</button>
+                    <button type='submit' value='{$biodata["id"]}' name='add_interested' type='submit'>$added_interested_already</button>
                   </div>
                 </form>
                      ";
                     };
-                  } 
+                  }else{
+                    echo "<p>You have no favorites</p>";
+                  }
                  ?>
 
               </div>
@@ -569,12 +580,12 @@
                     <div class="profile-info">
                       <h3>
                         <?php echo $logged_user_bio_details["full_name"]?>
-                        <span
+                        <!-- <span
                           class="status"
                           style="color: var(---secondaryColor)"
                           ><i class="fa-regular fa-circle-xmark"></i>
                           <?php echo $logged_user_bio_details["status"]?></span
-                        >
+                        > -->
                       </h3>
 
                       <p><strong>Age:</strong> <?php echo $logged_user_bio_details["age"]?> years</p>

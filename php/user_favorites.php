@@ -31,7 +31,7 @@
         $favorites_ids = $get_favorites_ids->fetchAll();
         $all_favorites_biodata=[];
         if(count($favorites_ids) >0){
-        $ids = array_column($favorites_ids, 'biodata_id'); 
+        $ids = array_column($favorites_ids, 'biodata_id');
         $id_list = implode(",", $ids); 
 
         $get_all_favorites_biodata = $conn->query("SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, status FROM biodatas WHERE id IN ($id_list)");
