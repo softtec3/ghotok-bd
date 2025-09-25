@@ -21,8 +21,8 @@
     <div class="hero-content">
       <h1>Welcome to <span>Ghotok-BD</span></h1>
       <p>Your trusted ghotok-bd platform to find the perfect life partner.</p>
-      <a href="/ghotok-bd/register.php" class="btn-primary">Register Now</a>
-      <a href="/ghotok-bd/login.php" class="btn-secondary">Login</a>
+      <a href="./register.php" class="btn-primary">Register Now</a>
+      <a href="./login.php" class="btn-secondary">Login</a>
     </div>
     <div class="overlay"></div>
   </section>

@@ -3,7 +3,7 @@
 ?>
 
 <div id="sideBar" class="sidebarCloseAnimation">
-  <div class="connects">Connects: <span id="connect">25</span></div>
+  <div class="connects">Connects: <span id="connect"><?php echo $logged_user_details["connects"]?></span></div>
   <div class="sideBarProfile">
     <img
       src="<?php 

@@ -494,12 +494,10 @@
                      echo "
               <form action='' method='get' style='margin:0;' class='sideBarProfile'>
                <span class='favoriteIcon'><i class='fas fa-heart'></i></span>
-                  <span onclick='showDetails($biodata_json)'
-                    ><img
-                    onclick=\"handleShow('details')\"
+                  <a href='./home.php?details_id={$biodata["id"]}'><img
                       src='./uploads/{$biodata['profile_picture']}'
                       alt='profile image'
-                  /></span>
+                  /></a>
                   <div class='description'>
                     <table>
                       <tr>
