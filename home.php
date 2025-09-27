@@ -61,7 +61,7 @@
                  <?php
                     if(count($all_biodata)>0){
                       foreach($all_biodata as $biodata){
-                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_name = substr($biodata['full_name'], 0, 5);
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                       $added_fav = in_array($biodata["id"], $ids) ? "Added":"Favorite";

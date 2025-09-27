@@ -10,6 +10,7 @@
     looking_for ENUM('male','female') NOT NULL,
     role VARCHAR(20) NOT NULL,
     connects INT DEFAULT 0,
+    status ENUM('active','inactive') DEFAULT 'inactive',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";

@@ -90,7 +90,11 @@
       <div class="charges-box">
         <h3>Publishing Charges</h3>
         <ul>
-          <li><i class="fas fa-check-circle"></i> Standard Publish: 500৳</li>
+          <li><i class="fas fa-check-circle"></i> Standard Publish: <?php if($role == "ghotok"){
+            echo "1200";
+            }else{
+              echo "500";
+            }?> ৳</li>
           <!-- <li><i class="fas fa-check-circle"></i> Featured Publish (highlighted profile): 1000৳</li> -->
         </ul>
       </div>
