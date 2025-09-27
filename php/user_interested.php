@@ -2,6 +2,7 @@
     $get_connects = $conn->query("SELECT connects FROM users WHERE user_id='$user_id'");
     $fetch_connects = $get_connects->fetch();
     $connects = (int) $fetch_connects["connects"];
+    $int_ids=[];
 // add to interested
     if(isset($_GET["add_interested"])){
         // echo $user_id;

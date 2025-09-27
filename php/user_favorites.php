@@ -1,4 +1,5 @@
 <?php
+ $ids=[];
 // add to favorites
     if(isset($_GET["add_favorite"])){
         // echo $user_id;
