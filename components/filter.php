@@ -2,7 +2,7 @@
   <div class="filter">
     <h2>Home</h2>
     <div class="mobileFilter">
-      <span id="filterIcon"><i class="fa-solid fa-filter"></i></span>
+      <span id="filterIcon">Filter<i class="fa-solid fa-filter"></i></span>
       <div id="mobileFilter" class="mobileFilterContainer closeFilterSidebar">
         <h2>Filter</h2>
         <form action="" method="get">
@@ -55,8 +55,8 @@
               <option value="Christian">Christian</option>
               <option value="Atheist">Atheist</option>
             </select> -->
-            <button type="submit" value="filter" name="filter">Filter</button>
-            <a href="./home.php">Clear</a>
+            <button class="filterBtn" type="submit" value="filter" name="filter">Filter</button>
+            <a href="./home.php" class="filterBtn">Clear</a>
           </div>
         </form>
         <div id="sidebarClose2">
@@ -116,8 +116,8 @@
         <option value="Christian">Christian</option>
         <option value="Atheist">Atheist</option>
       </select> -->
-      <button type="submit" value="filter" name="filter">Filter</button>
-      <a href="./home.php">Clear</a>
+      <button class="filterBtn" type="submit" value="filter" name="filter">Filter</button>
+      <a href="./home.php" class="filterBtn">Clear</a>
     </form>
   </div>
 </div>

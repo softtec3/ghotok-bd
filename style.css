@@ -1854,7 +1854,15 @@ textarea {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
 }
-
+.filterBtn {
+  border: 1px solid rgb(252, 252, 252) !important;
+}
+#filterIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
 /* Responsive */
 @media only screen and (max-width: 1200px) {
   .connects {

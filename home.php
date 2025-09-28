@@ -638,64 +638,71 @@
 
             <!-- Buy connects section -->
             <div id="buyConnectsSection" style="display: none">
-              <section class="buy-connects">
-                <h2 class="section-title">Buy Connects</h2>
-                <p class="section-sub">
-                  Choose a plan and unlock opportunities to connect with more
-                  profiles.
-                </p>
+          <section class="buy-connects">
+            <h2 class="section-title">Buy Connects</h2>
+            <p class="section-sub">
+              Choose a plan and unlock opportunities to connect with more profiles.
+            </p>
 
-                <div class="plans">
-                  <!-- Plan 1 -->
-                  <div class="plan-card">
-                    <h3>Basic</h3>
-                    <p class="price">৳300</p>
-                    <ul>
-                      <li><i class="fas fa-check-circle"></i> 10 Connects</li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Valid for 1 Month
-                      </li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Standard Support
-                      </li>
-                    </ul>
-                    <button class="plan-btn">Buy Now</button>
-                  </div>
+            <div class="plans">
+              <!-- Plan 1 -->
+              <div class="plan-card">
+                <h3>Starter</h3>
+                <p class="price">৳100</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> 1 Connect</li>
+                  <li><i class="fas fa-check-circle"></i> Basic Support</li>
+                </ul>
+                <a href="#" class="plan-btn">Buy Now</a>
+              </div>
 
-                  <!-- Plan 2 (Highlighted with Badge) -->
-                  <div class="plan-card featured">
-                    <span class="badge">Most Popular</span>
-                    <h3>Standard</h3>
-                    <p class="price">৳700</p>
-                    <ul>
-                      <li><i class="fas fa-check-circle"></i> 30 Connects</li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Valid for 2 Months
-                      </li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Priority Support
-                      </li>
-                    </ul>
-                    <button class="plan-btn">Buy Now</button>
-                  </div>
+              <!-- Plan 2 -->
+              <div class="plan-card">
+                <h3>Mini</h3>
+                <p class="price">৳200</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> 3 Connects</li>
+                  <li><i class="fas fa-check-circle"></i> Standard Support</li>
+                </ul>
+                <a href="#" class="plan-btn">Buy Now</a>
+              </div>
 
-                  <!-- Plan 3 -->
-                  <div class="plan-card">
-                    <h3>Premium</h3>
-                    <p class="price">৳1200</p>
-                    <ul>
-                      <li><i class="fas fa-check-circle"></i> 60 Connects</li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Valid for 3 Months
-                      </li>
-                      <li>
-                        <i class="fas fa-check-circle"></i> Premium Support
-                      </li>
-                    </ul>
-                    <button class="plan-btn">Buy Now</button>
-                  </div>
-                </div>
-              </section>
+              <!-- Plan 3 -->
+              <div class="plan-card featured">
+                <span class="badge">Most Popular</span>
+                <h3>Basic</h3>
+                <p class="price">৳300</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> 5 Connects</li>
+                  <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                </ul>
+                <a href="#" class="plan-btn">Buy Now</a>
+              </div>
+
+              <!-- Plan 4 -->
+              <div class="plan-card">
+                <h3>Standard</h3>
+                <p class="price">৳500</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> 15 Connects</li>
+                  <li><i class="fas fa-check-circle"></i> Premium Support</li>
+                </ul>
+                <a href="#" class="plan-btn">Buy Now</a>
+              </div>
+
+              <!-- Plan 5 -->
+              <div class="plan-card">
+                <h3>Premium</h3>
+                <p class="price">৳1200</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> 120 Connects</li>
+                  <li><i class="fas fa-check-circle"></i> VIP Support</li>
+                </ul>
+                <a href="#" class="plan-btn">Buy Now</a>
+              </div>
+            </div>
+          </section>
+
             </div>
 
             <!-- notification section -->

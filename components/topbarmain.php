@@ -18,11 +18,11 @@
 </div>
 <nav id="mobileNav">
 
-        <a href="./home.php"><i class="fas fa-home"></i> Home</a>
-        <button onclick="handleShow('profile')"><i class="fas fa-id-card"></i> Profile</button>
-        
-        <button id="sidebarOpen" class="menuLink"><span><i class="fas fa-bars"></i></span>Menu</button>
-        <button onclick="handleShow('interested')"><i class="fas fa-heart"></i> Interested</button>
-        <button onclick="handleShow('favorite')"><i class="fas fa-star"></i> Favorite</button>
+<a href="./home.php"><i class="fas fa-home"></i> Home</a>
+<button onclick="handleShow('profile')"><i class="fas fa-id-card"></i> Profile</button>
+<!-- menu link class -->
+<button id="sidebarOpen"><span><i class="fas fa-bars"></i></span>Menu</button>
+<button onclick="handleShow('interested')"><i class="fas fa-heart"></i> Interested</button>
+<button onclick="handleShow('favorite')"><i class="fas fa-star"></i> Favorite</button>
 </nav>
 </div>
