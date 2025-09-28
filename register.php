@@ -24,6 +24,11 @@
 <body>
   <div class="register-container">
   <div class="register-card">
+    <p class="alertText" style="display: <?php if($checking){
+       echo 'block';
+    }else{
+      echo "none";
+    };?>;"><?php if(!empty($checking)) echo $checking;?><a href="./login.php" style="font-weight: bold; margin-left: 5px;">Login</a></p>
        <!-- Home Icon -->
       <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>Create Your Account</h2>

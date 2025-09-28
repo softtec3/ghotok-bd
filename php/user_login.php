@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $checking = NULL;
     if(isset($_POST["user_id"])){
         $user_id = trim($_POST["user_id"]);
         $password = $_POST["password"];
@@ -13,15 +14,11 @@
                 header("Location: ./home.php");
                 exit();
             }else{
-            echo "<script>
-                alert('Wrong password');
-            </script>";
+            $checking = "Wrong password";;
         }
             
         }else{
-            echo "<script>
-                alert('User not exist please register');
-            </script>";
+            $checking = "User not exist. Please <a href='./register.php' style='font-weight: bold; margin-left: 5px;'>Register</a>";
         }
 
 

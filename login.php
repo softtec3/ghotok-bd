@@ -24,6 +24,11 @@
 <body>
   <div class="login-container">
   <div class="login-card">
+    <p class="alertText" style="display: <?php if($checking){
+       echo 'block';
+    }else{
+      echo "none";
+    };?>;"><?php if(!empty($checking)) echo $checking;?></p>
        <!-- Home Icon -->
       <a href="./index.php" class="home-icon"><i class="fas fa-home"></i></a>
     <h2>User Login</h2>

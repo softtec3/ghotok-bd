@@ -1938,6 +1938,14 @@ textarea {
   background: none;
   border: none;
 }
+.alertText {
+  background-color: #e9478277;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  border: 2px solid var(---primaryColor);
+}
 /* Responsive */
 
 @media only screen and (max-width: 1200px) {
