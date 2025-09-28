@@ -146,66 +146,64 @@
                 </div>
               </div>
 
-              <div class="person-details">
+<div class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
-                    src="<?php 
-                    $url ="placeholder.jpg";
-                      if($logged_user_bio_details["profile_picture"]){
-                        $url = "./uploads/". $logged_user_bio_details['profile_picture'];
-                      };
-                        echo $url;
-                      ?>"
+                    src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>"
                     alt="Profile"
                   />
                   <div class="profile-basic">
-                    <h2><?php echo $logged_user_bio_details['full_name'];?> <span class="id">ID: <?php echo $logged_user_bio_details['id'];?></span></h2>
-                    <!-- <p>
-                      <i class="fas fa-circle" style="color: red"></i> Inactive
-                    </p> -->
+                    <h2><?php echo $logged_user_bio_details["full_name"]?> <span class="id">ID: <?php echo $logged_user_bio_details["id"]?></span></h2>
                     <p>
-                      <i class="fas fa-map-marker-alt"></i> <?php echo $logged_user_bio_details['present_address'];?>
+                      <i class="fas fa-map-marker-alt"></i> <?php echo $logged_user_bio_details["present_address"]?>
                     </p>
                   </div>
                 </div>
+                <div class="personDetailsLowerContainer">
+                <div class="pdlcleft">
+                
+                <div class="personImageGallery">
+                  <div class="pigMain">
+                    <img id="mainImage2" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="main image">
+                  </div>
+                  <div class="pigsub">
+                    <img onclick="handleImage2(this)" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="subImage">
+                    <?php 
+                    if (!empty($logged_user_bio_details['other_img_one'])) {
+                        $imgPath = "./uploads/" . $logged_user_bio_details['other_img_one'];
+                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($logged_user_bio_details['other_img_two'])) {
+                        $imgPath = "./uploads/" . $logged_user_bio_details['other_img_two'];
+                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($logged_user_bio_details['other_img_three'])) {
+                        $imgPath = "./uploads/" . $logged_user_bio_details['other_img_three'];
+                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
 
-                <!-- Quick Intro -->
-                <div class="info-section">
-                  <h3><i class="fas fa-id-card"></i> Overview</h3>
-                  <p>Name: <?php echo $logged_user_bio_details['full_name'];?>, Age: <?php echo $logged_user_bio_details['age'];?> Years</p>
-                  <p>Education: <?php echo $logged_user_bio_details['education'];?> | Profession: <?php echo $logged_user_bio_details['profession'];?></p>
-                  <p>Height: <?php echo $logged_user_bio_details['height'];?> | Skin Color: <?php echo $logged_user_bio_details['skin_color'];?></p>
-                  <p><strong>A Few Lines About <?php echo $logged_user_bio_details['full_name'];?>:</strong> .............</p>
+                  </div>
                 </div>
 
                 <!-- Basic Details -->
-                <div class="info-section" style="text-transform: capitalize;">
+                <div class="info-section">
                   <h3><i class="fas fa-user"></i> Basic Details</h3>
                   <ul>
-                    <!-- <li><strong>Profile For:</strong> Self</li> -->
-                    <li><strong>Full Name:</strong> <?php echo $logged_user_bio_details['full_name'];?></li>
-                    <li><strong>Age:</strong> <?php echo $logged_user_bio_details['age'];?> Years</li>
-                    <li><strong>Height:</strong> <?php echo $logged_user_bio_details['height'];?></li>
-                    <li><strong>Gender:</strong> <?php echo $logged_user_bio_details['gender'];?></li>
-                    <li><strong>Marital Status:</strong> <?php echo $logged_user_bio_details['marital_status'];?></li>
-                    <!-- <li><strong>Mother Tongue:</strong> English</li>
-                    <li><strong>Blood Group:</strong> B+</li>
-                    <li><strong>Religion:</strong> Islam</li> -->
+                    <li><strong>Full Name:</strong> <?php echo $logged_user_bio_details["full_name"]?></li>
+                    <li><strong>Age:</strong> <?php echo $logged_user_bio_details["age"]?> Years</li>
+                    <li><strong>Height:</strong> <?php echo $logged_user_bio_details["height"]?></li>
+                    <li><strong>Gender:</strong> <?php echo $logged_user_bio_details["gender"]?></li>
+                    <li><strong>Marital Status:</strong> <?php echo $logged_user_bio_details["marital_status"]?></li>
                   </ul>
                 </div>
 
-                <!-- Contact Details -->
-                <div class="info-section">
-                  <h3><i class="fas fa-phone"></i> Contact Details</h3>
-                  <ul>
-                    <li><strong>Phone:</strong> <?php echo $logged_user_bio_details['phone'];?></li>
-                    <li><strong>Email:</strong> <?php echo $logged_user_bio_details['email'];?></li>
-                    <li>
-                      <strong>Address:</strong> <?php echo $logged_user_bio_details['present_address'];?>
-                    </li>
-                  </ul>
-                </div>
+
 
                 <!-- Professional Information -->
                 <div class="info-section">
@@ -213,61 +211,57 @@
                     <i class="fas fa-briefcase"></i> Professional Information
                   </h3>
                   <ul>
-                    <li><strong>Education:</strong> <?php echo $logged_user_bio_details['education'];?></li>
-                    <li><strong>Profession:</strong> <?php echo $logged_user_bio_details['profession'];?></li>
-                    <!-- <li><strong>Employment:</strong> Private Sector</li> -->
-                    <li><strong>Monthly Income:</strong> <?php echo $logged_user_bio_details['monthly_income'];?>/=</li>
+                    <li><strong>Education:</strong> <?php echo $logged_user_bio_details["education"]?></li>
+                    <li><strong>Profession:</strong> <?php echo $logged_user_bio_details["profession"]?></li>
+                    <li><strong>Monthly Income:</strong> <?php echo $logged_user_bio_details["monthly_income"]?>/=</li>
                   </ul>
                 </div>
 
-                <!-- Lifestyle -->
-                <!-- <div class="info-section">
-                  <h3><i class="fas fa-leaf"></i> Lifestyle</h3>
-                  <ul>
-                    <li><strong>Eating Habits:</strong> —</li>
-                    <li><strong>Drinking Habits:</strong> —</li>
-                    <li><strong>Smoking Habits:</strong> —</li>
-                  </ul>
-                </div> -->
-
-                <!-- Location -->
-                <!-- <div class="info-section">
-                  <h3><i class="fas fa-map"></i> Location</h3>
-                  <ul>
-                    <li><strong>City:</strong> Jashore</li>
-                    <li><strong>State:</strong> Khulna</li>
-                    <li><strong>Country:</strong> Bangladesh</li>
-                    <li><strong>Nationality:</strong> Bangladeshi</li>
-                  </ul>
-                </div> -->
 
                 <!-- Family Details -->
                 <div class="info-section">
                   <h3><i class="fas fa-users"></i> Family Details</h3>
                   <ul>
-                    <li><strong>Siblings:</strong> — <?php echo $logged_user_bio_details['siblings'];?></li>
-                    <!-- <li><strong>No. of Sisters:</strong> —</li>
-                    <li><strong>Father’s Profession:</strong> —</li>
-                    <li><strong>Mother’s Profession:</strong> —</li>
-                    <li><strong>Family Origin:</strong> —</li> -->
+                    <li><strong>Siblings:</strong> — <?php echo $logged_user_bio_details["siblings"]?></li>
                   </ul>
                 </div>
+                <!-- Quick Intro -->
+                <div class="info-section">
+                  <h3><i class="fas fa-id-card"></i> Overview</h3>
+                  <p>Name: <?php echo $logged_user_bio_details["full_name"]?>, Age: <?php echo $logged_user_bio_details["age"]?> Years</p>
+                  <p>Education: <?php echo $logged_user_bio_details["education"]?> | Profession: <?php echo $logged_user_bio_details["profession"]?></p>
+                  <p>Height: <?php echo $logged_user_bio_details["height"]?> | Skin Color: <?php echo $logged_user_bio_details["skin_color"]?></p>
+                  <p><strong>A Few Lines About <?php echo $logged_user_bio_details["full_name"]?>:</strong> <?php echo $logged_user_bio_details['about']??""?></p>
+                </div>
 
-                <!-- Interests & Hobbies -->
-                <!-- <div class="info-section">
-                  <h3><i class="fas fa-heart"></i> Interests & Hobbies</h3>
+                </div>
+                <div class="pdlcright">
+                                  <!-- Contact Details -->
+                <div class="info-section">
+                  <h3><i class="fas fa-phone"></i> Contact Details</h3>
                   <ul>
-                    <li>Interest 1</li>
-                    <li>Interest 2</li>
-                    <li>Hobby 1</li>
-                    <li>Hobby 2</li>
+                    <li><strong>Phone:</strong> <?php echo $logged_user_bio_details["phone"]?></li>
+                    <li><strong>Email:</strong> <?php echo $logged_user_bio_details["email"] ?></li>
+                    <li>
+                      <strong>Address:</strong> <?php echo $logged_user_bio_details["present_address"]?>
+                    </li>
                   </ul>
-                </div> -->
+                </div>
+                <div class="info-section warning">
+                  <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
+                </div>
+                
                 <!-- Action Buttons -->
-                <div class="actions">
-                  <button onclick="handleShow('updateBio')" class="btn primary"
-                    ><i class="fas fa-user-edit"></i> Update Bio-data
+                <!-- <div class="actions">
+
+                  <button class="btn info">
+                    <i class="fas fa-phone"></i> Contact
                   </button>
+                  <button class="btn danger">
+                    <i class="fas fa-exclamation-triangle"></i> Report
+                  </button>
+                </div> -->
+                </div>
                 </div>
               </div>
             </div>
@@ -777,14 +771,35 @@
                     </p>
                   </div>
                 </div>
+                <div class="personDetailsLowerContainer">
+                <div class="pdlcleft">
+                
+                <div class="personImageGallery">
+                  <div class="pigMain">
+                    <img id="mainImage" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="main image">
+                  </div>
+                  <div class="pigsub">
+                    <img onclick="handleImage(this)" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="subImage">
+                    <?php 
+                    if (!empty($biodata_details['other_img_one'])) {
+                        $imgPath = "./uploads/" . $biodata_details['other_img_one'];
+                        echo "<img onclick='handleImage(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($biodata_details['other_img_two'])) {
+                        $imgPath = "./uploads/" . $biodata_details['other_img_two'];
+                        echo "<img onclick='handleImage(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
+                    <?php 
+                    if (!empty($biodata_details['other_img_three'])) {
+                        $imgPath = "./uploads/" . $biodata_details['other_img_three'];
+                        echo "<img onclick='handleImage(this)' src='{$imgPath}' alt='subImage'>";
+                    }
+                    ?>
 
-                <!-- Quick Intro -->
-                <div class="info-section">
-                  <h3><i class="fas fa-id-card"></i> Overview</h3>
-                  <p>Name: <?php echo $biodata_details["full_name"]?>, Age: <?php echo $biodata_details["age"]?> Years</p>
-                  <p>Education: <?php echo $biodata_details["education"]?> | Profession: <?php echo $biodata_details["profession"]?></p>
-                  <p>Height: <?php echo $biodata_details["height"]?> | Skin Color: <?php echo $biodata_details["skin_color"]?></p>
-                  <p><strong>A Few Lines About <?php echo $biodata_details["full_name"]?>:</strong> .............</p>
+                  </div>
                 </div>
 
                 <!-- Basic Details -->
@@ -799,7 +814,40 @@
                   </ul>
                 </div>
 
-                <!-- Contact Details -->
+
+
+                <!-- Professional Information -->
+                <div class="info-section">
+                  <h3>
+                    <i class="fas fa-briefcase"></i> Professional Information
+                  </h3>
+                  <ul>
+                    <li><strong>Education:</strong> <?php echo $biodata_details["education"]?></li>
+                    <li><strong>Profession:</strong> <?php echo $biodata_details["profession"]?></li>
+                    <li><strong>Monthly Income:</strong> <?php echo $biodata_details["monthly_income"]?>/=</li>
+                  </ul>
+                </div>
+
+
+                <!-- Family Details -->
+                <div class="info-section">
+                  <h3><i class="fas fa-users"></i> Family Details</h3>
+                  <ul>
+                    <li><strong>Siblings:</strong> — <?php echo $biodata_details["siblings"]?></li>
+                  </ul>
+                </div>
+                <!-- Quick Intro -->
+                <div class="info-section">
+                  <h3><i class="fas fa-id-card"></i> Overview</h3>
+                  <p>Name: <?php echo $biodata_details["full_name"]?>, Age: <?php echo $biodata_details["age"]?> Years</p>
+                  <p>Education: <?php echo $biodata_details["education"]?> | Profession: <?php echo $biodata_details["profession"]?></p>
+                  <p>Height: <?php echo $biodata_details["height"]?> | Skin Color: <?php echo $biodata_details["skin_color"]?></p>
+                  <p><strong>A Few Lines About <?php echo $biodata_details["full_name"]?>:</strong> <?php echo $biodata_details['about']??""?></p>
+                </div>
+
+                </div>
+                <div class="pdlcright">
+                                  <!-- Contact Details -->
                 <div class="info-section">
                   <h3><i class="fas fa-phone"></i> Contact Details</h3>
                   <ul>
@@ -824,31 +872,12 @@
                     </li>
                   </ul>
                 </div>
-
-                <!-- Professional Information -->
-                <div class="info-section">
-                  <h3>
-                    <i class="fas fa-briefcase"></i> Professional Information
-                  </h3>
-                  <ul>
-                    <li><strong>Education:</strong> <?php echo $biodata_details["education"]?></li>
-                    <li><strong>Profession:</strong> <?php echo $biodata_details["profession"]?></li>
-                    <li><strong>Monthly Income:</strong> <?php echo $biodata_details["monthly_income"]?>/=</li>
-                  </ul>
+                <div class="info-section warning">
+                  <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                 </div>
-
-
-                <!-- Family Details -->
-                <div class="info-section">
-                  <h3><i class="fas fa-users"></i> Family Details</h3>
-                  <ul>
-                    <li><strong>Siblings:</strong> — <?php echo $biodata_details["siblings"]?></li>
-                  </ul>
-                </div>
-
-
+                
                 <!-- Action Buttons -->
-                <div class="actions">
+                <!-- <div class="actions">
 
                   <button class="btn info">
                     <i class="fas fa-phone"></i> Contact
@@ -856,6 +885,8 @@
                   <button class="btn danger">
                     <i class="fas fa-exclamation-triangle"></i> Report
                   </button>
+                </div> -->
+                </div>
                 </div>
               </div>
             </div>

@@ -196,3 +196,13 @@ const params = new URLSearchParams(window.location.search);
 if (params.has("details_id")) {
   handleShow("details");
 }
+
+// Image show in gallery
+const mainImage = document.getElementById("mainImage");
+function handleImage2(e) {
+  mainImage2.src = e.src;
+}
+const mainImage2 = document.getElementById("mainImage2");
+function handleImage(e) {
+  mainImage.src = e.src;
+}

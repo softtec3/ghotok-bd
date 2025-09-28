@@ -35,7 +35,7 @@
         $ids = array_column($favorites_ids, 'biodata_id');
         $id_list = implode(",", $ids); 
 
-        $get_all_favorites_biodata = $conn->query("SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, status FROM biodatas WHERE id IN ($id_list)");
+        $get_all_favorites_biodata = $conn->query("SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, about, other_img_one, other_img_two, other_img_three, status FROM biodatas WHERE id IN ($id_list)");
 
         $all_favorites_biodata = $get_all_favorites_biodata->fetchAll();            
         };

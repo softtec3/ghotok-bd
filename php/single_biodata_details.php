@@ -9,10 +9,10 @@ if(isset($_GET["details_id"])){
     $sql_query_bio;
 
     if(count($is_available) >0 ||  $ghotok_available){
-        $sql_query_bio = "SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, phone, email, status FROM biodatas WHERE id='$biodata_id'";
+        $sql_query_bio = "SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, about, other_img_one, other_img_two, other_img_three, phone, email, status FROM biodatas WHERE id='$biodata_id'";
 
     }else{
-        $sql_query_bio = "SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, status FROM biodatas WHERE id='$biodata_id'";
+        $sql_query_bio = "SELECT id,full_name, gender, marital_status, dob, age, height, weight, skin_color, education, profession, monthly_income, fathers_name, fathers_occupation, mothers_name, mothers_occupation, siblings,  present_address, district, preferred_age, preferred_height, preferred_education, preferred_profession, profile_picture, about, other_img_one, other_img_two, other_img_three, status FROM biodatas WHERE id='$biodata_id'";
     }
 
     $get_biodata = $conn->query($sql_query_bio);

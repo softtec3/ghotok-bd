@@ -443,12 +443,55 @@ a {
 .text-green {
   color: #10b981;
 }
-
+.personDetailsLowerContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.personImageGallery {
+  width: 100%;
+  height: 410px;
+  border: 1px solid var(---primaryColor);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  border-bottom: none;
+}
+.pigMain img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+.pigsub {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.pigsub img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.pdlcleft {
+  grid-column: span 2;
+}
+.pdlcright {
+  grid-column: span 1;
+}
 /* Info Sections */
 .info-section {
   margin-bottom: 20px;
 }
-
+.warning {
+  padding: 5px;
+  border: 1px solid var(---primaryColor);
+  border-radius: 5px;
+  background-color: white;
+  font: 15px;
+}
 .info-section h3 {
   font-size: 18px;
   color: var(---secondaryColor);
@@ -1864,6 +1907,7 @@ textarea {
   cursor: pointer;
 }
 /* Responsive */
+
 @media only screen and (max-width: 1200px) {
   .connects {
     display: block;
@@ -1987,5 +2031,8 @@ textarea {
   }
   .profile-basic {
     text-align: center;
+  }
+  .personDetailsLowerContainer {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
