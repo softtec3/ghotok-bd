@@ -12,6 +12,7 @@
     echo "Something went Wrong";
   };
   };
+  // Update bio-data
     $user_id = $_SESSION["user_id"];
 
     if(isset($_POST["full_name"])){
@@ -40,6 +41,11 @@
     $preferred_education = $_POST["preferred_education"];
     $preferred_profession = $_POST["preferred_profession"];
     $profile_picture = upload_file_get_name("profile_picture");
+    $about = $_POST["about"];
+    $other_img_one = upload_file_get_name("other_img_one");
+    $other_img_two = upload_file_get_name("other_img_two");
+    $other_img_three = upload_file_get_name("other_img_three");
+
 
     $update_bio_sql = "UPDATE biodatas SET 
     full_name='$full_name',
@@ -65,11 +71,22 @@
     preferred_age='$preferred_age',
     preferred_height='$preferred_height',
     preferred_education='$preferred_education',
-    preferred_profession='$preferred_profession'";
+    preferred_profession='$preferred_profession',
+    about='$about'";
 
     if (!empty($profile_picture)) {
     $update_bio_sql .= ", profile_picture='$profile_picture'";
     };
+    if (!empty($other_img_one)) {
+    $update_bio_sql .= ", other_img_one='$other_img_one'";
+    };
+    if (!empty($other_img_two)) {
+    $update_bio_sql .= ", other_img_two='$other_img_two'";
+    };
+    if (!empty($other_img_three)) {
+    $update_bio_sql .= ", other_img_three='$other_img_three'";
+    };
+
     $update_bio_sql .= " WHERE user_id='$user_id'";
 
     $update_biodata = $conn->query($update_bio_sql);

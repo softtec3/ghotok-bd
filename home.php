@@ -320,6 +320,8 @@
                       <option value="medium" <?php if($logged_user_bio_details['skin_color'] == 'medium') echo 'selected';?>>Medium</option>
                       <option value="dark" <?php if($logged_user_bio_details['skin_color'] == 'dark') echo 'selected';?>>Dark</option>
                     </select>
+                    <label for="about">About</label>
+                    <textarea name="about" required style="height: 150px;"><?php echo $logged_user_bio_details['about']?></textarea>
                   </fieldset>
 
                   <!-- Education & Profession -->
@@ -401,7 +403,8 @@
 
                   <!-- Profile Image -->
                   <fieldset>
-                    <legend>Profile Picture</legend>
+                    <legend>Images</legend>
+                    <label for="profile_picture">Profile Picture</label>
                     <input
                       type="file"
                       name="profile_picture"
@@ -413,8 +416,25 @@
                     echo "required";
                    }
                    ?>
-
                     />
+                    <label for="other_img_one">Other Image 1</label>
+                      <input
+                      type="file"
+                      name="other_img_one"
+                      accept="image/*"
+                      />
+                    <label for="other_img_two">Other Image 2</label>
+                      <input
+                      type="file"
+                      name="other_img_two"
+                      accept="image/*"
+                      />
+                    <label for="other_img_three">Other Image 3</label>
+                      <input
+                      type="file"
+                      name="other_img_three"
+                      accept="image/*"
+                      />
                   </fieldset>
 
                   <!-- Submit -->
@@ -637,7 +657,7 @@
             </div>
 
             <!-- Buy connects section -->
-            <div id="buyConnectsSection" style="display: none">
+          <div id="buyConnectsSection" style="display: none">
           <section class="buy-connects">
             <h2 class="section-title">Buy Connects</h2>
             <p class="section-sub">
