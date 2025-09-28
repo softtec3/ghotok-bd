@@ -1947,7 +1947,20 @@ textarea {
   border: 2px solid var(---primaryColor);
 }
 /* Responsive */
+@media only screen and (max-width: 1500px) {
+  #advertise1 {
+    display: none;
+  }
 
+  #advertise2 {
+    display: none;
+  }
+
+  #main {
+    grid-column: span 12;
+    border: 1px solid var(---secondaryColor);
+  }
+}
 @media only screen and (max-width: 1200px) {
   .connects {
     display: block;
