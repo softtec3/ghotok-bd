@@ -91,13 +91,9 @@
 
     $update_biodata = $conn->query($update_bio_sql);
     if($update_biodata){
-        echo "<script>
-            alert('Bio-data successfully updated');
-        </script>";
+        $show_alert = "Bio-data successfully updated";
     }else{
-        echo "<script>
-            alert('Something went wrong. Please try again later');
-        </script>";
+        $show_alert = "Something went wrong. Please try again later";
     }
 
     }else{

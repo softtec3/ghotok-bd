@@ -206,3 +206,11 @@ const mainImage2 = document.getElementById("mainImage2");
 function handleImage(e) {
   mainImage.src = e.src;
 }
+
+// alert
+const alertContainer = document.getElementById("alert");
+const alertClose = document.getElementById("alertClose");
+
+alertClose.addEventListener("click", () => {
+  alertContainer.style.display = "none";
+});

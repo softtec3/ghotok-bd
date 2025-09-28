@@ -6,23 +6,13 @@
         $bio_id =  $_GET["add_favorite"];
         $find_favorites = $conn->query("SELECT biodata_id FROM favorites WHERE user_id='$user_id' AND biodata_id='$bio_id'");
         if($find_favorites->rowCount()>0){
-            echo "<script>
-                alert('Already added');
-            </script>";
+            $show_alert = "Already Added";
         }else{
         $add_favorites = $conn->query("INSERT INTO favorites(user_id, biodata_id) VALUES ('$user_id', '$bio_id')");
         if($add_favorites){
-            echo "
-                <script>
-                    alert('Added to favorites');
-                </script>
-            ";
+            $show_alert = "Added to favorites";
         }else{
-            echo "
-                <script>
-                    alert('Something went wrong');
-                </script>
-            ";
+            $show_alert = "Something went wrong";
         } 
         }
     };
@@ -45,18 +35,9 @@
         $fav_id =  $_GET["remove_favorite"];
         $remove_favorites = $conn->query("DELETE FROM favorites WHERE biodata_id='$fav_id' AND user_id='$user_id'");
         if($remove_favorites){
-            echo "
-                <script>
-                    alert('Removed from favorites');
-                    window.location.href = './home.php';
-                </script>
-            ";
+            $show_alert = "Removed from favorites";
         }else{
-            echo "
-                <script>
-                    alert('Something went wrong');
-                </script>
-            ";
+            $show_alert = "Something went wrong";
         } 
     };
 

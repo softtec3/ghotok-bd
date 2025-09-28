@@ -9,32 +9,18 @@
         $bio_id =  $_GET["add_interested"];
         $find_add_interested = $conn->query("SELECT biodata_id FROM interested WHERE user_id='$user_id' AND biodata_id='$bio_id'");
         if($find_add_interested->rowCount()>0){
-            echo "<script>
-                alert('Already added to interest');
-            </script>";
+            $show_alert = "Already added to interest";
         }else{
         if($connects > 0){
         $add_interested = $conn->query("INSERT INTO interested(user_id, biodata_id) VALUES ('$user_id', '$bio_id')");
         if($add_interested){
             $decrease_connect = $conn->query("UPDATE users SET connects=connects-1 WHERE user_id='$user_id'");
-            echo "
-                <script>
-                    alert('Added to add_interested');
-                </script>
-            ";
+            $show_alert = "Added to interest";
         }else{
-            echo "
-                <script>
-                    alert('Something went wrong');
-                </script>
-            ";
+           $show_alert = "Something went wrong";
         } 
             }else{
-                           echo "
-                <script>
-                    alert('No sufficient connects');
-                </script>
-            "; 
+              $show_alert = "You don't have sufficient connects";
             }
 
         }

@@ -5,6 +5,12 @@
         header("Location: ./login.php");
         exit();
     };
+  // alert
+  $show_alert;
+  if(isset($_POST["closeAlert"])){
+    $show_alert = NULL;
+  }
+  
   include_once("./php/user_biodata.php");
   include_once("./php/logged_user_details.php");
   include_once("./php/all_biodata.php");
@@ -146,7 +152,7 @@
                 </div>
               </div>
 
-<div class="person-details">
+            <div class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
@@ -558,7 +564,7 @@
                      ";
                     };
                   }else{
-                    echo "<p>You have no favorites</p>";
+                    echo "<p>You have no interest</p>";
                   }
                  ?>
 
@@ -891,6 +897,17 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- alert -->
+      <div id="alert" style="display: <?php if(!empty($show_alert)) echo 'flex';?>;">
+        <div class="alertContent">
+            <form action="">
+                  <button type="submit" id="alertClose" name="closeAlert"><i class="fa-solid fa-xmark"></i></button>
+           </form>         
+          <p id="alertText">
+            <?php echo $show_alert??"";?>
+          </p>
         </div>
       </div>
       <!-- Advertise Container 02 -->
