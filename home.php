@@ -38,6 +38,7 @@
   </head>
   <body>
     <div id="container">
+
       <!-- Advertise Container 01 -->
       <?php include_once("./components/advertisement1.php")?>
       <!-- Main -->

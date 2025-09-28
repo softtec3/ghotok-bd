@@ -1,6 +1,7 @@
 <?php
     $user_id = $_SESSION["user_id"];
     $role = $_SESSION["role"];
+    $status = $_SESSION["status"];
     // user bio-data details
     $logged_user_bio = $conn->query("SELECT * FROM biodatas WHERE user_id='$user_id'");
     $logged_user_bio_details = $logged_user_bio->fetch();
