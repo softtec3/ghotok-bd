@@ -45,7 +45,9 @@
     $other_img_one = upload_file_get_name("other_img_one");
     $other_img_two = upload_file_get_name("other_img_two");
     $other_img_three = upload_file_get_name("other_img_three");
-
+    $child_order = $_POST["child_order"];
+    $fathers_status = $_POST["fathers_status"];
+    $mothers_status = $_POST["mothers_status"];
 
     $update_bio_sql = "UPDATE biodatas SET 
     full_name='$full_name',
@@ -60,10 +62,13 @@
     profession='$profession',
     monthly_income='$monthly_income',
     fathers_name='$fathers_name',
+    fathers_status='$fathers_status',
     fathers_occupation='$fathers_occupation',
     mothers_name='$mothers_name',
+    mothers_status='$mothers_status',
     mothers_occupation='$mothers_occupation',
     siblings='$siblings',
+    child_order='$child_order',
     phone='$phone',
     email='$email',
     present_address='$present_address',

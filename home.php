@@ -371,20 +371,49 @@
                   <!-- Family Information -->
                   <fieldset>
                     <legend>Family Information</legend>
-                    <label>Father's Name</label>
+                  <div class="formFlex">
+                    <div>
+                      <label>Father's Name</label>
                     <input type="text" name="fathers_name" required value="<?php echo $logged_user_bio_details['fathers_name']?>"/>
+                  </div>
+
+                  <div>
+                    <label>Father's Status</label>
+                    <select name="fathers_status" required>
+                      <option style="display: none;" value="">-- Select --</option>
+                      <option value="alive" <?php if($logged_user_bio_details['fathers_status'] == 'alive') echo 'selected';?>>Alive</option>
+                      <option value="deceased" <?php if($logged_user_bio_details['fathers_status'] == 'deceased') echo 'selected';?>>Deceased</option>
+                    </select> 
+                  </div>
+                </div>
 
                     <label>Father's Occupation</label>
                     <input type="text" name="fathers_occupation" required value="<?php echo $logged_user_bio_details['fathers_occupation']?>"/>
-
-                    <label>Mother's Name</label>
+                    
+                    <div class="formFlex">
+                    <div>
+                      <label>Mother's Name</label>
                     <input type="text" name="mothers_name" required value="<?php echo $logged_user_bio_details['mothers_name']?>"/>
+                    </div>
 
+                    <div>
+                      <label>Mother's Status</label>
+                    <select name="mothers_status" required>
+                      <option style="display: none;" value="">-- Select --</option>
+                      <option value="alive" <?php if($logged_user_bio_details['mothers_status'] == 'alive') echo 'selected';?>>Alive</option>
+                      <option value="deceased" <?php if($logged_user_bio_details['mothers_status'] == 'deceased') echo 'selected';?>>Deceased</option>
+                     
+                    </select>
+                    </div>
+                  </div>
                     <label>Mother's Occupation</label>
                     <input type="text" name="mothers_occupation" required value="<?php echo $logged_user_bio_details['mothers_occupation']?>"/>
 
                     <label>Siblings</label>
-                    <input type="text" name="siblings" required value="<?php echo $logged_user_bio_details['siblings']?>"/>
+                    <input type="number" name="siblings" required value="<?php echo $logged_user_bio_details['siblings']?>"/>
+
+                    <label>Position Among Siblings</label>
+                    <input type="number" name="child_order" required value="<?php echo $logged_user_bio_details['child_order'] ?? ""?>"/>
                   </fieldset>
 
                   <!-- Contact Information -->
@@ -400,14 +429,7 @@
                     <textarea name="present_address" required><?php echo $logged_user_bio_details['present_address'];?></textarea>
 
                     <label>District</label>
-                    <select name="district" required>
-                      <option style="display: none;" value="">-- Select District --</option>
-                      <option value="dhaka" <?php if($logged_user_bio_details['district'] == 'dhaka') echo 'selected';?>>Dhaka</option>
-                      <option value="jashore" <?php if($logged_user_bio_details['district'] == 'jashore') echo 'selected';?>>Jashore</option>
-                      <option value="rajshahi" <?php if($logged_user_bio_details['district'] == 'rajshahi') echo 'selected';?>>Rajshahi</option>
-                      <option value="khulna" <?php if($logged_user_bio_details['district'] == 'khulna') echo 'selected';?>>Khulna</option>
-                      <option value="barishal" <?php if($logged_user_bio_details['district'] == 'barishal') echo 'selected';?>>Barishal</option>
-                    </select>
+                    <input type="text" name="district" required value="<?php echo $logged_user_bio_details['district']?>"/>
                   </fieldset>
 
                   <!-- Partner Preferences -->

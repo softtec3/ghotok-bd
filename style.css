@@ -913,7 +913,20 @@ textarea {
 .registerBiodataContainer button:hover {
   opacity: 0.9;
 }
-
+.formFlex {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.formFlex div {
+  width: 100%;
+}
+.formFlex div:last-child {
+  max-width: 200px;
+}
+.formFlex input {
+  width: 100%;
+}
 /* Favorite page */
 .sideBarProfile {
   position: relative; /* allow absolute child positioning */
