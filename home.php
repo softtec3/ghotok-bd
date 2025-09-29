@@ -686,7 +686,7 @@
             </div>
 
             <!-- Buy connects section -->
-          <div id="buyConnectsSection" style="display: none">
+        <div id="buyConnectsSection" style="display: none">
           <section class="buy-connects">
             <h2 class="section-title">Buy Connects</h2>
             <p class="section-sub">
@@ -758,8 +758,8 @@
             <div id="notificationSection" style="display: none">
               <div class="notification-container">
                 <h2>Notifications</h2>
-
-                <div class="notification-card">
+                <p>There is no notification</p>
+                <!-- <div class="notification-card">
                   <i class="fas fa-heart"></i>
                   <div class="notification-text">
                     <p>
@@ -786,7 +786,7 @@
                     <p><strong>Karim Hasan</strong> sent you a message.</p>
                     <span class="time">3 days ago</span>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
 
