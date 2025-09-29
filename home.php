@@ -491,12 +491,10 @@
                <span class='favoriteIcon' style='font-size: 22px'
                     ><i class='fas fa-handshake'></i
                   ></span>
-                  <span onclick='showDetails($biodata_json)'
-                    ><img
-                    onclick=\"handleShow('details')\"
+                  <a href='./home.php?details_id={$biodata["id"]}' ><img
                       src='./uploads/{$biodata['profile_picture']}'
                       alt='profile image'
-                  /></span>
+                  /></a>
                   <div class='description'>
                     <table>
                       <tr>
@@ -525,8 +523,8 @@
                       </tr>
                     </table>
                   </div>
-                  <div class='actionButtons' onclick=\"handleShow('details')\" >
-                    <button onclick='showDetails($biodata_json)' type='button'>View Details</button>
+                  <div class='actionButtons'>
+                    <a href='./home.php?details_id={$biodata["id"]}' >View Details</a>
                   </div>
                 </form>
                      ";
@@ -983,6 +981,19 @@
           <p id="alertText">
             <?php echo $show_alert??"";?>
           </p>
+          <form style="display: <?php
+                $connect = (int) $logged_user_details["connects"];
+                if($connect == 0){
+                  if (strpos($show_alert, "connects") !== false) {
+                    echo "flex";
+                }
+                }else{
+                  echo "none";
+                }
+          ?>;" class="alertForm" action="" method="get">
+            <a href="./home.php?buyConnects">Buy Connects</a>
+            <a href="./home.php?bioId=">Pay for one <?php if(isset($_GET["add_interested"])) echo $_GET["add_interested"]?> </a>
+          </form>
         </div>
       </div>
       <!-- Advertise Container 02 -->
