@@ -1,5 +1,5 @@
 <?php
-    $ghotok_available = $role == "ghotok" AND $status == "active";
+    $ghotok_available = ($role == "ghotok" && $status == "active");;
 if(isset($_GET["details_id"])){
     $biodata_id =  $_GET["details_id"];
 

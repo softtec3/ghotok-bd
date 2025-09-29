@@ -198,15 +198,57 @@ if (params.has("details_id")) {
 }
 
 // Image show in gallery
-const mainImage = document.getElementById("mainImage");
-function handleImage2(e) {
-  mainImage2.src = e.src;
-}
-const mainImage2 = document.getElementById("mainImage2");
+// details section
+const mainImageDetails = document.getElementById("mainImageDetails");
+const zoomInBtnDetails = document.getElementById("zoomInBtnDetails");
+const zoomImageContainerDetails = document.getElementById(
+  "zoomImageContainerDetails"
+);
+const zicCloseDetails = document.getElementById("zicCloseDetails");
+
 function handleImage(e) {
-  mainImage.src = e.src;
+  mainImageDetails.src = e.src;
+}
+zoomInBtnDetails.addEventListener("click", () => {
+  zoomImageContainerDetails.style.transform = "scale(1)";
+});
+zicCloseDetails.addEventListener("click", () => {
+  zoomImageContainerDetails.style.transform = "scale(0)";
+});
+mainImageDetails.addEventListener("click", () => {
+  zoomImageContainerDetails.style.transform = "scale(1)";
+});
+// details section zoom
+const midSubMain = document.getElementById("midSubMain");
+function handleMid(e) {
+  midSubMain.src = e.src;
 }
 
+// profile section
+const mainImageProfile = document.getElementById("mainImageProfile");
+const zoomInBtnProfile = document.getElementById("zoomInBtnProfile");
+const zoomImageContainerProfile = document.getElementById(
+  "zoomImageContainerProfile"
+);
+const zicCloseProfile = document.getElementById("zicCloseProfile");
+
+function handleProfileImg(e) {
+  mainImageProfile.src = e.src;
+}
+zoomInBtnProfile.addEventListener("click", () => {
+  zoomImageContainerProfile.style.transform = "scale(1)";
+});
+zicCloseProfile.addEventListener("click", () => {
+  zoomImageContainerProfile.style.transform = "scale(0)";
+});
+mainImageProfile.addEventListener("click", () => {
+  zoomImageContainerProfile.style.transform = "scale(1)";
+});
+// profile section zoom
+const profileSubMain = document.getElementById("profileSubMain");
+function handleProfileImgZoom(e) {
+  profileSubMain.src = e.src;
+}
 // alert
 const alertContainer = document.getElementById("alert");
 const alertClose = document.getElementById("alertClose");

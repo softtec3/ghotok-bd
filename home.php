@@ -122,37 +122,9 @@
             </div>
             <!-- Profile section -->
             <div id="profileSection" style="display: none">
-              <div class="status-select-container">
-                <div class="status-select">
-                  <label for="profileStatus"
-                    >Profile Status <span class="<?php 
-                                  if($logged_user_bio_details['status'] == "inactive"){
-                                    echo "status";
-                                  }else{
-                                    echo "statusGreen";
-                                  }
-                                ?>"><?php echo $logged_user_bio_details['status'];?></span></label
-                  >
-                  <!-- <label for="profileStatus">Profile Status <span class="status" style="color: white;background-color:green">Active</span></label> -->
-                  <button class="<?php 
-                    if($logged_user_bio_details['status'] == "active"){
-                      echo "btnInactive";
-                    }else{
-                      echo "btnActive";
-                    }
-                  ?>"> 
-                  <?php 
-                      if($logged_user_bio_details['status'] == "inactive"){
-                        echo "Active";
-                      }else{
-                        echo "Inactive";
-                      }
-                ?></button>
-                  <!-- <button style="background: red;">Inactive</button> -->
-                </div>
-              </div>
+            
 
-            <div class="person-details">
+              <div class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
@@ -165,32 +137,83 @@
                       <i class="fas fa-map-marker-alt"></i> <?php echo $logged_user_bio_details["present_address"]?>
                     </p>
                   </div>
+                  <!-- Action Buttons -->
+                <form action='' method='get' class="actions">
+
+                  <button style="display: <?php 
+                    if($logged_user_bio_details['status'] == "active"){
+                      echo "block";
+                    }else{
+                      echo "none";
+                    }
+                  ?>;"> 
+                  <?php 
+                      if($logged_user_bio_details['status'] == "inactive"){
+                        echo "Active";
+                      }else{
+                        echo "Inactive";
+                      }
+                ?></button>
+                </form>
                 </div>
+                
                 <div class="personDetailsLowerContainer">
                 <div class="pdlcleft">
                 
                 <div class="personImageGallery">
                   <div class="pigMain">
-                    <img id="mainImage2" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="main image">
+                    <img id="mainImageProfile" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="main image">
+                    <span id="zoomInBtnProfile" class="zoomInBtn"><i class="fa-solid fa-maximize"></i></span>
+
+                    <div id="zoomImageContainerProfile" class="zoomImageContainer">
+                      <span id="zicCloseProfile" class="zicClose"><i class="fa-solid fa-xmark"></i></span>
+                        <div class="zoomImageContent">
+                        <div class="zicMain">
+                        <img id="profileSubMain" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="main image">
+                      </div>
+                      <div class="zicSub">
+                        <img onclick="handleProfileImgZoom(this)" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="subImage">
+                        <?php 
+                        if (!empty($logged_user_bio_details['other_img_one'])) {
+                            $imgPath = "./uploads/" . $logged_user_bio_details['other_img_one'];
+                            echo "<img onclick='handleProfileImgZoom(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                        <?php 
+                        if (!empty($logged_user_bio_details['other_img_two'])) {
+                            $imgPath = "./uploads/" . $logged_user_bio_details['other_img_two'];
+                            echo "<img onclick='handleProfileImgZoom(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                        <?php 
+                        if (!empty($logged_user_bio_details['other_img_three'])) {
+                            $imgPath = "./uploads/" . $logged_user_bio_details['other_img_three'];
+                            echo "<img onclick='handleProfileImgZoom(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                                  
+                      </div>
+                        </div>
+                    </div>
                   </div>
                   <div class="pigsub">
-                    <img onclick="handleImage2(this)" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="subImage">
+                    <img onclick="handleProfileImg(this)" src="<?php echo  "./uploads/".$logged_user_bio_details['profile_picture']?>" alt="subImage">
                     <?php 
                     if (!empty($logged_user_bio_details['other_img_one'])) {
                         $imgPath = "./uploads/" . $logged_user_bio_details['other_img_one'];
-                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                        echo "<img onclick='handleProfileImg(this)' src='{$imgPath}' alt='subImage'>";
                     }
                     ?>
                     <?php 
                     if (!empty($logged_user_bio_details['other_img_two'])) {
                         $imgPath = "./uploads/" . $logged_user_bio_details['other_img_two'];
-                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                        echo "<img onclick='handleProfileImg(this)' src='{$imgPath}' alt='subImage'>";
                     }
                     ?>
                     <?php 
                     if (!empty($logged_user_bio_details['other_img_three'])) {
                         $imgPath = "./uploads/" . $logged_user_bio_details['other_img_three'];
-                        echo "<img onclick='handleImage2(this)' src='{$imgPath}' alt='subImage'>";
+                        echo "<img onclick='handleProfileImg(this)' src='{$imgPath}' alt='subImage'>";
                     }
                     ?>
 
@@ -246,8 +269,22 @@
                 <div class="info-section">
                   <h3><i class="fas fa-phone"></i> Contact Details</h3>
                   <ul>
-                    <li><strong>Phone:</strong> <?php echo $logged_user_bio_details["phone"]?></li>
-                    <li><strong>Email:</strong> <?php echo $logged_user_bio_details["email"] ?></li>
+                    <li><strong>Phone:</strong> <?php 
+                      if(isset($logged_user_bio_details["phone"])){
+                        echo $logged_user_bio_details["phone"];
+                      }else{
+                        echo "Sent interest to see";
+                      }
+                    
+                    ?></li>
+                    <li><strong>Email:</strong> <?php 
+                      if(isset($logged_user_bio_details["email"])){
+                        echo $logged_user_bio_details["email"];
+                      }else{
+                        echo "Sent interest to see";
+                      }
+                    
+                    ?></li>
                     <li>
                       <strong>Address:</strong> <?php echo $logged_user_bio_details["present_address"]?>
                     </li>
@@ -256,17 +293,11 @@
                 <div class="info-section warning">
                   <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                 </div>
+                <div class="advertiseSection">
+                  <img src="" alt="advertisement">
+                </div>
                 
-                <!-- Action Buttons -->
-                <!-- <div class="actions">
-
-                  <button class="btn info">
-                    <i class="fas fa-phone"></i> Contact
-                  </button>
-                  <button class="btn danger">
-                    <i class="fas fa-exclamation-triangle"></i> Report
-                  </button>
-                </div> -->
+                
                 </div>
                 </div>
               </div>
@@ -501,7 +532,7 @@
                      ";
                     };
                   } else{
-                    echo "<p>You have no favorites</p>";
+                    echo "<p>You have no interests</p>";
                   }
                  ?>
 
@@ -564,7 +595,7 @@
                      ";
                     };
                   }else{
-                    echo "<p>You have no interest</p>";
+                    echo "<p>You have no favorites</p>";
                   }
                  ?>
 
@@ -776,13 +807,63 @@
                       <i class="fas fa-map-marker-alt"></i> <?php echo $biodata_details["present_address"]?>
                     </p>
                   </div>
+                  <!-- Action Buttons -->
+                <form action='' method='get' class="actions">
+
+                  <button type='submit' value='<?php echo $biodata_details["id"]?>' name='add_favorite'>
+                    <?php
+                      $added_favo = in_array($biodata_details["id"], $ids) ? "Added":"Favorite";
+                      echo $added_favo
+                    ?>
+                  </button>
+                    <button type='submit' value='<?php echo $biodata_details["id"]?>' name='add_interested'> 
+                      <?php
+                       $added_interest = in_array($biodata_details["id"], $int_ids) ? "Interested":"Interest";
+                      echo $added_interested;
+
+                     
+                    ?></button>
+                </form>
                 </div>
+                
                 <div class="personDetailsLowerContainer">
                 <div class="pdlcleft">
                 
                 <div class="personImageGallery">
                   <div class="pigMain">
-                    <img id="mainImage" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="main image">
+                    <img id="mainImageDetails" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="main image">
+                    <span id="zoomInBtnDetails" class="zoomInBtn"><i class="fa-solid fa-maximize"></i></span>
+
+                    <div id="zoomImageContainerDetails" class="zoomImageContainer">
+                      <span id="zicCloseDetails" class="zicClose"><i class="fa-solid fa-xmark"></i></span>
+                        <div class="zoomImageContent">
+                        <div class="zicMain">
+                        <img id="midSubMain" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="main image">
+                      </div>
+                      <div class="zicSub">
+                        <img onclick="handleMid(this)" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="subImage">
+                        <?php 
+                        if (!empty($biodata_details['other_img_one'])) {
+                            $imgPath = "./uploads/" . $biodata_details['other_img_one'];
+                            echo "<img onclick='handleMid(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                        <?php 
+                        if (!empty($biodata_details['other_img_two'])) {
+                            $imgPath = "./uploads/" . $biodata_details['other_img_two'];
+                            echo "<img onclick='handleMid(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                        <?php 
+                        if (!empty($biodata_details['other_img_three'])) {
+                            $imgPath = "./uploads/" . $biodata_details['other_img_three'];
+                            echo "<img onclick='handleMid(this)' src='{$imgPath}' alt='subImage'>";
+                        }
+                        ?>
+                                  
+                      </div>
+                        </div>
+                    </div>
                   </div>
                   <div class="pigsub">
                     <img onclick="handleImage(this)" src="<?php echo  "./uploads/".$biodata_details['profile_picture']?>" alt="subImage">
@@ -881,17 +962,11 @@
                 <div class="info-section warning">
                   <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                 </div>
+                <div class="advertiseSection">
+                  <img src="" alt="advertisement">
+                </div>
                 
-                <!-- Action Buttons -->
-                <!-- <div class="actions">
-
-                  <button class="btn info">
-                    <i class="fas fa-phone"></i> Contact
-                  </button>
-                  <button class="btn danger">
-                    <i class="fas fa-exclamation-triangle"></i> Report
-                  </button>
-                </div> -->
+                
                 </div>
                 </div>
               </div>

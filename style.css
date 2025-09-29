@@ -223,6 +223,15 @@ a {
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
+.actions button {
+  font-size: 14px;
+  padding: 7px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  padding: 7px 10px;
+}
 
 .actionButtons .editButton {
   background-color: #222;
@@ -240,11 +249,27 @@ a {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+.actions button:last-child {
+  background: var(---primaryBackground);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 .actionButtons button:hover {
   opacity: 0.9;
   transform: scale(1.02);
 }
+.actions button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
 .actionButtons button:first-child {
+  background-color: #e91e63;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.actions button:first-child {
   background-color: #e91e63;
   color: white;
   font-weight: 500;
@@ -395,6 +420,15 @@ a {
 /* Person details */
 /* Container */
 .person-details {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* .person-details {
   max-width: 900px;
   margin: auto;
   background: #fff;
@@ -404,16 +438,40 @@ a {
   margin-top: 10px;
   background: var(---secondaryBackground);
   border: 1px solid gainsboro;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
 
 /* Profile Header */
 .profile-header {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 2px solid #eee;
+  /* border-bottom: 2px solid #eee; */
+  padding-bottom: 20px;
+  background: var(---secondaryBackground);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.personDetailsLowerContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  background: var(---secondaryBackground);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.profile-header .actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
 }
 
 .profile-header img {
@@ -443,11 +501,7 @@ a {
 .text-green {
   color: #10b981;
 }
-.personDetailsLowerContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
+
 .personImageGallery {
   width: 100%;
   height: 410px;
@@ -459,6 +513,10 @@ a {
   border-radius: 5px;
   border-bottom: none;
 }
+.pigMain {
+  position: relative;
+}
+
 .pigMain img {
   width: 100%;
   height: 300px;
@@ -480,6 +538,77 @@ a {
 }
 .pdlcright {
   grid-column: span 1;
+}
+.advertiseSection {
+  width: 100%;
+  height: 350px;
+  border: 1px solid var(---primaryColor);
+  border-radius: 3px;
+}
+.advertiseSection img {
+  width: 100%;
+  height: 100%;
+}
+.zoomInBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(---primaryColor);
+}
+
+.zoomImageContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: black;
+  padding-top: 20px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+.zoomImageContent {
+  max-width: 60%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.zicMain {
+  min-height: 70vh;
+  max-height: 70vh;
+}
+.zicMain img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.zicSub {
+  height: 90%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.zicSub img {
+  grid-column: span 1;
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.zicClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 /* Info Sections */
 .info-section {
@@ -2087,5 +2216,9 @@ textarea {
   }
   .personDetailsLowerContainer {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .zoomImageContent {
+    max-width: 95%;
+    margin: 0 auto;
   }
 }
