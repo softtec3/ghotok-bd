@@ -730,11 +730,11 @@
 
               <!-- Plan 4 -->
               <div class="plan-card">
-                <h3>Standard</h3>
+                <h3>Pro</h3>
                 <p class="price">৳500</p>
                 <ul>
                   <li><i class="fas fa-check-circle"></i> 15 Connects</li>
-                  <li><i class="fas fa-check-circle"></i> Premium Support</li>
+                  <li><i class="fas fa-check-circle"></i> Pro Support</li>
                 </ul>
                 <a href="#" class="plan-btn">Buy Now</a>
               </div>
@@ -745,7 +745,7 @@
                 <p class="price">৳1200</p>
                 <ul>
                   <li><i class="fas fa-check-circle"></i> 120 Connects</li>
-                  <li><i class="fas fa-check-circle"></i> VIP Support</li>
+                  <li><i class="fas fa-check-circle"></i> Premium Support</li>
                 </ul>
                 <a href="#" class="plan-btn">Buy Now</a>
               </div>
