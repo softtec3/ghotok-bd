@@ -1,3 +1,7 @@
+<?php
+ include_once("./php/config.php");
+ include_once("./php/get_only_five_bio.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,39 +47,21 @@
     <p class="section-subtitle">Discover newly added members</p>
 
     <div class="profiles-grid">
-      <div class="profile-card">
-        <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?q=80&w=200" alt="Profile">
+      <?php
+        foreach($latest_five_bio as $latest_bio){
+          $img_url = "./uploads/" . $latest_bio["profile_picture"];
+          echo "
+        <div class='profile-card'>
+        <img src='$img_url' alt='Profile'>
         <h3>John Doe</h3>
-        <p>26 yrs • Software Engineer</p>
-        <a href="./home.php" class="view-btn">View Profile</a>
-      </div>
-
-      <div class="profile-card">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=200" alt="Profile">
-        <h3>Jane Smith</h3>
-        <p>24 yrs • Teacher</p>
-        <a href="./home.php" class="view-btn">View Profile</a>
-      </div>
-
-      <div class="profile-card">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200" alt="Profile">
-        <h3>Rahim Khan</h3>
-        <p>29 yrs • Businessman</p>
-        <a href="./home.php" class="view-btn">View Profile</a>
-      </div>
-
-      <div class="profile-card">
-        <img src="https://plus.unsplash.com/premium_photo-1679440415182-c362deb2fd40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
-        <h3>Ayesha Noor</h3>
-        <p>23 yrs • Student</p>
-        <a  href="./home.php" class="view-btn">View Profile</a>
-      </div>
-            <div class="profile-card">
-        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW58ZW58MHx8MHx8fDA%3D" alt="Profile">
-        <h3>John Doe</h3>
-        <p>26 yrs • Software Engineer</p>
-        <a href="./home.php" class="view-btn">View Profile</a>
-      </div>
+        <p>{$latest_bio["age"]} yrs • {$latest_bio["profession"]}</p>
+        <a href='./home.php' class='view-btn'>View Profile</a>
+        </div>
+          
+          
+          ";
+        }
+      ?>
     </div>
   </div>
 </section>
@@ -147,8 +133,8 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="./home.php">Home</a></li>
-          <li><a href="./home.php">Register</a></li>
-          <li><a href="./home.php">Login</a></li>
+          <li><a href="./register.php">Register</a></li>
+          <li><a href="./login.php">Login</a></li>
           <li><a href="./home.php">Rules & Regulations</a></li>
         </ul>
       </div>

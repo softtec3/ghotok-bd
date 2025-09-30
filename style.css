@@ -2399,4 +2399,13 @@ textarea {
     max-width: 95%;
     margin: 0 auto;
   }
+  .formFlex2 {
+    flex-direction: column;
+  }
+  .formFlexImg {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+  }
 }
