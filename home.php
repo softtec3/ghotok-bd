@@ -302,13 +302,14 @@
                     <li>
                       <strong>Address:</strong> <?php echo $logged_user_bio_details["present_address"]?>
                     </li>
+                    <li><strong>District:</strong> <?php echo $logged_user_bio_details["district"]?></li>
                   </ul>
                 </div>
                 <div class="info-section warning">
                   <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                 </div>
                 <div class="advertiseSection">
-                  <img src="" alt="advertisement">
+                  <img src="./uploads/fbpost600-400.jpg" alt="advertisement">
                 </div>
                 
                 
@@ -990,13 +991,14 @@
                     <li>
                       <strong>Address:</strong> <?php echo $biodata_details["present_address"]?>
                     </li>
+                    <li><strong>District:</strong> <?php echo $biodata_details["district"]?></li>
                   </ul>
                 </div>
                 <div class="info-section warning">
                   <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                 </div>
                 <div class="advertiseSection">
-                  <img src="" alt="advertisement">
+                  <img src="./uploads/fbpost600-400.jpg" alt="advertisement">
                 </div>
                 
                 

@@ -16,21 +16,13 @@
             </select>
             <select name="age" id="age">
               <option style="display: none" value="">Age</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
             </select>
             <select name="location">
               <option style="display: none" value="">Location</option>
               <?php
                 if(count($districts)>0){
                   foreach($districts as $district){
-                    echo "<option value='$district[0]'>$district[0]</option>";
+                    echo "<option value='$district'>$district</option>";
                   }
                 }
               ?>
@@ -40,7 +32,7 @@
               <?php
                 if(count($professions)>0){
                   foreach($professions as $profession){
-                    echo "<option value='$profession[0]'>$profession[0]</option>";
+                    echo "<option value='$profession'>$profession</option>";
                   }
                 }
               ?>
@@ -50,7 +42,7 @@
               <?php
                 if(count($heights)>0){
                   foreach($heights as $height){
-                    echo "<option value='$height[0]'>$height[0] ``</option>";
+                    echo "<option value='$height'>$height ``</option>";
                   }
                 }
                 ?>
@@ -82,21 +74,13 @@
       </select>
       <select name="age" id="age2">
         <option style="display: none" value="">Age</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
       </select>
       <select name="location">
         <option style="display: none" value="">Location</option>
         <?php
           if(count($districts)>0){
             foreach($districts as $district){
-              echo "<option value='$district[0]'>$district[0]</option>";
+              echo "<option value='$district'>$district</option>";
             }
           }
         ?>
@@ -106,7 +90,7 @@
        <?php
                 if(count($professions)>0){
                   foreach($professions as $profession){
-                    echo "<option value='$profession[0]'>$profession[0]</option>";
+                    echo "<option value='$profession'>$profession</option>";
                   }
                 }
        ?>
@@ -116,7 +100,7 @@
        <?php
                 if(count($heights)>0){
                   foreach($heights as $height){
-                    echo "<option value='$height[0]'>$height[0] ``</option>";
+                    echo "<option value='$height'>$height ``</option>";
                   }
                 }
        ?>
