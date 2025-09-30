@@ -2285,6 +2285,7 @@ textarea {
   }
   .personDetailsLowerContainer {
     grid-template-columns: repeat(1, 1fr);
+    padding: 5px;
   }
   .zoomImageContent {
     max-width: 95%;

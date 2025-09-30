@@ -80,7 +80,7 @@
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
-      <select name="age" id="age">
+      <select name="age" id="age2">
         <option style="display: none" value="">Age</option>
         <option value="18">18</option>
         <option value="19">19</option>

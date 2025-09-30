@@ -667,12 +667,6 @@
                     <div class="profile-info">
                       <h3>
                         <?php echo $logged_user_bio_details["full_name"]?>
-                        <!-- <span
-                          class="status"
-                          style="color: var(---secondaryColor)"
-                          ><i class="fa-regular fa-circle-xmark"></i>
-                          <?php echo $logged_user_bio_details["status"]?></span
-                        > -->
                       </h3>
 
                       <p><strong>Age:</strong> <?php echo $logged_user_bio_details["age"]?> years</p>

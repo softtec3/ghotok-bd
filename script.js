@@ -3,13 +3,13 @@ const mainDate = new Date().toLocaleString().split(",")[0];
 const getTime = () => {
   const date = new Date().toLocaleString().split(",")[1];
   const exactTime = date.split(" ")[1].split(":");
-  time.innerHTML = `${exactTime[0]}:${exactTime[1]} | ${mainDate
+  time.innerHTML = `Time: ${exactTime[0]}:${exactTime[1]} | ${mainDate
     .split("/")
     .join("-")}`;
 };
 setInterval(() => {
   getTime();
-}, 1000 * 60);
+}, 1000);
 
 // all section show and hide scripts
 const homeSection = document.getElementById("homeSection");
@@ -145,3 +145,19 @@ const alertClose = document.getElementById("alertClose");
 alertClose.addEventListener("click", () => {
   alertContainer.style.display = "none";
 });
+
+// age
+const ageSelect = document.getElementById("age");
+for (let i = 18; i <= 50; i++) {
+  let option = document.createElement("option");
+  option.value = i;
+  option.textContent = i;
+  ageSelect.appendChild(option);
+}
+const ageSelect2 = document.getElementById("age2");
+for (let i = 18; i <= 50; i++) {
+  let option = document.createElement("option");
+  option.value = i;
+  option.textContent = i;
+  ageSelect2.appendChild(option);
+}

@@ -6,7 +6,7 @@
                     <a href="./home.php"><img src="./ghotok-logo.png" alt="logo"></a>
                 </div>
         <div id="time" class="tmbMiddle">
-                   00:00 | 12-12-1912
+                  Time: 00:00 | 12-12-1912
            </div>
            <div class="topBarConnects">
             Connects: <span id="connects"><?php echo $logged_user_details["connects"]?></span>
