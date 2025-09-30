@@ -26,7 +26,6 @@ const notificationSection = document.getElementById("notificationSection");
 const detailsSection = document.getElementById("detailsSection");
 
 const handleShow = (name) => {
-  console.log(name);
   [
     homeSection,
     profileSection,
