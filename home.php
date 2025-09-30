@@ -17,6 +17,7 @@
   include_once("./php/user_favorites.php");
   include_once("./php/user_interested.php");
   include_once("./php/single_biodata_details.php");
+  include_once("./php/common_details.php");
 ?>
 
 <!DOCTYPE html>
@@ -122,9 +123,19 @@
             </div>
             <!-- Profile section -->
             <div id="profileSection" style="display: none">
-            
-
-              <div class="person-details">
+              <?php
+                if(empty($logged_user_bio_details['full_name'])){
+                  echo "<div class='updateBioText'>Please update your bio data first <button onclick=\"handleShow('updateBio')\">Update</button></div> ";
+                }
+              ?>
+              
+              <div style="display: <?php
+                if(empty($logged_user_bio_details['full_name'])){
+                  echo "none";
+                }else{
+                  echo "flex";
+                }
+              ?>;" class="person-details">
                 <!-- Profile Header -->
                 <div class="profile-header">
                   <img
@@ -229,6 +240,8 @@
                     <li><strong>Height:</strong> <?php echo $logged_user_bio_details["height"]?></li>
                     <li><strong>Gender:</strong> <?php echo $logged_user_bio_details["gender"]?></li>
                     <li><strong>Marital Status:</strong> <?php echo $logged_user_bio_details["marital_status"]?></li>
+                    <li><strong>Father's Name:</strong> <?php echo $logged_user_bio_details["fathers_name"]?> <span> <?php if($logged_user_bio_details["fathers_status"] != "alive") echo "&#40;" . $logged_user_bio_details["fathers_status"] . "&#41;"?></span></li>
+                    <li><strong>Mother's Name:</strong> <?php echo $logged_user_bio_details["mothers_name"]?> <span> <?php if($logged_user_bio_details["mothers_status"] != "alive") echo "&#40;" . $logged_user_bio_details["mothers_status"] . "&#41;"?></span></li>
                   </ul>
                 </div>
 
@@ -252,6 +265,7 @@
                   <h3><i class="fas fa-users"></i> Family Details</h3>
                   <ul>
                     <li><strong>Siblings:</strong> — <?php echo $logged_user_bio_details["siblings"]?></li>
+                    <li><strong>Position Among Siblings:</strong> — <?php echo $logged_user_bio_details["child_order"]?></li>
                   </ul>
                 </div>
                 <!-- Quick Intro -->
@@ -410,10 +424,10 @@
                     <input type="text" name="mothers_occupation" required value="<?php echo $logged_user_bio_details['mothers_occupation']?>"/>
 
                     <label>Siblings</label>
-                    <input type="number" name="siblings" required value="<?php echo $logged_user_bio_details['siblings']?>"/>
+                    <input type="number" name="siblings" required min="0" value="<?php echo $logged_user_bio_details['siblings']?>"/>
 
                     <label>Position Among Siblings</label>
-                    <input type="number" name="child_order" required value="<?php echo $logged_user_bio_details['child_order'] ?? ""?>"/>
+                    <input type="number" name="child_order" required min='0' value="<?php echo $logged_user_bio_details['child_order'] ?? ""?>"/>
                   </fieldset>
 
                   <!-- Contact Information -->
@@ -441,11 +455,12 @@
                       name="preferred_age"
                       placeholder="e.g. 22 - 30"
                       required
+                      min="0"
                       value="<?php echo $logged_user_bio_details['preferred_age']?>"
                     />
 
                     <label>Preferred Height</label>
-                    <input type="number" step="any" name="preferred_height" required value="<?php echo $logged_user_bio_details['preferred_height']?>" />
+                    <input type="number" step="any" name="preferred_height" min="0" required value="<?php echo $logged_user_bio_details['preferred_height']?>" />
 
                     <label>Preferred Education</label>
                     <input type="text" name="preferred_education"  required value="<?php echo $logged_user_bio_details['preferred_education']?>"/>
@@ -505,7 +520,7 @@
                   <?php
                   if($all_interested_biodata && count($all_interested_biodata)>0){
                      foreach($all_interested_biodata as $biodata){
-                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_name = substr($biodata['full_name'], 0, 5);
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                      echo "
@@ -568,7 +583,7 @@
                   <?php
                   if($all_favorites_biodata && count($all_favorites_biodata)>0){
                      foreach($all_favorites_biodata as $biodata){
-                      $short_name = substr($biodata['full_name'], 0, 8);
+                      $short_name = substr($biodata['full_name'], 0, 5);
                       $short_profession = substr($biodata['profession'], 0, 5);
                       $biodata_json = json_encode($biodata);
                       $added_interested_already = in_array($biodata["id"], $int_ids) ? "Interested":"Interest";
@@ -708,8 +723,8 @@
             </div>
 
             <!-- Buy connects section -->
-        <div id="buyConnectsSection" style="display: none">
-          <section class="buy-connects">
+          <div id="buyConnectsSection" style="display: none">
+             <section class="buy-connects">
             <h2 class="section-title">Buy Connects</h2>
             <p class="section-sub">
               Choose a plan and unlock opportunities to connect with more profiles.
@@ -773,7 +788,6 @@
               </div>
             </div>
           </section>
-
             </div>
 
             <!-- notification section -->
@@ -839,7 +853,7 @@
                     <button type='submit' value='<?php echo $biodata_details["id"]?>' name='add_interested'> 
                       <?php
                        $added_interest = in_array($biodata_details["id"], $int_ids) ? "Interested":"Interest";
-                      echo $added_interested;
+                      echo $added_interest;
 
                      
                     ?></button>
@@ -918,6 +932,10 @@
                     <li><strong>Height:</strong> <?php echo $biodata_details["height"]?></li>
                     <li><strong>Gender:</strong> <?php echo $biodata_details["gender"]?></li>
                     <li><strong>Marital Status:</strong> <?php echo $biodata_details["marital_status"]?></li>
+                    <li><strong>Father's Name:</strong> <?php echo $biodata_details["fathers_name"]?> <span> <?php if($biodata_details["fathers_status"] != "alive") echo "&#40;" . $biodata_details["fathers_status"] . "&#41;"?></span></li>
+                    <li><strong>Father's Occupation:</strong> <?php echo $biodata_details["fathers_occupation"]?></li>
+                    <li><strong>Mother's Name:</strong> <?php echo $biodata_details["mothers_name"]?> <span> <?php if($biodata_details["mothers_status"] != "alive") echo "&#40;" . $biodata_details["mothers_status"] . "&#41;"?></span></li>
+                    <li><strong>Mother's Occupation:</strong> <?php echo $biodata_details["mothers_occupation"]?></li>
                   </ul>
                 </div>
 
@@ -941,6 +959,7 @@
                   <h3><i class="fas fa-users"></i> Family Details</h3>
                   <ul>
                     <li><strong>Siblings:</strong> — <?php echo $biodata_details["siblings"]?></li>
+                    <li><strong>Position Among Siblings:</strong> — <?php echo $biodata_details["child_order"]?></li>
                   </ul>
                 </div>
                 <!-- Quick Intro -->
@@ -960,17 +979,17 @@
                   <ul>
                     <li><strong>Phone:</strong> <?php 
                       if(isset($biodata_details["phone"])){
-                        echo $biodata_details["phone"];
+                        echo "<a href='tel:{$biodata_details["phone"]}'>{$biodata_details["phone"]}</a>";
                       }else{
-                        echo "Sent interest to see";
+                        echo "01xxxxxxxxx <a class='viewBtn' href='./home.php?add_interested={$biodata_details["id"]}'>View</a>";
                       }
                     
                     ?></li>
                     <li><strong>Email:</strong> <?php 
                       if(isset($biodata_details["email"])){
-                        echo $biodata_details["email"];
+                       echo "<a href='mailto:{$biodata_details["email"]}'>{$biodata_details["email"]}</a>";
                       }else{
-                        echo "Sent interest to see";
+                        echo "xxx@xxxx <a class='viewBtn' href='./home.php?add_interested={$biodata_details["id"]}'>View</a>";
                       }
                     
                     ?></li>

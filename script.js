@@ -2,15 +2,14 @@ let time = document.getElementById("time");
 const mainDate = new Date().toLocaleString().split(",")[0];
 const getTime = () => {
   const date = new Date().toLocaleString().split(",")[1];
-  const zone = date.split(" ")[2];
   const exactTime = date.split(" ")[1].split(":");
-  time.innerHTML = `${exactTime[0]}:${exactTime[1]} ${zone} | ${mainDate
+  time.innerHTML = `${exactTime[0]}:${exactTime[1]} | ${mainDate
     .split("/")
     .join("-")}`;
 };
 setInterval(() => {
   getTime();
-}, 1000);
+}, 1000 * 60);
 
 // all section show and hide scripts
 const homeSection = document.getElementById("homeSection");

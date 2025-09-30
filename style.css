@@ -438,7 +438,7 @@ a {
 .person-details {
   max-width: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -527,7 +527,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
-  border-bottom: none;
 }
 .pigMain {
   position: relative;
@@ -625,6 +624,10 @@ a {
   font-size: 30px;
   cursor: pointer;
   color: white;
+}
+.viewBtn {
+  color: var(---primaryColor);
+  font-weight: bold;
 }
 /* Info Sections */
 .info-section {
@@ -926,6 +929,21 @@ textarea {
 }
 .formFlex input {
   width: 100%;
+}
+.updateBioText {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.updateBioText button {
+  padding: 7px 10px;
+  border: none;
+  background: var(---primaryBackground);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
 }
 /* Favorite page */
 .sideBarProfile {

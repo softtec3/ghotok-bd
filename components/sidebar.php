@@ -58,7 +58,7 @@
         </tr>
         <tr>
           <td>HEIGHT:</td>
-          <td><?php echo $logged_user_bio_details['height'];?></td>
+          <td><?php echo $logged_user_bio_details['height'];?> ``</td>
         </tr>
       </table>
     </div>

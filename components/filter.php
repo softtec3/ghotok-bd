@@ -1,3 +1,5 @@
+<?php
+?>
 <div>
   <div class="filter">
     <h2>Home</h2>
@@ -25,28 +27,33 @@
             </select>
             <select name="location">
               <option style="display: none" value="">Location</option>
-              <option value="dhaka">Dhaka</option>
-              <option value="jashore">Jashore</option>
-              <option value="rajshahi">Rajshahi</option>
-              <option value="khulna">Khulna</option>
-              <option value="barishal">Barishal</option>
+              <?php
+                if(count($districts)>0){
+                  foreach($districts as $district){
+                    echo "<option value='$district[0]'>$district[0]</option>";
+                  }
+                }
+              ?>
             </select>
             <select name="profession" id="profession">
               <option style="display: none" value="">Profession</option>
-              <option value="Teacher">Teacher</option>
-              <option value="Doctor">Doctor</option>
-              <option value="Engineer">Engineer</option>
-              <option value="Businessman">Businessman</option>
-              <option value="Shopkeeper">Shopkepper</option>
+              <?php
+                if(count($professions)>0){
+                  foreach($professions as $profession){
+                    echo "<option value='$profession[0]'>$profession[0]</option>";
+                  }
+                }
+              ?>
             </select>
             <select name="height" id="height">
               <option style="display: none" value="">Height</option>
-              <option value="5.5">5.5 FT</option>
-              <option value="5.6">5.6 FT</option>
-              <option value="5.7">5.7 FT</option>
-              <option value="5.8">5.8 FT</option>
-              <option value="5.9">5.9 FT</option>
-              <option value="6">6 FT</option>
+              <?php
+                if(count($heights)>0){
+                  foreach($heights as $height){
+                    echo "<option value='$height[0]'>$height[0] ``</option>";
+                  }
+                }
+                ?>
             </select>
             <!-- <select name="religion" id="religion">
               <option style="display: none" value="">Religion</option>
@@ -86,28 +93,33 @@
       </select>
       <select name="location">
         <option style="display: none" value="">Location</option>
-        <option value="dhaka">Dhaka</option>
-        <option value="jashore">Jashore</option>
-        <option value="rajshahi">Rajshahi</option>
-        <option value="khulna">Khulna</option>
-        <option value="barishal">Barishal</option>
+        <?php
+          if(count($districts)>0){
+            foreach($districts as $district){
+              echo "<option value='$district[0]'>$district[0]</option>";
+            }
+          }
+        ?>
       </select>
       <select name="profession" id="profession">
         <option style="display: none" value="">Profession</option>
-        <option value="Teacher">Teacher</option>
-        <option value="Doctor">Doctor</option>
-        <option value="Engineer">Engineer</option>
-        <option value="Businessman">Businessman</option>
-        <option value="Shopkeeper">Shopkepper</option>
+       <?php
+                if(count($professions)>0){
+                  foreach($professions as $profession){
+                    echo "<option value='$profession[0]'>$profession[0]</option>";
+                  }
+                }
+       ?>
       </select>
       <select name="height" id="height">
         <option style="display: none" value="">Height</option>
-        <option value="5.5">5.5 FT</option>
-        <option value="5.6">5.6 FT</option>
-        <option value="5.7">5.7 FT</option>
-        <option value="5.8">5.8 FT</option>
-        <option value="5.9">5.9 FT</option>
-        <option value="6">6 FT</option>
+       <?php
+                if(count($heights)>0){
+                  foreach($heights as $height){
+                    echo "<option value='$height[0]'>$height[0] ``</option>";
+                  }
+                }
+       ?>
       </select>
       <!-- <select name="religion" id="religion">
         <option style="display: none" value="">Religion</option>
