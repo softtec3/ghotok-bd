@@ -44,6 +44,11 @@
     <title>Ghotok BD</title>
   </head>
   <body>
+    <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
     <div id="container">
 
       <!-- Advertise Container 01 -->
