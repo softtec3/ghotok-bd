@@ -161,3 +161,23 @@ for (let i = 18; i <= 50; i++) {
   option.textContent = i;
   ageSelect2.appendChild(option);
 }
+
+// Update bio images
+const profilePic = document.getElementById("profilePic");
+const otherImgOne = document.getElementById("otherImgOne");
+const otherImgTwo = document.getElementById("otherImgTwo");
+const otherImgThree = document.getElementById("otherImgThree");
+const handleImgChange = (e) => {
+  const targetName = e.name;
+  let imgURL = URL.createObjectURL(e.files[0]);
+  console.log(imgURL);
+  if (targetName == "profile_picture") {
+    profilePic.src = imgURL;
+  } else if (targetName == "other_img_one") {
+    otherImgOne.src = imgURL;
+  } else if (targetName == "other_img_two") {
+    otherImgTwo.src = imgURL;
+  } else if (targetName == "other_img_three") {
+    otherImgThree.src = imgURL;
+  }
+};

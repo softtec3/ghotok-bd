@@ -473,11 +473,22 @@
                   <!-- Profile Image -->
                   <fieldset>
                     <legend>Images</legend>
+                    <div class="formFlex2">
+
+                    <img id="profilePic" class="formFlexImg" src="<?php
+                      $img_url = "./placeholder.jpg";
+                      if($logged_user_bio_details['profile_picture']){
+                        $img_url = "./uploads/" . $logged_user_bio_details['profile_picture'];
+                      }
+                      echo $img_url;
+                    ?>" alt="">
+                    <div>
                     <label for="profile_picture">Profile Picture</label>
                     <input
                       type="file"
                       name="profile_picture"
                       accept="image/*"
+                      onchange="handleImgChange(this)"
                    <?php 
                    if($logged_user_bio_details['profile_picture']){
                     echo "";
@@ -485,29 +496,69 @@
                     echo "required";
                    }
                    ?>
-                    />
+                    /></div></div>
+                    <div class="formFlex2">
+                   <img id="otherImgOne" class="formFlexImg" src="<?php
+                      $img_url = "./placeholder.jpg";
+                      if($logged_user_bio_details['other_img_one']){
+                        $img_url = "./uploads/" . $logged_user_bio_details['other_img_one'];
+                      }
+                      echo $img_url;
+                    ?>" alt="">
+                    
+                    <div>
+
+                   
                     <label for="other_img_one">Other Image 1</label>
                       <input
                       type="file"
                       name="other_img_one"
                       accept="image/*"
-                      />
+                      onchange="handleImgChange(this)"
+                      /> </div></div>
+                     
+                      <div  class="formFlex2">
+                      <img id="otherImgTwo" class="formFlexImg" src="<?php
+                      $img_url = "./placeholder.jpg";
+                      if($logged_user_bio_details['other_img_two']){
+                        $img_url = "./uploads/" . $logged_user_bio_details['other_img_two'];
+                      }
+                      echo $img_url;
+                    ?>" alt="">
+                      
+                    <div>
+
+                   
                     <label for="other_img_two">Other Image 2</label>
                       <input
                       type="file"
                       name="other_img_two"
                       accept="image/*"
-                      />
+                      onchange="handleImgChange(this)"
+                      /> </div></div>
+                      
+                    
+                      <div class="formFlex2">
+                        <img id="otherImgThree" class="formFlexImg" src="<?php
+                      $img_url = "./placeholder.jpg";
+                      if($logged_user_bio_details['other_img_three']){
+                        $img_url = "./uploads/" . $logged_user_bio_details['other_img_three'];
+                      }
+                      echo $img_url;
+                    ?>" alt="">
+                    <div>
                     <label for="other_img_three">Other Image 3</label>
                       <input
                       type="file"
                       name="other_img_three"
                       accept="image/*"
+                      onchange="handleImgChange(this)"
                       />
+                      </div></div>
                   </fieldset>
 
                   <!-- Submit -->
-                  <button type="submit">Register</button>
+                  <button type="submit">Update</button>
                 </form>
               </div>
             </div>
