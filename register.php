@@ -78,6 +78,22 @@
           <option value="friend">Friend</option>
         </select>
       </div>
+      <div class="form-group">
+        <p style="font-weight: bold;">Security Questions</p>
+      </div>
+
+        <div class="form-group">
+        <label for="security_ques_one">What is the name of your first school?</label>
+        <input type="text" id="email" name="security_ques_one" placeholder="Enter your answer" required>
+      </div>
+        <div class="form-group">
+        <label for="security_ques_two">What was the name of your first pet?</label>
+        <input type="text" id="email" name="security_ques_two" placeholder="Enter your answer" required>
+      </div>
+        <div class="form-group">
+        <label for="security_ques_three">What city were you born in?</label>
+        <input type="text" id="email" name="security_ques_three" placeholder="Enter your answer" required>
+      </div>
 
       <!-- Submit -->
       <button type="submit" class="register-btn">Register</button>

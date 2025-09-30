@@ -6,12 +6,15 @@
         $gender = $_POST["gender"];
         $looking_for = $_POST["looking_for"];
         $role = $_POST["role"];
+        $security_ques_one= $_POST["security_ques_one"];
+        $security_ques_two= $_POST["security_ques_two"];
+        $security_ques_three= $_POST["security_ques_three"];
         
         $find_user = $conn->query("SELECT user_id FROM users WHERE user_id='$user_id'");
         if($find_user->rowCount()>0){
             $checking = "Already registered. Please";
         }else{
-        $create_user = $conn->query("INSERT INTO users(`user_id`,`password`, `gender`, `looking_for`, `role`) VALUES ('$user_id', '$password', '$gender', '$looking_for', '$role')");
+        $create_user = $conn->query("INSERT INTO users(`user_id`,`password`, `gender`, `looking_for`, `role`, `security_ques_one`, `security_ques_two`, `security_ques_three`) VALUES ('$user_id', '$password', '$gender', '$looking_for', '$role', '$security_ques_one', '$security_ques_two', '$security_ques_three')");
         $create_biodata = $conn->query("INSERT INTO biodatas(`user_id`) VALUES ('$user_id')");
         if($create_user && $create_biodata){
             // header("Location: ./login.php");

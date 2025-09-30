@@ -5,6 +5,7 @@
         header("Location: ./home.php");
         exit();
         };
+  include_once("./php/forget_pass.php");
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@
         <input type="text" id="email" name="user_id" placeholder="Enter your email or phone" required>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label class="passLabel" for="password"><span>Password</span> <button type="button" id="forgetPassBtn">Forget password?</button></label>
         <input type="password" id="password" name="password" placeholder="Enter your password" required>
       </div>
       <button type="submit" class="login-btn">Login</button>
@@ -47,7 +48,62 @@
       Don’t have an account? <a href="./register.php">Register here</a>
     </p>
   </div>
-</div>
+  <div id="forgetPassContainer">
+    <div class="forgetPassContent">
+      <span id="forgetPassContainerCloseBtn"><i class="fa-solid fa-xmark"></i></span>
+    <!-- <p>Please contact with our support team with your valid information. They will help you to retrieve your password.</p>
+    <a href="tel:
+    +8801355885588">Call Us: 
+    +8801355885588</a> -->
+    <form action="" method="POST">
 
+      <div class="form-group">
+        <label for="forget_user_id">Email / Phone</label>
+        <input type="text"  name="forget_user_id" placeholder="Enter your email or phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="security_ques_one">What is the name of your first school?</label>
+        <input type="text"  name="security_ques_one" placeholder="Enter your answer" required>
+      </div>
+
+      <div class="form-group">
+        <label for="security_ques_two">What was the name of your first pet?</label>
+        <input type="text"  name="security_ques_two" placeholder="Enter your answer" required>
+      </div>
+
+      <div class="form-group">
+        <label for="security_ques_three">What city were you born in?</label>
+        <input type="text"  name="security_ques_three" placeholder="Enter your answer" required>
+      </div>
+
+      <div class="form-group">
+        <label for="forget_new_pass">New Password</label>
+        <input type="text"  name="forget_new_pass" placeholder="Enter new password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Submit</button>
+    </form>
+    </div>
+  </div>
+</div>
+<script>
+  // forget password
+    const forgetPassContainer = document.getElementById("forgetPassContainer");
+    const forgetPassBtn = document.getElementById("forgetPassBtn");
+    const forgetPassContainerCloseBtn = document.getElementById(
+      "forgetPassContainerCloseBtn"
+    );
+
+    forgetPassBtn.addEventListener("click", () => {
+      console.log("clicked")
+      forgetPassContainer.style.transform = "scale(1)";
+    });
+    forgetPassContainerCloseBtn.addEventListener("click", () => {
+      console.log("clicked")
+      forgetPassContainer.style.transform = "scale(0)";
+    });
+
+</script>
 </body>
 </html>

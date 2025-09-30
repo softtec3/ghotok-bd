@@ -1060,6 +1060,56 @@ textarea {
 .register-card {
   position: relative; /* so the icon stays inside */
 }
+.passLabel {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.passLabel button {
+  color: var(---primaryColor);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+#forgetPassContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  transition: transform 0.1s;
+}
+.forgetPassContent {
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  width: 450px;
+  gap: 10px;
+  position: relative;
+  border: 1px solid var(---primaryColor);
+}
+.forgetPassContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.forgetPassContent a {
+  color: var(---primaryColor);
+  font-weight: bold;
+}
+#forgetPassContainerCloseBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: var(---primaryColor);
+}
 /* Registration page */
 .register-container {
   display: flex;
