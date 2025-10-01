@@ -49,11 +49,12 @@
     <div class="profiles-grid">
       <?php
         foreach($latest_five_bio as $latest_bio){
+          $short_name = substr($latest_bio["full_name"],0,7);
           $img_url = "./uploads/" . $latest_bio["profile_picture"];
           echo "
         <div class='profile-card'>
         <img src='$img_url' alt='Profile'>
-        <h3>John Doe</h3>
+        <h3>{$short_name}...</h3>
         <p>{$latest_bio["age"]} yrs • {$latest_bio["profession"]}</p>
         <a href='./home.php' class='view-btn'>View Profile</a>
         </div>
