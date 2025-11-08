@@ -1,8 +1,8 @@
 <?php
-    include("./config.php");
+include("./config.php");
 
-    // Users table
-    $sql_users = "CREATE TABLE IF NOT EXISTS users(
+// Users table
+$sql_users = "CREATE TABLE IF NOT EXISTS users(
 	id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(20) NOT NULL,
@@ -17,14 +17,14 @@
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
-    if($conn->query($sql_users)){
-        echo "users table created or already exist <br/>";
-    }else{
-       echo "Error creating users table <br/>";
-    };
+if ($conn->query($sql_users)) {
+    echo "users table created or already exist <br/>";
+} else {
+    echo "Error creating users table <br/>";
+};
 
-    // bio-data table
-    $sql_bioDatas = "CREATE TABLE IF NOT EXISTS biodatas(
+// bio-data table
+$sql_bioDatas = "CREATE TABLE IF NOT EXISTS biodatas(
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50) UNIQUE NOT NULL,
     full_name VARCHAR(50) DEFAULT NULL,
@@ -65,14 +65,14 @@
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 )";
 
-    if($conn->query($sql_bioDatas)){
-        echo "Bio-datas table created or already exist <br/>";
-    }else{
-       echo "Error creating users table <br/>";
-    };
+if ($conn->query($sql_bioDatas)) {
+    echo "Bio-datas table created or already exist <br/>";
+} else {
+    echo "Error creating users table <br/>";
+};
 
-    // Favorites table
-    $sql_favorites = "CREATE TABLE IF NOT EXISTS favorites(
+// Favorites table
+$sql_favorites = "CREATE TABLE IF NOT EXISTS favorites(
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50) NOT NULL,
     biodata_id INT NOT NULL,
@@ -81,14 +81,14 @@
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 )";
 
-    if($conn->query($sql_favorites)){
-        echo "Favorites table created or already exist <br/>";
-    }else{
-       echo "Error creating favorite table <br/>";
-    };
+if ($conn->query($sql_favorites)) {
+    echo "Favorites table created or already exist <br/>";
+} else {
+    echo "Error creating favorite table <br/>";
+};
 
-    // Interested Table
-    $sql_interested = "CREATE TABLE IF NOT EXISTS interested(
+// Interested Table
+$sql_interested = "CREATE TABLE IF NOT EXISTS interested(
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(50) NOT NULL,
     biodata_id INT NOT NULL,
@@ -97,10 +97,27 @@
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
     )";
 
-    if($conn->query($sql_interested)){
-        echo "Interested table created or already exist <br/>";
-    }else{
-       echo "Error creating interested table <br/>";
-    };
-    
-?>
+if ($conn->query($sql_interested)) {
+    echo "Interested table created or already exist <br/>";
+} else {
+    echo "Error creating interested table <br/>";
+};
+// transactions Table
+$sql_transactions = "CREATE TABLE IF NOT EXISTS transactions (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    user_id varchar(100) NOT NULL,
+    txn_id TEXT NOT NULL,
+    txn_date timestamp DEFAULT CURRENT_TIMESTAMP,
+    payment_for varchar(100) DEFAULT NULL,
+    interested_id int DEFAULT NULL,
+    merchant_invoice varchar(100) DEFAULT NULL,
+    status ENUM('success','pending', 'failed','cancel') DEFAULT 'pending',
+    amount int NOT NULL DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+)";
+
+if ($conn->query($sql_transactions)) {
+    echo "transactions table created or already exist <br/>";
+} else {
+    echo "Error creating transactions table <br/>";
+};

@@ -1,70 +1,72 @@
 <?php
-  
+
 ?>
 
 <div id="sideBar" class="sidebarCloseAnimation">
-  <div class="connects">Connects: <span id="connect"><?php echo $logged_user_details["connects"]?></span></div>
+  <div class="connects">Connects: <span id="connect"><?php echo $logged_user_details["connects"] ?></span></div>
   <div class="sideBarProfile">
     <img
-      src="<?php 
-      $url ="placeholder.jpg";
-        if($logged_user_bio_details["profile_picture"]){
-          $url = "./uploads/". $logged_user_bio_details['profile_picture'];
-        };
-          echo $url;
-        ?>"
-      alt="profile image"
-    />
-    <span class="<?php 
-      if($logged_user_bio_details['status'] == "inactive"){
-        echo "status";
-      }else{
-        echo "statusGreen";
-      }
-    ?>"
-      ><i class="fa-regular <?php 
-      if($logged_user_bio_details['status'] == "inactive"){
-        echo "fa-circle-xmark";
-      }else{
-        echo "fa-circle-check";
-      }
-    ?>"></i> <?php echo $logged_user_bio_details['status'];?></span
-    >
+      src="<?php
+            $url = "placeholder.jpg";
+            if ($logged_user_bio_details["profile_picture"]) {
+              $url = "./uploads/" . $logged_user_bio_details['profile_picture'];
+            };
+            echo $url;
+            ?>"
+      alt="profile image" />
+    <span class="<?php
+                  if ($logged_user_bio_details['status'] == "inactive") {
+                    echo "status";
+                  } else {
+                    echo "statusGreen";
+                  }
+                  ?>"><i class="fa-regular <?php
+                                            if ($logged_user_bio_details['status'] == "inactive") {
+                                              echo "fa-circle-xmark";
+                                            } else {
+                                              echo "fa-circle-check";
+                                            }
+                                            ?>"></i> <?php echo $logged_user_bio_details['status']; ?></span>
 
     <p style="<?php
-      if(!empty($logged_user_bio_details['full_name'])){
-        echo "display:none";
-      };
-    ?>">Please Update bio-data</p>
+              if (!empty($logged_user_bio_details['full_name'])) {
+                echo "display:none";
+              };
+              ?>">Please Update bio-data</p>
     <div class="description" style="<?php
-      if(empty($logged_user_bio_details['full_name'])){
-        echo "display:none";
-      };
-    ?>">
+                                    if (empty($logged_user_bio_details['full_name'])) {
+                                      echo "display:none";
+                                    };
+                                    ?>">
       <table>
         <tr>
           <td>ID:</td>
           <td style="color: var(---secondaryColor); font-weight: bold">
-            <?php echo $logged_user_bio_details['id'];?>
+            <?php echo $logged_user_bio_details['id']; ?>
           </td>
         </tr>
         <tr>
           <td>Name:</td>
-          <td><?php echo $logged_user_bio_details['full_name'];?></td>
+          <td><?php echo $logged_user_bio_details['full_name']; ?></td>
         </tr>
         <tr>
           <td>AGE:</td>
-          <td><?php echo $logged_user_bio_details['age'];?> years</td>
+          <td><?php echo $logged_user_bio_details['age']; ?> years</td>
         </tr>
         <tr>
           <td>HEIGHT:</td>
-          <td><?php echo $logged_user_bio_details['height'];?> ``</td>
+          <td><?php echo $logged_user_bio_details['height']; ?> ``</td>
         </tr>
       </table>
     </div>
     <div class="actionButtons">
       <button onclick="handleShow('updateBio')" class="editButton" style="background-color: black;">Edit</button>
-      <button id="publishBtn">Publish</button>
+      <?php
+      if ($logged_user_bio_details["status"] != "active") {
+        echo "<button id='publishBtn'>Publish</button>";
+      }
+      ?>
+
     </div>
   </div>
   <div class="sideBarLinks">
@@ -90,11 +92,11 @@
       <div class="charges-box">
         <h3>Publishing Charges</h3>
         <ul>
-          <li><i class="fas fa-check-circle"></i> Standard Publish: <?php if($role == "ghotok"){
-            echo "1200";
-            }else{
-              echo "500";
-            }?> ৳</li>
+          <li><i class="fas fa-check-circle"></i> Standard Publish: <?php if ($role == "ghotok") {
+                                                                      echo "1200";
+                                                                    } else {
+                                                                      echo "500";
+                                                                    } ?> ৳</li>
           <!-- <li><i class="fas fa-check-circle"></i> Featured Publish (highlighted profile): 1000৳</li> -->
         </ul>
       </div>
@@ -105,7 +107,7 @@
         visibility.
       </p>
 
-      <a href="./home.php" id="payBtn">Proceed to Payment</a>
+      <a href="#" id="payBtn">Proceed to Payment</a>
     </div>
   </div>
   <div id="sidebarClose">
@@ -114,6 +116,46 @@
 </div>
 
 <script>
+  // handle profile publish payment
+  const payAmount = <?php if ($role == "ghotok") {
+                      echo "1200";
+                    } else {
+                      echo "500";
+                    } ?>;
+  const user_id = <?php echo '"' . $user_id . '"' ?>;
+  document.getElementById("payBtn").addEventListener("click", async () => {
+    try {
+      // Step 1: Get or refresh token automatically
+      const tokenRes = await fetch("../payment/get_token.php");
+      const tokenData = await tokenRes.json();
+      const id_token = tokenData.id_token;
+
+      // Step 2: Create payment
+      const createRes = await fetch("../payment/create_payment.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          id_token,
+          amount: payAmount.toString(),
+          user_id: user_id.trim(),
+          payment_for: "biodata",
+        }),
+      });
+      const createData = await createRes.json();
+
+      if (createData.bkashURL) {
+        window.location.href = createData.bkashURL; // Redirect to bKash
+      } else {
+        alert("Error creating payment: " + JSON.stringify(createData));
+      }
+    } catch (err) {
+      alert("Error: " + err);
+      // console.log(err)
+    }
+  });
+
   // Sidebar close and open
   const sideBar = document.getElementById("sideBar");
   const sideBarCloseBtn = document.getElementById("sidebarClose");
