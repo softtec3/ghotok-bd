@@ -35,6 +35,7 @@ include_once("./php/all_advertisements.php");
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
