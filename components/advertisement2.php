@@ -1,3 +1,9 @@
 <div id="advertise2">
-        <a href="" target="_blank"><img src="https://admin.ghotok.soft-techtechnology.com/uploads/ad.jpg" alt="advertisement 1"></a>
+        <?php
+        if (!empty($all_advertisement[1]['ad_link']) && !empty($all_advertisement[1]['ad_image'])) {
+                echo "<a href='{$all_advertisement[1]['ad_link']}' target='_blank'>
+            <img src='https://admin.ghotok.soft-techtechnology.com/{$all_advertisement[1]['ad_image']}' alt='advertisement 2'>
+          </a>";
+        }
+        ?>
 </div>

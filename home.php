@@ -18,6 +18,7 @@ include_once("./php/user_favorites.php");
 include_once("./php/user_interested.php");
 include_once("./php/single_biodata_details.php");
 include_once("./php/common_details.php");
+include_once("./php/all_advertisements.php");
 ?>
 
 <!DOCTYPE html>
@@ -313,7 +314,13 @@ include_once("./php/common_details.php");
                     <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                   </div>
                   <div class="advertiseSection">
-                    <img src="./uploads/fbpost600-400.jpg" alt="advertisement">
+                    <?php
+                    if (!empty($all_advertisement[2]['ad_link']) && !empty($all_advertisement[2]['ad_image'])) {
+                      echo "<a href='{$all_advertisement[2]['ad_link']}' target='_blank'>
+            <img src='https://admin.ghotok.soft-techtechnology.com/{$all_advertisement[2]['ad_image']}' alt='advertisement 3'>
+          </a>";
+                    }
+                    ?>
                   </div>
 
 
@@ -1058,7 +1065,13 @@ include_once("./php/common_details.php");
                     <p>⚠️ Please verify profiles carefully—never share sensitive information; we are not responsible for any misuse or false representation.</p>
                   </div>
                   <div class="advertiseSection">
-                    <img src="./uploads/fbpost600-400.jpg" alt="advertisement">
+                    <?php
+                    if (!empty($all_advertisement[2]['ad_link']) && !empty($all_advertisement[2]['ad_image'])) {
+                      echo "<a href='{$all_advertisement[2]['ad_link']}' target='_blank'>
+            <img src='https://admin.ghotok.soft-techtechnology.com/{$all_advertisement[2]['ad_image']}' alt='advertisement 3'>
+          </a>";
+                    }
+                    ?>
                   </div>
 
 
