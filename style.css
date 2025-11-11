@@ -29,14 +29,48 @@ a {
   grid-template-columns: repeat(12, 1fr);
   gap: 10px;
 }
+
 #advertise1 {
   grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#advertise1 a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#advertise1 img {
+  width: 95%;
+  max-height: 600px;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 1px solid var(---secondaryColor);
+  border-radius: 3px;
 }
 
 #advertise2 {
   grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+#advertise2 a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#advertise2 img {
+  width: 95%;
+  max-height: 600px;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 1px solid var(---secondaryColor);
+  border-radius: 3px;
+}
 #main {
   grid-column: span 8;
   border: 1px solid var(---secondaryColor);

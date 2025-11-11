@@ -35,7 +35,7 @@ $inserted_transactions = $conn->query($sql);
 
 $payload = json_encode([
     'payerReference' => $user_id, //need to change with customer user_id
-    'callbackURL' => 'http://localhost/payment/callback.php', //need to change with real domain
+    'callbackURL' => 'https://ghotok.soft-techtechnology.com/payment/callback.php', //need to change with real domain
     'amount' => $amount, //need to change with real amount
     'currency' => 'BDT',
     'intent' => 'sale',
